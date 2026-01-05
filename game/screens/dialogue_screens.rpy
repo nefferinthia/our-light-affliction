@@ -16,16 +16,23 @@ screen say(who, what):
     style_prefix "say"
 
     window:
+        id "window_frame"
+        style "window_frame"
+
+    window:
         id "window"
 
         if who is not None:
-
             window:
                 id "namebox"
                 style "namebox"
                 text who id "who"
 
         text what id "what"
+
+    window:
+        id "window_buttons"
+        style "window_buttons"
 
     ## If there's a side image, display it in front of the text.
     add SideImage() xalign 0.0 yalign 1.0
@@ -52,12 +59,14 @@ style say_dialogue:
 style say_thought:
     is say_dialogue
 
+
 # Style for the box containing the speaker's name
 style namebox:
-    xpos 20
+    xpos -10
+    ypos -60
     xysize (None, None)
-    background Frame("gui/namebox.png", 5, 5, 5, 5, tile=False, xalign=0.0)
-    padding (5, 5, 5, 5)
+    background Frame("gui/namebox.png", 5, 5, gui.namebox_size, 5,xalign=0.0)
+    padding (30, 10, gui.namebox_size, 10)
 
 # Style for the text with the speaker's name
 style say_label:
@@ -67,6 +76,14 @@ style say_label:
     size gui.name_text_size
     font gui.name_text_font
 
+style window_frame:
+    background Frame("gui/window_frame.png")
+
+style window_buttons:
+    background Frame("gui/textbox_buttons.png")
+    xalign 0.98
+    yalign 1.0
+    xysize (284, 274)
 
 ## Quick Menu screen ###########################################################
 ##
