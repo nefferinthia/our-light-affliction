@@ -22,3 +22,5 @@ errors.txt
 game/saves/navigation.json
 game/script_version.txt
 game/saves/sync/**
+
+libs/
