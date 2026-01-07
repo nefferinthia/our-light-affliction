@@ -33,6 +33,9 @@ define gui.name_text_font = gui.preference("name_font", "DejaVuSans.ttf")
 # The size for character names
 define gui.name_text_size = gui.preference("name_size", 45)
 
+# Size of the namebox in pixels
+define gui.namebox_size = 175
+
 ## Localization ################################################################
 
 ## This controls where a line break is permitted. The default is suitable

@@ -16,16 +16,44 @@ screen say(who, what):
     style_prefix "say"
 
     window:
-        id "window"
+        style "window_frame"
 
+    window:
+        style "text_window"
         if who is not None:
-
             window:
-                id "namebox"
                 style "namebox"
                 text who id "who"
 
         text what id "what"
+
+    window:
+        style "window_buttons"
+        vbox:
+            spacing -35
+            window: 
+                style "button0"
+                imagebutton action ShowMenu('save'):
+                    idle "gui/button0.png"
+                text "Menu":
+                    yalign 0.4
+                    xalign 0.1
+            
+            window:
+                style "button1"
+                imagebutton action ShowMenu('save'):
+                    idle "gui/button1.png"
+                text "Save":
+                    yalign 0.5
+                    xalign 0.5
+
+            window: 
+                style "button2"
+                imagebutton action ShowMenu('load'):
+                    idle "gui/button2.png"
+                text "Load":
+                    yalign 0.6
+                    xalign 0.1
 
     ## If there's a side image, display it in front of the text.
     add SideImage() xalign 0.0 yalign 1.0
@@ -36,7 +64,7 @@ init python:
     config.character_id_prefixes.append('namebox')
 
 # Style for the dialogue window
-style window:
+style text_window:
     xalign 0.5
     yalign 1.0
     xysize (1231, 277)
@@ -52,22 +80,39 @@ style say_dialogue:
 style say_thought:
     is say_dialogue
 
+
 # Style for the box containing the speaker's name
 style namebox:
-    xpos 20
+    xpos -10
+    ypos -60
     xysize (None, None)
-    background Frame("gui/namebox.png", 5, 5, 5, 5, tile=False, xalign=0.0)
-    padding (5, 5, 5, 5)
+    background Frame("gui/namebox.png", 5, 5, gui.namebox_size, 5,xalign=0.0)
+    padding (30, 10, gui.namebox_size, 10)
 
 # Style for the text with the speaker's name
 style say_label:
-    color '#f93c3e'
+    color '#000000'
     xalign 0.0
     yalign 0.5
     size gui.name_text_size
     font gui.name_text_font
 
+style window_frame:
+    background Frame("gui/window_frame.png")
 
+style window_buttons:
+    xalign 0.98
+    yalign 1.0
+
+style button0:
+    xysize (284, 114)
+
+style button1:
+    xysize (284, 114)
+
+style button2:
+    xysize (284, 114)
+    
 ## Quick Menu screen ###########################################################
 ##
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
@@ -110,7 +155,7 @@ style quick_button:
 style quick_button_text:
     size 21
     selected_color '#f93c3e'
-    idle_color "#603c3c"
+    idle_color "#8b6363"
 
 ## NVL screen ##################################################################
 ##
