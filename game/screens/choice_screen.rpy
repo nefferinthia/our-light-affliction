@@ -7,9 +7,6 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
-init python:
-    hovered_choice = -1
-
 screen choice(items):
     style_prefix "choice"
 
