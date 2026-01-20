@@ -30,11 +30,12 @@ screen say(who, what):
     window:
         style "window_buttons"
         vbox:
-            spacing -35
+            spacing -20
             window: 
                 style "button0"
                 imagebutton action ShowMenu('save'):
-                    idle "gui/button0.png"
+                    idle "gui/menu button 1.png"
+                    hover "gui/menu button 1 hover.png"
                 text "Menu":
                     yalign 0.4
                     xalign 0.1
@@ -42,7 +43,8 @@ screen say(who, what):
             window:
                 style "button1"
                 imagebutton action ShowMenu('save'):
-                    idle "gui/button1.png"
+                    idle "gui/menu button 2.png"
+                    hover "gui/menu button 2 hover.png"
                 text "Save":
                     yalign 0.5
                     xalign 0.5
@@ -50,7 +52,8 @@ screen say(who, what):
             window: 
                 style "button2"
                 imagebutton action ShowMenu('load'):
-                    idle "gui/button2.png"
+                    idle "gui/menu button 3.png"
+                    hover "gui/menu button 3 hover.png"
                 text "Load":
                     yalign 0.6
                     xalign 0.1
