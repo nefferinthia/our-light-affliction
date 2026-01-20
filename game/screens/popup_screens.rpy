@@ -15,19 +15,29 @@ screen confirm(message, yes_action, no_action=None):
 
     style_prefix "confirm"
 
-    add "#0008" # You can replace this with your own overlay image
+    add "gui/confirm screen.png" # You can replace this with your own overlay image
 
     frame:
-        has vbox
 
-        label _(message) style "confirm_prompt"
+        label _(message) style "confirm_prompt":
+            xalign 0.35
+            yalign 0.5
+            xoffset 10
+            xysize (300, 420)
 
-        hbox:
-
-            textbutton _("Confirm") action yes_action
-            # Modified so you can just have a confirmation prompt
-            if no_action is not None:
-                textbutton _("Cancel") action no_action
+        textbutton _("Confirm") action yes_action:
+            xalign 0.75
+            yalign 0.35
+            yoffset 5
+            xysize (270, 195)
+        # Modified so you can just have a confirmation prompt
+        if no_action is not None:
+            textbutton _("Cancel") action no_action:
+                xalign 0.75
+                yalign 0.65
+                yoffset -5
+                xoffset 5
+                xysize (270, 195)
 
     ## Right-click and escape answer "no".
     if no_action is not None:
@@ -36,7 +46,6 @@ screen confirm(message, yes_action, no_action=None):
         key "game_menu" action yes_action
 
 style confirm_frame:
-    background Frame("gui/frame.png", 60, 60, 60, 60, tile=False)
     padding (60, 60, 60, 60)
     xalign 0.5
     yalign 0.5
