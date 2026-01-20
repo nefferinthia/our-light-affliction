@@ -128,7 +128,3 @@ style vslider:
     base_bar Frame("gui/slider/vertical_[prefix_]bar.png", 6, 6, 6, 6, tile=False)
     thumb "gui/slider/vertical_[prefix_]thumb.png"
 
-
-style frame:
-    padding (6, 6, 6, 6)
-    background Frame("gui/frame.png", 6, 6, 6, 6, tile=False)
