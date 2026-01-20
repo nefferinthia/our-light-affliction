@@ -23,6 +23,8 @@ layeredimage lucifrid thinking:
             "lucifrid/expressions/flustered.png"
         attribute frown:
             "lucifrid/expressions/frown.png"
+        attribute grin:
+            "lucifrid/expressions/grin.png"
         attribute innocent:
             "lucifrid/expressions/innocent.png"
         attribute ominous:
@@ -60,6 +62,8 @@ layeredimage lucifrid guarded:
             "lucifrid/expressions/flustered.png"
         attribute frown:
             "lucifrid/expressions/frown.png"
+        attribute grin:
+            "lucifrid/expressions/grin.png"
         attribute innocent:
             "lucifrid/expressions/innocent.png"
         attribute ominous:
@@ -93,6 +97,8 @@ layeredimage lucifrid inviting:
             "lucifrid/expressions/flustered.png"
         attribute frown:
             "lucifrid/expressions/frown.png"
+        attribute grin:
+            "lucifrid/expressions/grin.png"
         attribute innocent:
             "lucifrid/expressions/innocent.png"
         attribute ominous:
@@ -128,6 +134,8 @@ layeredimage lucifrid threatening:
             "lucifrid/expressions/flustered.png"
         attribute frown:
             "lucifrid/expressions/frown.png"
+        attribute grin:
+            "lucifrid/expressions/grin.png"
         attribute innocent:
             "lucifrid/expressions/innocent.png"
         attribute ominous:
