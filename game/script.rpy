@@ -4,9 +4,9 @@
 # name of the character.
 
 define e = Character("Edelweiss")
-define em = Character("Emrys")
-define l = Character("Lucifrid")
-define i = Character("Ilya")
+define em = Character("Emrys", image="emrys")
+define l = Character("Lucifrid", image="lucifrid")
+define i = Character("Ilya", image="ilya")
 
 # The game starts here.
 
@@ -28,24 +28,28 @@ label start:
     default ilya_ending = 0
     default bad_ending = 0
 
-    #cool NVL intro scene with ominous foreshadowing
-    #this sets up that players could’ve expected a lucy romance wouldn’t work out
+
     "To those of us who can see {i}them{/i}...{w} there are two paths available."
     "One is to work towards peace in equilibrium with the realm beyond as diviners,"
     "the other to stand firm in protecting humans by eradicating dangerous apparitions as exorcists."
     "But inscribed upon the gate to both these paths stands a warning that all must heed:"
     "To intertwine the mortal realm with the realm beyond can lead to naught but misfortune."
 
-    scene classroom
-    with dissolve
+    scene classroom day
 
     "Out of the corner of my eye I see something crawling. It's {i}them{/i} again."
     "I don’t know what happened to this school. We’ve been having a serious spider plague."
     e "Look, they're back! The spiders! There’s a whole bunch of them right there in the corner."
     "Emrys looks to where I point but merely shoots me a confused glance."
-    em "Edelweiss, are you getting enough sleep? I’m starting to worry about you."
+
+    show emrys casual confused
+
+    em "Edelweiss, are you getting enough sleep? I’mR starting to worry about you."
     e "Oh, um... Never... mind? Haha! I didn’t mean it, I just wanted to scare you!"
     em "If you say so. Just take care of yourself, alright?"
+
+    hide emrys
+
     "Oops, that was awkward. I guess I should’ve gotten the hint when I brought up our school’s newest denizens and no one seemed to have a clue what I was on about."
     "They must be apparitions."
 
@@ -56,8 +60,14 @@ label start:
     "At the desk beside me Emrys is continuing diligently with our homework, but I can’t seem to focus."
     "Ah, who cares about schoolwork! The only reason I’m attending this place is because the barrier between our world and the spirit realm is thin here."
     "One day I’ll be the head of our family, a top class diviner! No mathematics are going to help me with that."
+
+    show emrys small_smile
+
     em "You’re distracted."
     "His voice drops to a whisper."
+
+    show emrys determined
+
     em "{size=-8}Don’t tell me... the spiders are from the beyond?{/size}"
     "Emrys has been in the employ of my family since we were children. He doesn’t have the ancient blood required to see apparitions properly, but he can sense stronger ones by virtue of his training."
     "Practical abilities aside, growing up as a diviner can be rather lonely. Having him around as a friend who understands, who I don't need to hide anything from, has been a blessing."
@@ -69,20 +79,35 @@ label start:
     "Emrys rises from his desk."
     em "Where do you think you’re going?"
     e "It’s important! The spiders are up to something!"
+
+    show emrys alert
+
     em "Then I’m coming with you."
     e "Fine... Do as you wish, just don’t draw too much attention."
+
+    show emrys confused alert
+
     "He shoots me an incredulous glance."
     "Okay fine, if anyone’s going to draw too much attention it’s probably me."
     "But I have my secret technique. If you act like you know what you’re doing, no one will think you’re not supposed to be doing it."
 
-    scene black
+    scene hallway day
     with dissolve
 
     "As we leave the classroom, the last few arachnids scurry up the steps and out of our sight."
     e "They’re going upstairs? I’ve never been to the fourth floor..."
+
+    show emrys small_smile casual
+
     em "Well, it's officially off-limits."
     em "You're not about to let that stop you, I presume."
     "He doesn't sound judgmental, just matter-of-fact. A mischievous smile finds its way onto my face as I nod."
+
+    scene black
+    with dissolve
+    scene hallway day
+    with dissolve
+
     #sfx creak
     "As we climb the staircase, the lights grow dimmer. Wooden floorboards creak underneath my loafers and the dust in the air makes my throat go dry."
     "Only a few steps later I feel an uncomfortable shiver creep across my back."
@@ -104,6 +129,9 @@ label start:
 
     #door sfx
     #scary ominous Lucifrid cg??, camera pans to emrys
+
+    scene classroom day
+    with dissolve
 
     "There he is–hanging in a large web against the wall. Surrounding him are numerous of the spiders we followed here and some of their larger brethren."
     "A boy about our age stands facing him. Four eyes, four arms and a wide, fanged grin betray his inhuman nature. If I had to guess, he's the one controlling the spider troops."
