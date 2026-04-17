@@ -55,7 +55,7 @@ label start:
     "Pitch-black with red eyes... They’re creepy. I wish I couldn’t see them."
     "At the desk beside me Emrys is continuing diligently with our homework, but I can’t seem to focus."
     "Ah, who cares about schoolwork! The only reason I’m attending this place is because the barrier between our world and the spirit realm is thin here."
-    "One day I’ll be the head of our family, a top class diviner! No mathematics is going to help me with that."
+    "One day I’ll be the head of our family, a top class diviner! No mathematics are going to help me with that."
     em "You’re distracted."
     "His voice drops to a whisper."
     em "{size=-8}Don’t tell me... the spiders are from the beyond?{/size}"
@@ -129,7 +129,7 @@ label start:
     "Tch... Seems I've been dancing to his tune the whole time."
     "I keep my voice firm."
     e "I'm Edelweiss, though I suppose I don't have to inform you. That boy you’ve so rudely accosted is Emrys."
-    "He clasps two of his arms behind his back in a solemn pose, using the other two to pull at Emrys’ uniform in a half-curious, half-disgusted manner."
+    "He clasps two of his arms behind his back in a solemn pose, using the other two to pull at Emrys’ uniform in a part-curious, part-disgusted manner."
     l "Now what are you doing spending your time with a halfwit such as this?"
     "Right, apparitions only respect spiritual power. I just have to go along with his view."
     e "He’s my assistant. I delegate any work not fit for my hands to him."
@@ -167,7 +167,7 @@ label start:
     "His four hands press against the wall behind me, pinning me in place. Before I have time to process what’s happening he presses his lips against mine."
     l "Let this be proof of the invisible ties that bind us, now and forever. Neither life nor death shall come between us."
     "He snaps his fingers again and Emrys falls from his web. A procession of spiders softens his fall and parades him out of the classroom."
-    l "Don’t worry, they’ll deliver him safely back where he came from."
+    l "Don’t worry, they’ll deliver him safely back to where he came from."
     l "Now, we have work to do, my dearest partner!"
 
     e "What on Earth was that all about?!"
@@ -203,7 +203,7 @@ label start:
     l "The boundary is thinnest in this exact location. If an apparition wants to cross over into this world, they’re likely to pass through this classroom."
     l "Not to mention I can tap into my powers more easily without crossing over."
     "I listen to his explanation as I follow his instructions to tidy up the room, gathering up the belongings of students who have probably long graduated."
-    "Lucifrid smiles and pats my head. Well, tries to, as I push his hand away."
+    "Lucifrid smiles and pats my head. Well, tries to, as I push one of his four hands away."
     l "You’re surprisingly obedient, aren’t you?"
     e "Hmph, I just have a sense of responsibility."
     e "..."
@@ -256,7 +256,7 @@ label start:
     l "But fine, let me show you exactly where you fit into my plans..."
     "He claps his hands–all four of them–and sinks two of his arms into the desk arrangement, seemingly phasing them out of existence."
     "Is he... reaching into the beyond? Interesting."
-    "Bit by bit I’m becoming more aware of exactly how much I {i}don’t{/i} know, and don’t understand about apparitions."
+    "Bit by bit I’m becoming more aware of exactly how much I don’t know, and don’t understand about apparitions."
     "If my mother were here, would she have been able to handle this situation better? Would she have bested Lucifrid the moment they met?"
     "If my mother were here... I could have at least asked for her advice."
     "Her figure appears in my mind, but she’s faint and I can’t quite make out her face. It’s been a long time after all."
@@ -280,7 +280,7 @@ label start:
     e "Somewhat... I think..."
     "My lessons covered something like this once, but I can’t quite recall the details."
     "A lot of my family’s knowledge is passed down for generations through nothing but scrawled notes and incomplete observations."
-    "Father is from a minor branch family and mostly minded the affairs at home, so when mother passed away young, she took a lot of information with her to the grave."
+    "Father is from a minor branch family and mostly minds the affairs at home, so when mother passed away young, she took a lot of information with her to the grave."
     l "Well, it matters not. What matters is that you will claim the names of all my opponents for me, so that I may reign over the dark side of this school undisputedly."
     l "Don’t worry, I’ll let you reign alongside me, that’s only fair."
     "He laughs, unconcerned with whether I {i}want{/i} to reign alongside him."
@@ -322,7 +322,7 @@ label start:
     e "Similar powers, different approach. They usually possess stronger tools and rituals to dispose of apparitions. They're uh, fight before flight."
     "Emrys opens his mouth, probably to reprimand my casual speech, but closes it again and just nods."
     em "Next, the beyond."
-    e "It's where apparitions live. It's like–another layer of this world."
+    e "It's where apparitions live. It's like, another layer of this world."
     em "I don't think your father will be satisfied with that answer."
     e "Well, it's vague! We don't even know exactly what it is! Sometimes it's just the same as our world, and sometimes it's completely different."
     em "It's connected to our world, and overlaps in places, but not everywhere. It's oversimplifying to call it another layer."
@@ -343,7 +343,7 @@ label start:
 
     em "So with that, wanna hang out at the arcade?"
     e "Ah, um, I can’t, I’ve got... stuff."
-    "It would be beyond foolish to give up the one advantage I’ve gained by teaming up with Lucifrid, but I’m not exactly sure how to explain my new after school activities that doesn’t involve at least a shade of the truth."
+    "It would be beyond foolish to give up the one advantage I’ve gained by teaming up with Lucifrid, but my mind is drawing a blank on a convincing excuse."
     em "What, don’t tell me you’ve started taking your schoolwork seriously! If it's more diviner business I'll help out."
     e "Schoolwork! Yes, that’s the stuff! You know, with test week coming up and all..."
     em "..."
@@ -608,7 +608,7 @@ label start:
         "How should I respond to this?"
 
 
-        "Jokingly. If I did follow his advice there’s no way I’d be his obedient little assistant anymore.":
+        "Jokingly.# If I did follow his advice there’s no way I’d be his obedient little assistant anymore.":
             $ lucy_yan += 1
             e "Yes, I think I’ll do just that!"
             e "I’ll grow my powers in secret until the day I can overthrow you and be free of our contract once and for all."
@@ -619,7 +619,7 @@ label start:
             jump postchoice_lucycourtyard
 
 
-        "Decisively. There’s no point in a life lived only for oneself.": 
+        "Decisively.# There’s no point in a life lived only for oneself.": 
             $ negative_arc += 1
             e "It’s easy to say all that when you’re an apparition with no concept of family or kin."
             e "If I do as you say, I’ll end up like you! Alone, with my only company someone who wouldn’t be there if I hadn’t twisted their arm into it."
@@ -629,7 +629,7 @@ label start:
             jump postchoice_lucycourtyard
 
 
-        "Questioningly. What if I don’t even know what I want?":
+        "Questioningly.# What if I don’t even know what I want?":
             $ positive_arc += 1
             e "If I’m going to do what {i}I{/i} want, then I at least have to know what that is..."
             "Lucifrid looks at me incredulously. Like it’s the first time he’s even considered the possibility of someone without a strong desire of their own."
@@ -845,7 +845,7 @@ label postchoice_lucycourtyard:
         "How do I feel about all of this?"
 
 
-        "This is my business, and I have the situation under control. I’ll determine if Lucifrid poses a threat, and when he does I will be the one to deal with him.":
+        "This is my business, and I have the situation under control.# I’ll determine if Lucifrid poses a threat, and when he does I will be the one to deal with him.":
             $ positive_arc += 1
             $ ilya_respect += 1
             "Eliminate Lucifrid? If anyone’s doing that it’ll be me. And it would be a last resort."
@@ -869,7 +869,7 @@ label postchoice_lucycourtyard:
 
 
 
-        "I appreciate Ilya’s concern, and perhaps it wouldn’t be a bad idea to open up to him. But to exorcise Lucifrid? That’s going too far.":
+        "I appreciate Ilya’s concern.# Perhaps it wouldn’t be a bad idea to open up to him, but to exorcise Lucifrid? That’s going too far.":
             $ ilya_affection += 1
             "Ilya means me no harm, he’s acting out of concern for me even if we may not agree on our methods."
             "Diviners are meant to facilitate peaceful coexistence with the beyond, making sure that the two sides of the barrier stay in harmony, balanced like two sides of a scale."
@@ -891,7 +891,7 @@ label postchoice_lucycourtyard:
 
 
 
-        "Actually... I’ve felt more happy and purposeful working alongside Lucifrid than I have ever before in my life. I’m not going to let Ilya interfere.":
+        "Actually... working alongside Lucifrid has been great.# I’m not going to let Ilya interfere now that I've finally found purpose in something.":
             $ negative_arc += 1
             $ ilya_affection -= 1
             "I wouldn’t let Lucifrid know but... in a way, he’s finally made me feel useful. He's given me what my father refused me: a chance to prove myself."
@@ -1033,7 +1033,7 @@ label postchoice_ilyameeting:
     menu:
         "Who should I give the rice dumplings to?"
 
-        "Ilya.":
+        "Ilya.#":
             "I suppose I best keep up with my own lies and reinforce the boyfriend narrative. Everyone in class suspects me of something anyway…"
             "Lucifrid already stole my lunch the other day, I shouldn’t reward him for it."
             "Besides, I can’t help but feel I owe Ilya for accepting the boyfriend ploy so gracefully."
@@ -1106,7 +1106,7 @@ label postchoice_ilyameeting:
             i "...That's within reach."
 
 
-        "Lucifrid.":
+        "Lucifrid.#":
             "I think of how Lucifrid can't leave the school grounds."
             "Has he ever had rice dumplings before? There’s probably tons of food he’s never tried."
             "I guess I could wait until our usual after-school rendezvous, but rice dumplings are best eaten fresh."
@@ -1331,7 +1331,7 @@ label postchoice_ilyameeting:
     "We look around the hideout for a sign of Lucifrid, to no avail."
     "There’s no finding an apparition of his caliber if he doesn’t want to be found, so there's little to do but wait around."
     "..."
-    "Growing tired of waiting, Emrys sits down on Lucifrid’s usual chairImmediately the room darkens."
+    "Growing tired of waiting, Emrys sits down on Lucifrid’s usual chair. The room darkens immediately."
     "Lucifrid spawns in an instant from a corner obscured by a crawling mass of his familiars."
     "Startled, Emrys jumps up from the chair with a flinch."
     l "Do not casually take my throne, human."
@@ -1645,11 +1645,11 @@ label postchoice_ilyameeting:
     menu:
         "No, no! He’s got everything all wrong. But what can I even say to him?"
         
-        "He only went after the library cat because I asked him to!":
+        "He only went after the library cat because I asked him to!#":
             jump postchoice_ilyajustify
-        "The only reason the battle escalated to our side of the school is because I started a fire and then couldn’t handle the smoke!":
+        "The only reason the battle escalated to our side of the school is because I started a fire and then couldn’t handle the smoke!#":
             jump postchoice_ilyajustify
-        "The students got hurt when he lost focus because I’m weak and he needed to protect me!":
+        "The students got hurt when he lost focus because I’m weak and he needed to protect me!#":
             jump postchoice_ilyajustify
 
 
@@ -1678,7 +1678,7 @@ label postchoice_ilyajustify:
         "Well, Edelweiss, don't just stare at him. Say something!"
 
 
-        "You haven’t once tried talking with him! You’d see Lucifrid’s not the one at fault here if you just gave him a chance! How will there ever be cooperation between diviners and exorcists if you simply force your way?!":
+        "You haven’t once tried talking with him!# You’d see Lucifrid’s not the one at fault here if you just gave him a chance! How will there ever be cooperation between diviners and exorcists if you simply force your way?!":
             
             $ ilya_affection -= 1
             $ ilya_respect -= 1
@@ -1715,7 +1715,7 @@ label postchoice_ilyajustify:
 
 
 
-        "I’m truly sorry for what happened, Ilya. I overestimated my abilities as a diviner, and I’ll work to make reparations. Please give me another chance to deal with Lucifrid by myself.":
+        "I’m truly sorry for what happened, Ilya.# I overestimated my abilities as a diviner, and I’ll work to make reparations. Please give me another chance to deal with Lucifrid by myself.":
             
             $ ilya_affection += 1
             $ negative_arc += 1
@@ -1746,7 +1746,7 @@ label postchoice_ilyajustify:
 
 
 
-        "Lucifrid did all this at my request. It didn’t go perfectly, but we did get back the students’ voices that were stolen. You need us for when stronger apparitions inevitably threaten the school.":
+        "Lucifrid did all this at my request.# It didn’t go perfectly, but we did get back the students’ voices that were stolen. You need us for when stronger apparitions inevitably threaten the school.":
             
             $ ilya_respect += 1
             $ positive_arc += 1
@@ -1858,7 +1858,7 @@ label postchoice_ilyafallout:
 
 
     menu:
-        "...Okay. Thank you, Lucifrid.":
+        "...Okay. Thank you, Lucifrid.#":
             $ positive_arc += 1
             #lucifrid pause
             "Something changes in Lucifrid then. He’s normally so quick to respond, so candid in his emotions, but now, he seems unsure."
@@ -1876,7 +1876,7 @@ label postchoice_ilyafallout:
             jump postchoice_broomcloset
 
 
-        "How am I supposed to trust anything you say with that smirk on your face?":
+        "How am I supposed to trust anything you say with that smirk on your face?#":
             $ lucy_yan += 1
             #cg changes to regular position
             #lucifrid innocent
@@ -2113,7 +2113,7 @@ label mom_convo:
         "Where do I even begin?"
 
 
-        "Talk about being a diviner" if momconvodiviner == 0:
+        "Talk about being a diviner#" if momconvodiviner == 0:
             $ momconvodiviner += 1
             
             e "Well, one thing’s never changed. I’m still trying my hardest to be like you, Mother."
@@ -2123,7 +2123,7 @@ label mom_convo:
 
             menu:
                 e "I'm almost scared to say this but..."
-                "I’m not sure being a diviner is what {i}I{/i} really want.":
+                "I’m not sure being a diviner is what {i}I{/i} really want.#":
                     $ positive_arc += 1
                     "Mom" "Don’t you worry about my expectations, dear."
                     "Mom" "All I’ve ever wanted is for you to be happy."
@@ -2132,7 +2132,7 @@ label mom_convo:
                     "Mom" "It’s alright to think of yourself too."
 
 
-                "I don’t think I’m cut out to be a diviner.":
+                "I don’t think I’m cut out to be a diviner.#":
                     $ negative_arc += 1
                     "Mom" "Aren’t you just afraid to face the possibility of failure?"
                     "Mom" "It’s always easier to give up and say you never intended to succeed, than to try and fall short."
@@ -2142,7 +2142,7 @@ label mom_convo:
             jump mom_convo
 
 
-        "Talk about Lucifrid" if momconvolucy == 0:
+        "Talk about Lucifrid#" if momconvolucy == 0:
 
 
             $ momconvolucy += 1
@@ -2157,13 +2157,13 @@ label mom_convo:
 
 
             menu:
-                "He’s domineering and selfish and unreasonable and capricious, and it makes me afraid to trust him.":
+                "He’s domineering and selfish and unreasonable and capricious, and it makes me afraid to trust him.#":
                     $ positive_arc -= 3
                     #locks you out of true ending
-                "He’s domineering and selfish and unreasonable and capricious, and I think I love him.":
+                "He’s domineering and selfish and unreasonable and capricious, and I think I love him.#":
                     $ ilya_affection -= 3
                     #locks you out of ilya ending
-                "My feelings keep swaying between one extreme and the other.":
+                "My feelings keep swaying between one extreme and the other.#":
                     $ lucy_yan += 1
 
 
@@ -2178,7 +2178,7 @@ label mom_convo:
             jump mom_convo
 
 
-        "Talk about Ilya" if momconvoilya == 0:
+        "Talk about Ilya#" if momconvoilya == 0:
 
 
             $ momconvoilya += 1
@@ -2190,11 +2190,11 @@ label mom_convo:
 
 
             menu:
-                "Sometimes I find myself wondering if he’s right, wondering what would have happened if I met Ilya before getting caught up in Lucifrid’s plans.":
+                "Sometimes I find myself wondering if he’s right, wondering what would have happened if I met Ilya before getting caught up in Lucifrid’s plans.#":
                     $ ilya_affection += 1
-                "I wish he’d stop acting so condescending, then maybe we could get along.":
+                "I wish he’d stop acting so condescending, then maybe we could get along.#":
                     $ ilya_respect += 1
-                "He’s an arrogant prick. I’ll prove him wrong soon enough.":
+                "He’s an arrogant prick. I’ll prove him wrong soon enough.#":
                     $ ilya_affection -= 3
 
 
@@ -2207,7 +2207,7 @@ label mom_convo:
             jump mom_convo
 
 
-        "I think I've addressed everything." if momconvoilya >= 1 and momconvolucy >= 1 and momconvodiviner >= 1:
+        "I think I've addressed everything.#" if momconvoilya >= 1 and momconvolucy >= 1 and momconvodiviner >= 1:
 
 
             jump postchoice_momconvo
@@ -2283,7 +2283,7 @@ label postchoice_momconvo:
 
 
         menu:
-            "I deflate like a balloon as all my pent-up anger floods out of me.":
+            "I deflate like a balloon as all my pent-up anger floods out of me.#":
 
 
                 $ negative_arc += 1
@@ -2300,7 +2300,7 @@ label postchoice_momconvo:
                 l "The prince of spiders will ascend to kingship, one way or the other. And you will be my queen."
 
 
-            "The pent-up anger inside of me threatens to explode.":
+            "The pent-up anger inside of me threatens to explode.#":
 
 
                 $ lucy_yan += 1
@@ -2484,7 +2484,7 @@ label endings:
         "There’s only one person I can rely on..."
 
 
-        "Lucifrid" if true_ending >= 1:
+        "Lucifrid#" if true_ending >= 1:
             "I get up and walk towards the fourth floor."
             #bg hallway
             "I don’t know what’s going to happen. I don’t know what we should do. But I know that as long as we’re together, we can handle anything."
@@ -2754,7 +2754,7 @@ label endings:
             "And somewhere, I know, he's smiling."
             return
 
-        "Lucifrid" if lucy_ending >= 1: #Lucifrid's yandere ending
+        "Lucifrid#" if lucy_ending >= 1: #Lucifrid's yandere ending
             "I swallow hard, but fail to stop the anxiety from rising like bile in my throat."
             "There's nowhere for me to run except into the arms of danger, but if that's what it takes to save Emrys, then I will."
             "It's only right for me to be the victim of my own incompetence, but I can't allow it to affect him."
@@ -2976,7 +2976,7 @@ label endings:
             "It must not have been important."
             return
 
-        "Ilya" if ilya_ending >= 1:
+        "Ilya#" if ilya_ending >= 1:
 
             "I’m so tired of being caught in Lucifrid’s web. No matter what I do, I’m nothing but a pawn in his game."
             "I’ve followed his plans over and over, and yet he refuses to see me as an equal."
@@ -3204,7 +3204,7 @@ label endings:
             i "I love you too, Edelweiss."
             return
 
-        "Myself" if bad_ending >= 1:
+        "Myself#" if bad_ending >= 1:
             "No! I refuse to let Lucifrid solve all my problems again."
             "Isn’t it about time I become a diviner Mother and Father can be proud of?"
             "{i}I{/i} will be the one to save Emrys, and we can come up with a plan to save the school together."
