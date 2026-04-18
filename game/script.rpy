@@ -7,6 +7,7 @@ define e = Character("Edelweiss")
 define em = Character("Emrys", image="emrys")
 define l = Character("Lucifrid", image="lucifrid")
 define i = Character("Ilya", image="ilya")
+define n = Character(None, kind=nvl)
 
 # The game starts here.
 
@@ -28,13 +29,15 @@ label start:
     default ilya_ending = 0
     default bad_ending = 0
 
+    scene black
 
-    "To those of us who can see {i}them{/i}...{w} there are two paths available."
-    "One is to work towards peace in equilibrium with the realm beyond as diviners,"
-    "the other to stand firm in protecting humans by eradicating dangerous apparitions as exorcists."
-    "But inscribed upon the gate to both these paths stands a warning that all must heed:"
-    "To intertwine the mortal realm with the realm beyond can lead to naught but misfortune."
+    n "To those of us who can see {i}them{/i}...{w} there are two paths available."
+    n "One is to work towards peace in equilibrium with the realm beyond as diviners,"
+    n "the other to stand firm in protecting humans by eradicating dangerous apparitions as exorcists."
+    n "But inscribed upon the gate to both these paths stands a warning that all must heed:"
+    n "To intertwine the mortal realm with the realm beyond can lead to naught but misfortune."
 
+    nvl clear
     scene classroom day
 
     "Out of the corner of my eye I see something crawling. It's {i}them{/i} again."
@@ -44,7 +47,7 @@ label start:
 
     show emrys casual confused
 
-    em "Edelweiss, are you getting enough sleep? I’mR starting to worry about you."
+    em "Edelweiss, are you getting enough sleep? I’m starting to worry about you."
     e "Oh, um... Never... mind? Haha! I didn’t mean it, I just wanted to scare you!"
     em "If you say so. Just take care of yourself, alright?"
 

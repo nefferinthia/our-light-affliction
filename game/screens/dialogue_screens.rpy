@@ -171,6 +171,7 @@ screen nvl(dialogue, items=None):
 
     window:
         style "nvl_window"
+        top_padding 200
 
         has vbox
         spacing 15
@@ -230,7 +231,7 @@ style nvl_label:
 # The style for dialogue in NVL
 style nvl_dialogue:
     is say_dialogue
-    xpos 675
+    xpos 575
     ypos 12
     xsize 885
     min_width 885
