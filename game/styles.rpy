@@ -36,8 +36,6 @@ define gui.name_text_size = gui.preference("name_size", 40)
 # Size of the namebox in pixels
 define gui.namebox_size = 175
 
-define gui.nvl_height = 50
-
 ## Localization ################################################################
 
 ## This controls where a line break is permitted. The default is suitable

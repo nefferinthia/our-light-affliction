@@ -59,7 +59,7 @@ screen say(who, what):
                     xalign 0.1
 
     ## If there's a side image, display it in front of the text.
-    add SideImage() xalign 0.0 yalign 1.0
+    add SideImage() xalign 0.0 yalign 1.0 xoffset -30
 
 
 ## Make the namebox available for styling through the Character object.

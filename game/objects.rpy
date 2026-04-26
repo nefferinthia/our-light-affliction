@@ -1,5 +1,19 @@
-define _show_hide_transition = Dissolve(0.15)
+define _scene_show_hide_transition = Dissolve(0.15)
 define fastdissolve = Dissolve(0.15)
+
+transform closeup:
+    zoom 2.0
+    yalign 0.15
+    xalign 0.5
+
+transform halfcloseup:
+    zoom 1.5
+    yalign 0.15
+    xalign 0.5
+
+transform normal:
+    zoom 1.0
+    yalign 1.0
 
 layeredimage lucifrid:
     zoom 0.5
@@ -11,6 +25,38 @@ layeredimage lucifrid:
         
     group arms auto:
         attribute guardedhips default
+
+layeredimage side edelweiss:
+    zoom 0.5
+
+    always "edelweiss_base"
+
+    group blush auto
+
+    group expressions auto:
+        attribute neutral default
+
+layeredimage edelweiss:
+
+    group blush:
+        attribute slightblush default null
+        attribute deepblush null
+        attribute none null
+
+    group expressions:
+        attribute angry null
+        attribute awkward null
+        attribute conflicted null
+        attribute determined null
+        attribute laugh null
+        attribute neutral null
+        attribute panic null
+        attribute pout null
+        attribute rueful null
+        attribute smile null
+        attribute smug null
+        attribute tearful null
+        attribute unamused null
 
 layeredimage ilya:
     zoom 0.5
