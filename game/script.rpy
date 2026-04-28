@@ -110,7 +110,7 @@ label start:
     "But I have my secret technique. If you act like you know what you’re doing, no one will think you’re not supposed to be doing it."
 
     scene hallway day
-    with dissolve
+    with MVNStainedGlass10
 
     "As we leave the classroom, the last few arachnids scurry up the steps and out of our sight."
 
@@ -127,7 +127,7 @@ label start:
     scene black
     with fade
     scene hallway day
-    with dissolve
+    with MVNStainedGlass10
 
     #sfx creak
     "As we climb the staircase, the lights grow dimmer. Wooden floorboards creak underneath my loafers and the dust in the air makes my throat go dry."
@@ -158,7 +158,7 @@ label start:
     #scary ominous Lucifrid cg??, camera pans to emrys
 
     scene classroom day
-    with dissolve
+    with MVNStainedGlass10
 
     "There he is–hanging in a large web against the wall. Surrounding him are numerous of the spiders we followed here and some of their larger brethren."
     "A boy about our age stands facing him. Four eyes, four arms and a wide, fanged grin betray his inhuman nature. If I had to guess, he's the one controlling the spider troops."
@@ -282,7 +282,7 @@ label start:
     with fade
 
     scene classroom day
-    with dissolve
+    with MVNStainedGlass10
     show edelweiss angry slightblush
 
     e "What on Earth was that all about?!"
@@ -295,12 +295,10 @@ label start:
     l "Oh, that? I mean, we could’ve intermingled our blood if you preferred. I thought this would be most agreeable to human sensibilities."
     l "Was I wrong?"
 
-    #e annoyed
     show edelweiss pout
 
     e "..."
 
-    #e blushing
     show edelweiss deepblush
 
     e "..."
@@ -314,7 +312,7 @@ label start:
     e "Argh!"
 
     scene classroom evening
-    with dissolve
+    with MVNStainedGlass10
     
     "The setting sun coats the abandoned classroom in a pleasant, warm glow."
     "The air is dense with specks of dust that twirl and dance, illuminated by the sun’s rays."
@@ -445,7 +443,6 @@ label start:
 
     e "H-heh, what kind of top class diviner would I be if I hadn’t even set foot in the spirit realm myself?"
 
-    #sprite closeup
     show lucifrid innocent at halfcloseup
 
     l "Hmmmm, is that so?"
@@ -591,52 +588,104 @@ label start:
     show lucifrid evilsmile invitinghips
 
     l "I’ll see you here tomorrow after class! For now you’re dismissed!"
-    #fade out
-
 
     scene classroom day
     with fade
     #school bell sfx
+    show emrys casual small_smile
+
     em "Alright, I'll give you the keyword and you tell me what you know."
+
+    show edelweiss smile
+
     e "Mm-hm."
     em "{i}Diviner.{/i}"
+
+    show edelweiss awkward
+
     e "What? Is this really necessary? Of course I know that!"
+
+    show emrys neutral
+
     em "The basics are the basics for a reason."
+
+    show edelweiss neutral
+
     e "Individuals from a bloodline with a strong connection to the beyond. They can see apparitions and exercise some power over them."
     em "That's too broad."
+
+    show edelweiss awkward
+
     e "I wasn't done yet! They keep balance between the human realm and the spirit realm and try to seek peaceful solutions, like sealing an apparition instead of banishing it."
+
+    show emrys small_smile
+
     em "Alright, what about exorcists?"
+
+    show edelweiss neutral
+
     e "Similar powers, different approach. They usually possess stronger tools and rituals to dispose of apparitions. They're uh, fight before flight."
+
+    show emrys neutral
+
     "Emrys opens his mouth, probably to reprimand my casual speech, but closes it again and just nods."
     em "Next, the beyond."
     e "It's where apparitions live. It's like, another layer of this world."
     em "I don't think your father will be satisfied with that answer."
+
+    show edelweiss determined
+
     e "Well, it's vague! We don't even know exactly what it is! Sometimes it's just the same as our world, and sometimes it's completely different."
+
+    show emrys neutral
+
     em "It's connected to our world, and overlaps in places, but not everywhere. It's oversimplifying to call it another layer."
+
+    show edelweiss pout
+
     e "Fiiiine."
     em "Next. The boundary."
+    show edelweiss neutral
     e "The dividing line between our world and the beyond. Crossing over is possible, but requires rituals, and it's quite dangerous." 
     e "The work of a diviner usually starts when apparitions cross the boundary. Sometimes humans summon them, purposefully or inadvertently. But some of them can cross over on their own."
+    
+    show emrys small_smile
     em "That's more like it."
+
+    show edelweiss awkward
     e "You really think my dad's gonna ask stuff like this?"
+    show emrys neutral
     em "He's trying to be serious about your education. Conducting exams is part of that."
+    show emrys small_smile
     em "You'll do fine. Maybe he'll finally let you carry one of your mom's talismans after this."
+    show edelweiss pout
     e "As if. I wish he'd take me seriously... How am I supposed to learn without any hands-on experience?"
     "True to his word, Lucifrid has made sure Emrys remembers nothing of his spidery ordeal. He's back to quizzing me on theory like nothing happened."
     "I suppose I'll be getting plenty of hands-on experience soon enough..."
     em "I'll put in a good word for you if you do well on the exam, maybe he'll listen to me."
+    show edelweiss smile
     e "Can't believe my own father trusts you more than me but yeah, that might actually help."
 
-
+    show emrys alert
     em "So with that, wanna hang out at the arcade?"
+
+    show edelweiss awkward
     e "Ah, um, I can’t, I’ve got... stuff."
     "It would be beyond foolish to give up the one advantage I’ve gained by teaming up with Lucifrid, but my mind is drawing a blank on a convincing excuse."
+    show emrys casual
     em "What, don’t tell me you’ve started taking your schoolwork seriously! If it's more diviner business I'll help out."
+
     e "Schoolwork! Yes, that’s the stuff! You know, with test week coming up and all..."
+
+    show emrys confused
     em "..."
     "A man couldn’t look more incredulous if he tried. Guess Emrys knows me better than that."
+
+    show edelweiss laugh
     e "Ahaha, you got me!"
+    show edelweiss smile
     e "Maybe it wouldn’t be a bad idea to blow off steam at the arcade."
+    show emrys alert small_smile
     em "I thought losing made your mood worse, not better."
     "Emrys smirks."
     e "It does. I was more thinking of watching you lose, personally."
@@ -644,6 +693,7 @@ label start:
     "Besides, apparitions operate within their own domains. If I just make it out of the school there should be nothing he can do."
     "That settles it."
     e "Fine, you’re right, I don’t need to do the stuff today."
+    show emrys determined
     em "Whatever your \"stuff\" is, it better not be dangerous."
     "I’d say he’s being overprotective, but I can't exactly argue that meddling in apparition domain wars {i}isn't{/i} dangerous."
     "Well, better make something up."
@@ -651,71 +701,162 @@ label start:
     "Like hanging out with spider apparitions. As all girls do."
 
     scene black
-    with dissolve
+    with fade
+
+    scene hallway day
+    with MVNStainedGlass10
 
     "We make our way down to the first floor and Emrys takes a last minute bathroom break. Tension builds up inside me."
     "This is so not the time! We have to get out of here!"
     "...Is what I’d like to say, but I have to play it cool. Instead I wait patiently by the front entrance."
+
     #Lucy appears, looking very displeased
+    show lucifrid frown guardedclenched
+
     l "What exactly do you think you’re doing?" 
     l "Foolish human. We are quite literally bound to each other’s life essence and you thought you could sneak out unnoticed?"
     "Though Lucifrid is barely an inch taller than me, right now his presence is looming."
     "The atmosphere of the entire hallway darkens as my pulse speeds up."
     "I can’t do much but stare and stammer. I have no excuse."
     "I {i}did{/i} think I could sneak out unnoticed."
+
     #Lucifrid smile 
+    show lucifrid guardedhips evilsmile
+
     l "But no matter! I’ll discipline you whatever way it takes. Though I was so looking forward to our burgeoning camaraderie, hehe."
+
+    show edelweiss conflicted
+
     e "I-I’m sorry! I just didn’t know what to–"
+
+    show lucifrid threateninghips
+
     "He places two of his hands across my mouth and uses the other two to spin me around. Emrys is walking over."
     l "Hush now, you wouldn’t want him to get suspicious."
     "I try to calm my breathing and pretend I’m not deeply terrified."
+
+    show emrys confused casual
+    show lucifrid guardedhips evilsmile
+
     em "Edelweiss, your face is pale, is everything alright? {size=-8}...Apparitions again?{/size}"
     "He whispers the last part as he leans in, completely unaware of the third party that has joined in on our little gathering."
     "I didn’t know Lucifrid could willfully erase his presence like that, but I guess Emrys’ spiritual abilities are easily thrown off. He can't see him."
+
+    show edelweiss awkward
+
     e "Oh yeah, a real scary-looking spider just crawled past. Probably harmless though!"
+
+    show edelweiss neutral
+
     e "Listen, I got a call and it looks like my plans really can’t wait. I’m sorry for being all wishy-washy. I’ll make it up to you some other time, I promise."
+
+    show lucifrid frown
+
     "Lucifrid’s eyes narrow."
+
+    show edelweiss awkward
+
     e "O-on the weekends, you know. When I have more time!"
+
     l "This won't do. Say something to throw him off."
     "Well, I know one thing I can say to stop Emrys from digging further. But that's no longer little white lie territory, that's big black lie, and I'm not sure I feel good about it."
     "I look over at Lucifrid nervously, but his menacing glower has lost none of its intensity."
     "I swallow hard."
+
+    show emrys casual small_smile
     em "Just don’t forget I’m not {i}just{/i} your assistant. I want to spend time with you off-duty all the same."
+    
     #e warm smile
+    show edelweiss slightblush smile
+
     e "I know that. I’m happy about that."
     "Forgive me Emrys. This is all to protect you."
     e "I would never forget my best friend just because I got a boyfriend."
+
+    show lucifrid smug guardedrelaxed
+    show emrys confused blush
+
     "Emrys blushes while Lucifrid grins widely."
     em "A boyfriend...? When did you find the time to... Is he taking good care of you at least?"
+
+    show lucifrid innocent invitingrelaxed
+
     l "I didn't know you thought of me that way, Edie."
     "Lucifrid languidly slings two arms around me as I try my best to keep my composure."
     "I’m going to regret this, aren’t I?"
+
+    show edelweiss awkward
+
     e "I’ll tell you the details sometime, once I know for sure it’s the real thing."
+
+    show edelweiss neutral
+
     e "Just go on ahead, Emrys! I’ll see you in class tomorrow."
     "Emrys lowers his head just a bit bashfully. As I look at his face, the shame of deceit washes over me." 
+
+    hide emrys
+    show lucifrid guardedrelaxed
+
     "I watch his frame move into the distance and promise myself I’ll tell him the truth eventually. He’ll understand.{w} He'll understand, right?"
     "...He'll definitely tell father. I can scarcely imagine the scolding I’ll receive."
     "But what's done is done. Regret can wait."
+
+    show lucifrid grin
+
     "Lucifrid pushes me forward towards the staircase and I stumble unceremoniously."
     l "Onward, underling. We’ve wasted enough time."
 
-    #fadeout
+    scene black
+    with fade
+
+    scene classroom evening
+    with MVNStainedGlass10
     #tidied classroom/hideout bg
+    show lucifrid guardedrelaxed
+
     l "Are we clear on the plan?"
     e "I follow your lead and stay behind you until you’ve subdued the enemy, at which point I’ll open the tome and say: ‘Speak thy name and thine allegiance be manifest.’"
+
+    show lucifrid innocent
+
     "He hums contentedly."
+
+    show lucifrid neutral
+
     l "Seems like we’re ready."
+
+    show lucifrid evilsmile invitingrelaxed
+
     l "Now, take my hand. Don’t be afraid."
     "I try to steady my breathing as I link our hands, forming an anchor for safe passage across the boundary. I'm not afraid. I'm not afraid."
     "The hands-on experience father wouldn't allow me... is coming sooner than I expected."
+
+    show edelweiss determined
+
     e "Wait!"
+
+    show lucifrid neutral
+
     l "Hmm?"
+
+    show edelweiss smug
+
     e "Can I whack them over the head with the tome while I chant?"
+
+    show lucifrid grin
+
     "Lucifrid bursts out laughing."
     l "Well, I don't see why not."
-    #transition
+
+    scene black
+    with MVNTurbulence04
     "The air around us contorts and I squint my eyes shut, feeling briefly like I might lose consciousness."
     "All sense perception leaves me except a hazy weightlessness and the feeling of Lucifrid's hand in mine. For a brief moment I am nowhere and everywhere."
+    
+    scene classroom day
+    #classroom beyond
+    with MVNTurbulence04
+    
     "My feet land on solid ground again and I open my eyes. There stands the prince of spiders with his battalion of familiars, cast in a dim, eerie light. The classroom around us appears... normal."
     "Upon closer inspection, there are eyes peering out from places they shouldn’t be, and everything sways and twists periodically, as though the edges between objects are not quite laws, and more like suggestions of physics."
     "A piercing wind shrieks and howls in a way it should not be able to inside a school building, chilling me to my core."
@@ -723,84 +864,192 @@ label start:
     "He looks over me and nods as he steps forward determinedly, defying the fierce headwind opposing us."
     "So we walk. Onward and onward. And onward.{w} And onward."
     "A distance that should have taken us minutes, if not seconds to cross seems to stretch endlessly onward as the blackboard at the front of the classroom remains ever distant."
+
+    show lucifrid threateninghips grin
+
     l "Come out, come out, wherever you are!"
     "In the blink of an eye, Lucifrid shoots silky threads in four directions, coating the room in pathways for his familiars." 
     "The spider battalion spreads out in a trained formation, attempting to scope out the denizen of this mysterious place."
     e "Who... or what are we even looking for?"
     "I lean forward, trying to peer behind the desks ahead of us."
+
+    show lucifrid neutral
+
     l "Stay back, Edelweiss. These threads are sharper than they look."
     "I shiver as I jolt back. The room is so cold that even the light glinting menacingly off Lucifrid’s web seems like it could freeze."
     "As he clenches a fist, the web spun around the teacher’s desk coils and cinches, slicing through solid wood with ease."
+
     #sfx ghost cry
+    show lucifrid smug
+
     l "Heh, I think someone didn’t like that."
     "The howling breeze intensifies into a gale and as Lucifrid spins his web to span more and more of the room before us, frost crystallises on every thread."
     "A glacial maelstrom materialises into a ghastly cloaked figure. Its long hair billows, obscuring its features as it wheezes at us."
     "Ghost" "Leave this place."
+
+    show lucifrid grin
+    show lucifrid innocent
+
     l "Terribly afraid I can’t do that."
     "Lucifrid’s familiars have begun clambering up the creature’s robes."
     "Right as I start to feel a tinge of pity for it, it dashes forward, scattering the arachnid battalion on its vestments and shooting icicles in our direction."
     "Ghost" "Stay away..."
     "Lucifrid avoids the attack nimbly, stopping one of the projectiles just short of hitting me in the process."
     "No time to feel sorry now."
+
+    show lucifrid neutral
+
     l "Take cover and bide your time."
     "I follow his instructions and hide behind a student’s desk, watching as he continues to taunt the snow spirit."
     "It seems to lose its temper the longer it fails to hit a single strike."
+
+    show lucifrid threateninghips grin
+
     l "Hehehe, haha! Is that all you've got?"
     "Then it rushes forward just slightly too desperately and carelessly gets tangled in the spider prince’s web. It's trapped now."
     "Lucifrid responds by toyingly flexing his fingers, the web cutting and slicing with his every move."
     "Ghost" "Uuuh..."
     "Isn’t he being too cruel? Our opponent is defenseless!"
+
+    show edelweiss determined
+
     e "Did no one ever teach you not to play with your food?"
     l "Ah, a classic human saying, isn't it? But where do you think we are?"
+    show lucifrid evilsmile
+
     l "I can even express it in your terms. I believe it goes... \"when in Rome\"?"
     "That smug little..."
+
+    hide lucifrid
+
     "Instead of waiting for a signal, I decide to cut his playtime short and run ahead with the tome in tow."
     e "State thy name and thine allegiance be manifest!"
     "I smash the creature with all the strength I can muster. I don't even hear the syllables it spits out over the sound of the blood rushing to my head."
     "Ink flows across the tome’s opened pages and the creature slinks away. Immediately the air calms and warmth returns to the room."
     "The breath I didn't know I was holding in slips out with a sigh."
     "Lucifrid dissolves his webs with a swift exhale, his expression displeased."
+
+    show lucifrid neutral guardedopen
+
     l "You’re not too good at taking orders, are you? My cumbersome partner."
+
+    show edelweiss smile
+
     e "Partner implies a relationship between equals. I can act on my own authority!"
     e "I got the job done, didn’t I? Who knows, maybe that thing would have broken free from your web in no time!"
+
+    show lucifrid guardedhips smug
+
     l "Hah, not a chance."
+
+    show lucifrid evilsmile
+
     l "I wanted to bully that one a little longer! Guess I’ll have to content myself with bullying you."
     "He pinches my cheek just hard enough that it hurts–but I refuse to give him the satisfaction of acknowledging the pain."
+
+    show edelweiss unamused
+
     e "Hmph. Be careful or I'll teach you another saying. You reap what you sow."
+
+    show lucifrid grin
+
     l "Hmm, not sure that one's relevant to me. {i}Hehe.{/i}"
     "I shake my head and move on."
+
+    show edelweiss neutral
+
     e "...So, what happens to that apparition now?"
+
+    show lucifrid invitinghips
+
     l "It's entirely mine! Powerless until I say the word, its territory incorporated into my domain effective immediately."
     e "So is this classroom free of outside influence on the other side of the boundary too?"
     l "Mhm-mhm! Light side or dark side, it's mine. Though alas, my power is still limited in the human realm."
     e "And that ice spirit is just... gone until you call upon it?"
+
+    show lucifrid innocent
+
     l "Familiars are free to wander around as they please! They can't do any harm anyway. Endlessly benevolent, aren't I?"
     "It’s... less cruel than I expected, though I suppose pragmatism is the ruling principle here."
     "It leaves me to wonder what a cruel fate for an apparition would even look like."
     e "How do apparitions even die? Do apparitions die?"
+
+    show lucifrid thinkingrelaxed neutral
+
     l "Hmm, it’s more like they wax and wane... they don’t truly disappear like humans do. Though an eternal waning is pretty much the same as death. As long as someone remembers us and calls upon us, we can return."
+
+    show edelweiss awkward
+    show edelweiss rueful
+
     e "I guess being forgotten is the final end for humans and spirits alike."
+
+    show lucifrid thinkingopen innocent
+
     l "Well, that’s through natural means. You pesky humans have devised ways to exorcise us. You’re far more cruel than us!" 
+
+    show edelweiss determined
+
     e "There’s apparitions that threaten to destroy entire communities! Sometimes harsh measures are justified."
+
+    show lucifrid guardedhips grin
+
     l "Mm, mm. Glad you’re starting to warm to my point of view."
     "Purposefully twisting my words again, huh? Now it’s my turn to pinch his cheek."
     "...Squishy."
+
+    show lucifrid pout
+
     l "Hey, ow! That hurts!"
+
+    show edelweiss smug
+
     e "Merely returning the favour. After sowing comes reaping, I warned you."
     l "...These crops are growing unreasonably quickly."
     l "Now off you go, your duty is done. I've had quite enough of you."
     "He reacts like a sulking schoolboy and it betrays the terrifying image of our first meeting."
     "I wonder how old he really is... He looks to be my age, but there’s no way to tell with apparitions."
+
+    show edelweiss neutral
+    show lucifrid neutral
+
     e "I’ll be gone as soon as you escort me back to the light side of the barrier–it's not like I'm here for my own enjoyment." 
+
+    show edelweiss pout
+
     e "It won’t even be light out anymore at this rate! You’re taking up all my free time..."
+
+    show lucifrid smug
+    show lucifrid neutral
+
     l "I {i}was{/i} considering cutting you some slack tomorrow until your... physical insubordination."
     "He links his hand to mine so we can once again cross the boundary."
+
+    show edelweiss determined
+
     e "We’re partners! On equal footing! Something like this is nothing. In fact, it’s only the beginning of Edelweiss emancipation."
+
+    show edelweiss smile
+
     e "For our next mission I’d say I deserve my own spider battalion, or squadron at the very least."
+
+    show lucifrid evilsmile guardedrelaxed
+
     l "You can try to win their trust, hehe. But don't think they'll let you stage a mutiny."
+
     #lucy ominous
+    show lucifrid ominous
+
     l "Their eyes are my eyes."
+
+    show lucifrid neutral
     l "Now hush, let's move."
+
+    scene black
+    with MVNTurbulence04
+    scene classroom evening
+    #hideout
+    with MVNTurbulence04
+
     "The passage is less violent on my senses this time, but can’t quite be described as pleasant."
     "Perhaps with time I’ll get used to it."
     "My first foray into the beyond... I wouldn’t admit it out loud but without Lucifrid there I would have been terrified."
@@ -810,6 +1059,7 @@ label start:
     "Perhaps soon I’ll finally be like you."
 
     scene classroom day
+    with MVNStainedGlass10
     #hideout bg
     #sfx door creak
     "Hmm?"

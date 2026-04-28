@@ -100,6 +100,13 @@ layeredimage emrys:
         attribute alert:
             "emrys/alert.png"
 
+    group blush:
+        attribute none default:
+            "emrys/none.png"
+        attribute blush:
+            "emrys/blush.png"
+
+
     group expressions:
         attribute big_smile:
             "emrys/expressions/big_smile.png"
@@ -111,7 +118,9 @@ layeredimage emrys:
             "emrys/expressions/frowning.png"
         attribute hurt:
             "emrys/expressions/hurt.png"
-        attribute small_smile default:
+        attribute neutral default:
+            "emrys/expressions/neutral.png"
+        attribute small_smile:
             "emrys/expressions/small_smile.png"
     
     group glasses:
