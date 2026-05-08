@@ -27,11 +27,11 @@ define gui.text_font = gui.preference("font", "AveriaSerif-Light.ttf")
 # The text font for buttons
 define gui.interface_text_font = gui.preference("interface_font", "Cheboygan.ttf")
 # The default size of in-game text
-define gui.text_size = gui.preference("size", 35)
+define gui.text_size = gui.preference("size", 38)
 # The font for character names
 define gui.name_text_font = gui.preference("name_font", "AveriaSerif-Regular.ttf")
 # The size for character names
-define gui.name_text_size = gui.preference("name_size", 40)
+define gui.name_text_size = gui.preference("name_size", 42)
 
 # Size of the namebox in pixels
 define gui.namebox_size = 175
