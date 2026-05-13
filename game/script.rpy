@@ -9,8 +9,8 @@ define l = Character("Lucifrid", image="lucifrid")
 define i = Character("Ilya", image="ilya")
 define n = Character(None, kind=nvl)
 
-# The game starts here.
 #HOLD UP YOU CAN CHANGE EXPRESSIONS MID-LINE
+#lines longer than 1 laptop screen should be split in 2
 
 label start:
     
@@ -753,7 +753,8 @@ label start:
     show emrys confused casual
     show lucifrid guardedhips evilsmile
 
-    em "Edelweiss, your face is pale, is everything alright?{nw=1} {size=-8}...Apparitions again?{/size}"
+    em "Edelweiss, your face is pale, is everything alright?{nw=1} "
+    extend  "{size=-8}...Apparitions again?{/size}"
     "He whispers the last part as he leans in, completely unaware of the third party that has joined in on our little gathering."
     "I didn’t know Lucifrid could willfully erase his presence like that, but I guess Emrys’ spiritual abilities are easily thrown off. He can't see him."
 
@@ -1186,7 +1187,7 @@ label start:
 
     e "Hehe, seems there are some things the humble Edelweiss can teach our dark overlord."
 
-    scene courtyard placeholder
+    scene courtyard evening
     with MVNStainedGlass10
     
     "The two of us sit down on a bench in the courtyard, ice cream in hand, basking in the last rays of sun of a clement summer afternoon."
@@ -1225,10 +1226,11 @@ label start:
 
     l "I think duty is something you have to give shape for yourself."
     l "No one can know what anyone else is thinking or feeling. Your mother and the whole lineage of your family, who knows what they were doing anything for? It’s just your projection, right?"
-    show lucifrid displeased  guardedhips
-    l "The only thing you can trust is your own gut, and the only one who needs to be pleased with your actions is yourself. It’s a fool’s errand to try and live up to the expectations of forces outside your understanding."
+    show lucifrid displeased guardedhips
+    l "The only thing you can trust is your own gut, and the only one who needs to be pleased with your actions is yourself." 
+    l "It’s a fool’s errand to try and live up to the expectations of forces outside your understanding."
     l "If someone doesn’t like what you’re doing, you just have to become strong enough that they can’t begin to object."
-    show lucifrid grin invitinghips
+    show lucifrid grin  
     "His tone is uncharacteristically serious, but before I can comment on it he switches back to his usual demeanour, making a big show out of grasping his ice cream wrapper and crushing it in his hand like an insect."
     
     menu:
@@ -1253,10 +1255,11 @@ label start:
         "Decisively.# There’s no point in a life lived only for oneself.": 
             $ negative_arc += 1
             e "It’s easy to say all that when you’re an apparition with no concept of family or kin."
-            e neutral "If I do as you say, I’ll end up lik  e you! Alone, with my only company someone who wouldn’t be there if I hadn’t twisted their arm into it."
-            show lucifrid guardedhips neutral
+            e "If I do as you say, I’ll end up like you! Alone, with my only company someone who wouldn’t be there if I hadn’t twisted their arm into it."
+            show lucifrid guardedhips evilsmile
             l "Ah yes, truly the worst of all fates. I’ll have you know I’m quite happy with my life."
-            e rueful "Well, I’m happy for you, but I wouldn’t be! I need other people. And if I have to sacrifice some of my personal desires to keep them around, then that’s more than worth it to me."
+            e conflicted "Well, I’m happy for you, but I wouldn’t be! I need other people."
+            e rueful "And if I have to sacrifice some of my personal desires to keep them around, then that’s more than worth it to me."
             show lucifrid grin
             l "Alright! As long as you’re sacrificing your personal desires for {i}me{/i} I won’t complain, ehehe."
             jump postchoice_lucycourtyard 
@@ -1458,7 +1461,8 @@ label postchoice_lucycourtyard:
 
     "Classmate" "I can't believe it! Ilya noticed you! What did you do to catch his eye?!"
     e awkward "Should I know who he is? I don’t think I did anything."
-    "Other Classmate" "He’s the student council vice-president and top of his year in academics! He’s always polite but it’s rumoured he’s not close to anyone. He’s so mysterious and dreamy..."
+    "Other Classmate" "He’s the student council vice-president and top of his year in academics! 
+    Other Classmate" "He’s always polite but it’s rumoured he’s not close to anyone. He’s so mysterious and dreamy..."
     "Classmate" "You have to tell us what you talked about after!"
     e smug "Hehe, I’ll see what I can do. If you want details on him you’ll have to find some way to repay me..."
     "Discouraged, the two classmates slink away to pack up their lunches. Emrys leans in closer to me."
@@ -1530,7 +1534,8 @@ label postchoice_lucycourtyard:
     i "You must be wondering why I called you here. Allow me to get straight to the point."
     i "As a member of the student council I concern myself with the well-being of the whole student body."
     i "Have you noticed strange happenings around yourself lately? Has anything been bothering you?"
-    "He’s being vague on purpose. Is he testing me? Don’t panic, there’s no way he could know about the apparitions. He just saw you acting strange in class."
+    "He’s being vague on purpose. Is he testing me?" 
+    "Don’t panic, there’s no way he could know about the apparitions. He just saw you acting strange in class."
     e awkward "N-no! Nothing strange going on with me!"
     show ilya determined
     "Ilya narrows his eyes."
@@ -2739,7 +2744,10 @@ label postchoice_broomcloset:
     "The last thing I need is a repeat of the last time an apparition found its way to the light side."
     "I have to get it out of the way of the other students somehow!" 
     "Without time to weigh my options, I run towards the courtyard. Everyone should still be in class, and an open area will at least minimise damage to the building."
-    #bg courtyard
+    
+    scene courtyard day
+    with MVNStainedGlass10
+
     e "Hah... hah..."
     "Pausing to catch my breath, I swivel around to face my adversary for the first time."
     "The horned humanoid creature dons a mask portraying a most eerie grin."
@@ -3527,7 +3535,7 @@ label endings:
             "I still look around for apparitions as if by habit. Only now, there’s no way to tell if they are there."
             "I thought losing my diviner abilities would feel like losing a limb, but it’s more like setting down a heavy bag."
             "I was carrying it for so long, I forgot how it felt to be without it."
-            "As I walk on, the steps creak beneath my footsteps. All the way up to the fourth floor."
+            "As I walk on, the steps creak beneath my loafers. All the way up to the fourth floor."
 
             #sfx creak
             scene classroom evening
@@ -3560,7 +3568,7 @@ label endings:
             "A faint warmth envelops me, and I find myself smiling through my tears."
             "I’m sure if he could speak to me now, he would be scolding me."
             l "{i}Unbelievable! I give you a gift, and you reward me with tears?{/i}"
-            e "...I’ll take care of him well, I promise."
+            e "...I’ll take good care of him, I promise."
             "I cradle Yang in my hands and walk to the door." 
             "Before I leave, I turn back to the empty room." 
             e "Don’t forget, Lucifrid. Neither life nor death." 
