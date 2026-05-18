@@ -20,7 +20,11 @@ transform normal:
     zoom 1.0
     yalign 1.0
 
-layeredimage lucifrid:
+transform offscreen_left(start_x=0.25):
+    xalign start_x
+    linear 1.0  xalign -0.5
+
+layeredimage lucifrid: 
     zoom 0.5
 
     always "lucifrid_base"

@@ -128,6 +128,10 @@ default preferences.text_cps = 0
 
 default preferences.afm_time = 15
 
+## Blur preference (lauwurence script)
+
+default preferences.graphics_blur = 1
+
 ## Icon ########################################################################
 ##
 ## The icon displayed on the taskbar or dock.
