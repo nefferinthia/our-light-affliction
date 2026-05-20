@@ -4,12 +4,12 @@ define fastdissolve = Dissolve(0.15)
 transform closeup:
     zoom 2.0
     yalign 0.15
-    xalign 0.5
+    xpos 0.55
 
 transform halfcloseup:
     zoom 1.5
     yalign 0.15
-    xalign 0.5
+    xpos 0.55
 
 transform halfcloseupl:
     zoom 1.5
@@ -20,9 +20,33 @@ transform normal:
     zoom 1.0
     yalign 1.0
 
-transform offscreen_left(start_x=0.25):
-    xalign start_x
-    linear 1.0  xalign -0.5
+transform midleft:
+    zoom 1.0
+    yalign 1.0
+    xcenter 0.30
+
+transform midright:
+    zoom 1.0
+    yalign 1.0
+    xcenter 0.70
+
+transform exitleft(start_x=0.25):
+    xpos start_x
+    linear 1.0  xpos -0.5
+
+transform exitleftslow(start_x=0.25):
+    xpos start_x
+    linear 1.5  xpos -0.5
+
+transform enterleft(end_x=0.5, duration=1.3):
+    xpos -0.5
+    yalign 1.0
+    easein duration xcenter end_x
+
+transform enterright(end_x=0.5, duration=1.3):
+    xpos 1.5
+    yalign 1.0
+    easein duration xcenter end_x
 
 layeredimage lucifrid: 
     zoom 0.5

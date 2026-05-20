@@ -24,7 +24,7 @@ screen choice(items):
 screen full_choice(i, t):
     window:
         background Frame("gui/choice button {}.png".format(i+1), 20, 20, 50, 20)
-        padding (20, 20, 100, 20)
+        padding (20, 20, 120, 20)
         xsize 600
         xalign 0.5
         yalign 0.7
@@ -40,19 +40,19 @@ style choice1:
     idle_background Frame("gui/choice button 1.png", 5, 5, 30, 5)
     hover_background Frame("gui/choice button 1 hover.png", 5, 5, 30, 5)
     xsize 1355
-    padding (30, 30)
+    padding (30, 30, 220, 30)
 
 style choice2:
     idle_background Frame("gui/choice button 2.png", 5, 5, 30, 5)
     hover_background Frame("gui/choice button 2 hover.png", 5, 5, 30, 5)
     xsize 1355
-    padding (30, 30)
+    padding (30, 30, 220, 30)
 
 style choice3:
     idle_background Frame("gui/choice button 3.png", 5, 5, 30, 5)
     hover_background Frame("gui/choice button 3 hover.png", 5, 5, 30, 5)
     xsize 1355
-    padding (30, 30)
+    padding (30, 30, 220, 30)
 
 style choice_button_text:
     yalign 0.5

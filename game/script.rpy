@@ -3,6 +3,7 @@
 define config.gl2 = True 
 
 define e = Character("Edelweiss", image="edelweiss")
+define e2 = Character("Edelweiss")
 define em = Character("Emrys", image="emrys")
 define l = Character("Lucifrid", image="lucifrid")
 define i = Character("Ilya", image="ilya")
@@ -19,6 +20,7 @@ label start:
     default ilya_respect = 0
     default ilya_affection = 0
     default lucy_distrust = False
+    default notsoquiet = False
 
     default momconvodiviner = 0
     default momconvolucy = 0
@@ -127,12 +129,11 @@ label start:
 
     "As we leave the classroom, the last few arachnids scurry up the steps and out of our sight."
 
+    show emrys small_smile casual at enterright
+    pause 1.3
     show edelweiss neutral
 
     e "They’re going upstairs? I’ve never been to the fourth floor..."
-
-    show emrys small_smile casual
-
     em "Well, it's officially off-limits."
     em "You're not about to let that stop you, I presume."
     "He doesn't sound judgmental, just matter-of-fact. A mischievous smile finds its way onto my face as I nod."
@@ -299,6 +300,7 @@ label start:
     with fade
 
     scene hideout day empty
+    show lucifrid neutral guardedrelaxed
     with MVNStainedGlass10
     show edelweiss angry slightblush
 
@@ -330,6 +332,8 @@ label start:
 
     scene hideout evening empty
     with MVNStainedGlass10
+
+    #dust particle vfx
     
     "The setting sun coats the abandoned classroom in a pleasant, warm glow."
     "The air is dense with specks of dust that twirl and dance, illuminated by the sun’s rays."
@@ -582,54 +586,37 @@ label start:
     show lucifrid innocent
 
     l "A unified spirit realm will be for the benefit of everyone."
-
     show edelweiss unamused
-
     e "Everyone except humans..."
     "He responds with nothing but a wide, almost innocent smile. Guess that’s my answer."
     "Well, let's not stir the pot. If I can earn his trust, maybe I can catch him off guard."
-
     show edelweiss smile
-
     e "Well, I’ll take it as a learning experience for my future as a diviner!"
     "There’s nothing to do but look on the bright side and make the best of it. Or at the very least convince Lucifrid that that's what I'm doing."
-
     show lucifrid guardedhips grin
-
     l "Mm, mm!"
     "He nods emphatically."
     l "I’m glad we were able to see eye to eye!"
-
     show edelweiss unamused
-
     e "I wouldn’t quite put it that way..."
-
     show lucifrid evilsmile invitinghips
-
     l "I’ll see you here tomorrow after class! For now you’re dismissed!"
 
-    scene classroom day
+    scene black
     with fade
-    #school bell sfx
+    scene classroom day
     show emrys casual small_smile
-
+    with MVNStainedGlass10
+    #school bell sfx
     em "Alright, I'll give you the keyword and you tell me what you know."
-
     show edelweiss smile
-
     e "Mm-hm."
     em "{i}Diviner.{/i}"
-
     show edelweiss awkward
-
     e "What? Is this really necessary? Of course I know that!"
-
     show emrys neutral
-
     em "The basics are the basics for a reason."
-
     show edelweiss neutral
-
     e "Individuals from a bloodline with a strong connection to the beyond. They can see apparitions and exercise some power over them."
     em "That's too broad."
 
@@ -766,7 +753,7 @@ label start:
     "I try to calm my breathing and pretend I’m not deeply terrified."
 
     show emrys confused casual
-    show lucifrid guardedhips evilsmile
+    with easeinright
 
     em "Edelweiss, your face is pale, is everything alright?{nw=1} "
     extend  "{size=-8}...Apparitions again?{/size}"
@@ -781,7 +768,7 @@ label start:
 
     e "Listen, I got a call and it looks like my plans really can’t wait. I’m sorry for being all wishy-washy. I’ll make it up to you some other time, I promise."
 
-    show lucifrid displeased
+    show lucifrid guardedhips displeased
 
     "Lucifrid’s eyes narrow."
 
@@ -841,8 +828,8 @@ label start:
     with fade
 
     scene hideout day
-    with MVNStainedGlass10
     show lucifrid guardedrelaxed
+    with MVNStainedGlass10
 
     l "Are we clear on the plan?"
     e "I follow your lead and stay behind you until you’ve subdued the enemy, at which point I’ll open the tome and say: ‘Speak thy name and thine allegiance be manifest.’"
@@ -956,7 +943,7 @@ label start:
     "That smug little..."
 
     hide lucifrid
-
+    #CG tome
     "Instead of waiting for a signal, I decide to cut his playtime short and run ahead with the tome in tow."
     e "State thy name and thine allegiance be manifest!"
     #sfx book smack
@@ -1084,6 +1071,8 @@ label start:
     scene hideout evening
     with MVNTurbulence04
 
+    #dust particle vfx
+
     "The passage is less violent on my senses this time, but can’t quite be described as pleasant."
     "Perhaps with time I’ll get used to it."
     "My first foray into the beyond... I wouldn’t admit it out loud but without Lucifrid there I would have been terrified."
@@ -1166,11 +1155,9 @@ label start:
 
     scene black
     with fade
-
     scene hideout day
-    with MVNStainedGlass10
-
     show lucifrid neutral guardedrelaxed
+    with MVNStainedGlass10
 
     l "Today I’ve tidied up most of our task for us."
 
@@ -1182,6 +1169,7 @@ label start:
     "Many apparitions have various forms, the more intricate forms becoming impossible to maintain as they lose power."
     "I wonder if Lucifrid manifests himself in different ways than this; this form doesn’t seem too strenuous in upkeep."
     "I've gotten used to helping him by now. I lend my assistance in various ways: sometimes it's a fight like against the ice spirit, sometimes it's nothing more than using his tome to administer the final rites. Like now."
+    #CG tome
     #sfx pages turning
     "Drawing upon a larger sigil inscribed in one of the desks, I manifest the spider prince’s tome. Its pages scramble open as I recite the incantation."
     e "State thy name and thine allegiance be manifest."
@@ -1718,7 +1706,7 @@ label postchoice_ilyameeting:
     "Ilya doesn’t know of our contract. If he harms Lucifrid, he may inadvertently harm me as well."
     "I’ll keep that little fact up my sleeve, who knows when I will need a bargaining chip—or an element of surprise."
 
-    scene hallway
+    scene hallway day
     with MVNStainedGlass10
 
     "I push past other students on their way to after school activities in a rush to reach the fourth floor."
@@ -1834,6 +1822,9 @@ label postchoice_ilyameeting:
         "Who should I give the rice dumplings to?"
 
         "Ilya.#":
+
+            $ ilya_affection += 1
+
             "I suppose I best keep up with my own lies and reinforce the boyfriend narrative. Everyone in class suspects me of something anyway..."
             "And Lucifrid already stole my lunch the other day, I shouldn’t reward him for it."
             "Besides, I can’t help but feel I owe Ilya for accepting the boyfriend ploy so gracefully."
@@ -1843,8 +1834,8 @@ label postchoice_ilyameeting:
             "I knock three times, then let myself in."
 
             scene student council placeholder
-            with MVNStainedGlass10
             show ilya stiff calm
+            with MVNStainedGlass10
 
             i "Oh, Edelweiss."
             "Ilya looks up from a small stack of papers, pen paused mid-air."
@@ -1930,13 +1921,12 @@ label postchoice_ilyameeting:
             scene hallway day
             with MVNStainedGlass10
             scene hideout day
+            show lucifrid invitingrelaxed grin
             with MVNStainedGlass10
             #sfx door
 
             "Lucifrid is lounging atop his so-called throne."
             "He grins when I enter, folding two of his arms behind his head, while the other two cradle a particularly smug-looking spider."
-            
-            show lucifrid invitingrelaxed grin
 
             l "You're early. Skipping class?"
             e smile "It's lunchtime. I brought you something."
@@ -2039,9 +2029,9 @@ label postchoice_ilyameeting:
     scene black
     with fade
     scene classroom day
+    show emrys alert determined
     with MVNStainedGlass10
 
-    show emrys alert determined
     em "Hey, did you hear? There’s been some worrying rumours."
     e smile "Thought you weren’t the gossiping type. What’s this about then?"
     em neutral "This is different. It seems a kid from another class just stopped speaking from one day to the next, no one knows what caused it."
@@ -2098,6 +2088,7 @@ label postchoice_ilyameeting:
     scene library placeholder
     #sfx sliding door
     #music quiets
+    #dust particle vfx
     "The library air is heavy with dust, forcing a cough from my throat." 
     "A slight breeze blows from the window, but nothing else disturbs the stillness of the room."
     "Two students sit deeply engrossed in schoolbooks, another at the computer with headphones so large as to be comical."
@@ -2149,7 +2140,8 @@ label postchoice_ilyameeting:
     scene hallway day
     with MVNStainedGlass10
     #sfx sliding door
-    show emrys determined casual
+    show emrys determined casual at enterright(0.7,0.7)
+    pause 0.7
     em "What exactly were you trying to do?"
     e smile "Upset it enough to prove it caused the incidents!"
     em alert "By becoming a victim yourself?!"
@@ -2171,9 +2163,8 @@ label postchoice_ilyameeting:
     "I tell Emrys about Lucifrid and our contract."
 
     scene hallway day
-    with fade
-
     show emrys casual frowning
+    with fade
     em "You did what?!" 
     e conflicted "Don’t get angry! You promised!"
     show emrys determined
@@ -2202,9 +2193,8 @@ label postchoice_ilyameeting:
     with MVNStainedGlass10
     #sfx door slam
     e "Lucifrid! Where are you?"
-    show emrys confused casual:
-        xpos 500
-    with easeinleft
+    show emrys confused casual at enterleft(0.3,1.0)
+    pause 1.0
     em "It’s a wonder that door is still whole if you treat it this roughly all the time."
     #sfx skitter
     "Spiders blink their manifold scarlet eyes in silence, patiently awaiting their master’s return."
@@ -2231,10 +2221,10 @@ label postchoice_ilyameeting:
         xpos 500
     em "You-"
     "Emrys starts but Lucifrid interrupts him heedlessly, fixing his eyes on me."
-    show lucifrid guardedhips displeased:
+    show lucifrid guardedhips frown:
         xpos 1000
     show emrys:
-        xpos 300
+        xpos 350
     with ease
     l "What exactly is the meaning of this, my dear assistant?"
     "Hearing his voice so void of its usual levity, I swallow nervously."
@@ -2244,93 +2234,74 @@ label postchoice_ilyameeting:
     "I take a deep breath and collect myself. Lucifrid’s intimidation tactics are nothing more than that: tactics."
     e neutral "The two of us were investigating." 
     e determined "Something is afoot in this school and it involves an apparition, so it seems our interests align."
-    show lucifrid guardedhips at halfcloseup:
-        xalign 0.6
+    show lucifrid guardedhips at halfcloseup
     l "My dealings are with you. What could his presence possibly add to this equation?"
     e "You have nothing to lose from an extra ally! Especially not now you’ve drawn the eye of an exorcist!"
-    show lucifrid:
-        xalign 0.75
-    show emrys alert:
-        xalign 0.25
+    show lucifrid at midright
+    with None
+    show emrys alert at midleft
     with ease
     "Emrys steps between the two of us."
     em "I am in the employ of the Hesgothia family, and more than that I am Edelweiss’ friend." 
     em "Her diviner activities are my business all the same."
 
-    show lucifrid evilsmile:
-        xalign 0.75
+    show lucifrid evilsmile at midright
     l "I am oh-so-glad she has a friend, but your support in these matters is no longer necessary."
-    show lucifrid invitinghips innocent:
-        xalign 0.75
+    show lucifrid invitinghips innocent at midright
     l "Edelweiss agreed to our contract in order to protect you, so who would I be to get you into danger and invalidate the terms of that agreement?"
-    show lucifrid guardedhips ominous:
-        xalign 0.75
+    show lucifrid guardedhips ominous at midright
     l "You would do nothing but get in the way."
     "I let out a scoff."
     e  "What a caring apparition you are, all of a sudden."
 
-    show emrys frowning:
-        xalign 0.25
+    show emrys frowning at midleft
     em "You do not get to decide what risks I do or do not take. The only one who has any say in that is Edelweiss herself."
-    show lucifrid guardedhips frown:
-        xalign 0.75
+    show lucifrid guardedhips frown at midright
     "Lucifrid engages Emrys in a stare-off, and I look at the latter apologetically." 
     "I want to defend him but... Lucifrid isn’t exactly wrong."
     "Emrys wants to keep an eye on us to protect me from Lucifrid, but what could he even {i}do{/i}? I'll just have one more thing to worry about."
     e awkward "Why don’t you just listen in for now? You’ll see our means and methods are solid and you won’t have to worry!"
     "I motion to Yang, who has been inching closer to us for the span of our conversation."
     e smile "Look, this is my own spider familiar! His name is Yang and he’s very reliable."
-    show emrys casual small_smile:
-        xalign 0.25
+    show emrys casual small_smile at midleft
     "Emrys cracks a smile, and Lucifrid at the very least isn’t protesting letting him stay. Small victories."
     "Lucifrid sighs, his threatening aura melting away."
-    show lucifrid guardedopen neutral:
-        xalign 0.75    
+    show lucifrid guardedopen neutral at midright    
     l "Well, you had business here. Tell me about this apparition then."
     e neutral "Two students lost their voices. When we started investigating, it turned out they had an altercation in the library the day before this happened."
     e "Then we saw a cat in the library who gave off spiritual energy."
     e "I believe it must have been an apparition, taking the voices of students it considers loud and bothersome." 
     e conflicted "I have no proof it was the cat, but the fact alone that it can interfere with our realm, that the other students can see it and pet it is... worrisome."
-    show lucifrid thinkingrelaxed neutral:
-        xalign 0.75
+    show lucifrid thinkingrelaxed neutral at midright
     l "The librarian is operating on this side of the boundary now? Interesting."
-    show lucifrid thinkingopen neutral:
-        xalign 0.75
+    show lucifrid thinkingopen neutral at midright
     l "You want to break its spell then, I assume?"
-    show emrys determined:
-        xalign 0.25
+    show emrys determined at midleft
     em "Wait, you knew about the cat and never mentioned anything?"
-    show lucifrid guardedclenched frown:
-        xalign 0.75
+    show lucifrid guardedclenched frown at midright
     l "I know of all the creatures that are active in my domain, human. Do not underestimate me."
-    show lucifrid guardedrelaxed grin:
-        xalign 0.75
+    show lucifrid guardedrelaxed grin at midright
     l "It’s no threat to me, but as magnanimous ruler of the beyond to be, I suppose this falls under my jurisdiction."
     e smile "See, I knew this would be a task for you! I’m helping you spread your influence!"
-    show lucifrid guardedopen evilsmile:
-        xalign 0.75
+    show lucifrid guardedopen evilsmile at midright
     l "...Under one condition."
     l "Your {i}friend{/i} ceases his meddling and concerns himself with your human activities only."
-    show emrys alert:
-        xalign 0.25
+    show emrys alert at midleft
     em "I will not shirk my duties with regards to Lady Edelweiss’ protection."
     "Lady Edelweiss... He never calls me that anymore."
     "My eyes cloud with worry in the pregnant silence that follows." 
     "Lucifrid merely stares at Emrys, unfazed."
     em "...{w}"
-    show emrys casual neutral:
-        xalign 0.25
+    show emrys casual neutral at midleft
     extend "but I concede that the best way to do that is sometimes to step back and hold the rear."
-    show emrys alert determined:
-        xalign 0.25
+    show emrys alert determined at midleft
     em "I don’t trust you for a second. But I trust Edelweiss, and I don’t want to make her life more difficult by causing strife. Clearly she won’t be rid of you anytime soon."
     em "But I will be around. Don’t think you can do whatever you please to her just because I’m not a diviner."
     "Lucifrid snickers, making no attempt to hide his derision."
-    show lucifrid guardedhips smug:
-        xalign 0.75
+    show lucifrid guardedhips smug at midright
     l "Off you go then, little protector."
     e rueful "Thanks, Emrys..."
-    show emrys at offscreen_left
+    show emrys at exitleft
     pause 0.5
     #sfx door
     show lucifrid at center
@@ -2414,24 +2385,35 @@ label postchoice_ilyameeting:
     with MVNTurbulence04
     #sfx creak
     #bg library beyond
+    show lucifrid guardedrelaxed neutral at enterleft(0.3,0.7)
+    pause 0.7
     "The library..."
     "The layout is identical to its light side counterpart but the details are all different, like the same page in a colouring book filled in by different people."
     "Nightgown flowing, a petite girl with catlike features trots over to us, her expression stern. Her ears perk up when she spots Lucifrid."
     "Cat" "Your Dark Majesty, what brings you to my library today?"
     "She addresses him respectfully but curtly, giving both of us small nods of acknowledgement."
     "Then her eyes linger on me in contemplation. She doesn’t get many humans in her domain, I’d wager."
+
+    show lucifrid guardedrelaxed evilsmile at midleft
     l "Librarian, I know you to be reasonable. That’s why I extend the courtesy of parley."
     "Oh, wait. This girl {i}is{/i} the library cat. Should’ve connected those dots."
+    show lucifrid guardedopen neutral at midleft 
     l "You’ve been meddling in the students’ affairs, haven’t you? Why get involved with the light side of the barrier?"
     "Cat" "I-"
-    l "No, phrasing it as a question is unfair. I will have you return these students’ voices. The choice remaining to you is whether that will be of your own volition or by force."
+    show lucifrid guardedhips neutral at midleft
+    l "No, phrasing it as a question is unfair. I {i}will{/i} have you return these students’ voices."
+    show lucifrid threateninghips evilsmile at midleft
+    l "The choice remaining to you is whether that will be of your own volition or by force."
     "So his idea of an alliance is when someone unequivocally submits to his will. I suppose it shouldn’t come as a surprise."
     "Cat" "With all due respect, Your Majesty, why do you take the humans’ side? Did this girl cast a spell on you?"
     "Cat" "I can only imagine you would have laughed with me over this a little while ago." 
     "Cat" "The library is mine to oversee, and ought to be a place of calm and quiet. The students knowingly broke that agreement; their punishment is deserved."
+    show lucifrid guardedhips displeased at midleft
     "His casual grin falling from his face, Lucifrid backs the girl into a corner and spins a web round her feet."
     l "I don’t take lightly to your implications. Know your place, and know that your every freedom is because I allow it."
+    show lucifrid guardedclenched at midleft
     l "Every day you draw more attention to me and my designs by playing around on the light side. Is my rule a game to you?"
+    show lucifrid frown at midleft
     l "And that is assuming the best, who says you are not amassing forces to oppose me? Appearing in some beguiling, innocent form before the students to win them to your cause."
     "I bite my thumb, my eyes darting between the two of them."
     "This negotiation doesn’t seem to be going the way we hoped. Is there anything I can do to help?"
@@ -2440,182 +2422,269 @@ label postchoice_ilyameeting:
     "Cat" "First I’ll remove this human distraction, then I can be sure you are in your right mind."
     "Her form flickers and shifts as she grows into a monstrous, many-headed feline hydra. Her beastly proportions rip her out of Lucifrid’s web with ease."
     "I think it’s safe to say the time for negotiations is over."
-    "Both of us dash to the side, ducking behind a bookshelf just as the hydra's massive claw swipes where we were standing. The impact cleaves the table in two."
+    show lucifrid displeased at right
+    with MoveTransition(0.2)
+    "Both of us dash to the side, ducking behind a bookshelf just as"
+    #sfx claw swipe/table breaking
+    show battle effect 3b
+    with vpunch
+    $ renpy.pause(0.5, hard=True)
+    extend " the hydra's massive claw swipes where we were standing."
+    hide battle effect 3b
+    with None
+    "The impact cleaves the table in two."
     "Lucifrid summons forth his spider legions and I manifest his tome to call upon the names of other familiars." 
-    e "I can’t believe talking things out didn’t work! And you were so accommodating!"
+    e smug "I can’t believe talking things out didn’t work! And you were so accommodating!"
+    show lucifrid invitinghips grin at right
     l "Are my ears deceiving me? Are you advocating violence?"
-    e "Oh, I would never."
-    "I focus my thoughts on a spirit we subdued recently and the tome flutters open to the page where its name is inlaid. I place my hand over the thick ink and chant the invocation."
-    e "Heed the voice that calls, honour the ties that bind."
+    e smile "Oh, I would never."
+
+    hide lucifrid
+    #CG tome
+    "I focus my thoughts on a spirit we subdued recently and the tome flutters open to the page where its name is inlaid."
+    "I place my hand over the thick ink and chant the invocation."
+    e2 "Heed the voice that calls, honour the ties that bind."
+    #sfx bite
     "The librarian doesn’t wait for my summoning ritual and bites at me with one of her heads."
+
+    show lucifrid invitinghips displeased at midright
+    with move
     l "Charge!"
+    #sfx skitter
     "Luckily Lucifrid has less need for preparation. His spiders rush in without hesitation at his command, creating a veritable wall between me and my feline assailant."
     "In the meantime, the fire spirit I called for rises up from the tome and an idea sprouts in my mind."
     "We’re on the defensive now, and we can’t compete with her brute strength. We’re going to need trickery of some kind."
-    e "Go! Raze the shelves!"
+    e determined "Go! Raze the shelves!"
+    #sfx woosh
+    show fire slash
+    $ renpy.pause(0.5, hard=True)
     "The fire spirit flies off on burning wings at my command, setting aflame the defenseless books at the slightest touch."
+    hide fire slash
     "I flash Lucifrid a cheeky grin. I can't believe it but... this is kind of fun."
-    e "I hope you didn’t need those!"
+    e laugh "I hope you didn’t need those!"
+    show lucifrid guardedrelaxed grin at midright
     l "I was never much of a reader anyway."
+    #sfx cat growl
     "The cat-hydra seems to grow even angrier, growling, hissing and charging after the fire spirit."
     "The distraction affords Lucifrid the time to spin a dense web around us as a protective barrier, his underlings working industriously to fortify its gaps."
-    l "You’re clearly its target, so please take cover behind the web and act defenseless. And say some incensing words; I know you’re skilled at that."
-    e "Will it be enough to stop her? She broke out of your other web pretty easily..."
+    show lucifrid guardedopen neutral at midright
+    l "You’re clearly its target, so please take cover behind the web and act defenseless."
+    show lucifrid guardedopen evilsmile at midright
+    l "And say some incensing words; I know you’re good at that."
+    e awkward "Will it be enough to stop her? She broke out of your other web pretty easily..."
+    show lucifrid guardedhips grin at midright
     l "Probably, hehe!"
-    #edelweiss unamused
-    e "{i}Probably{/i} is not enough with my life on the line!"
+    e unamused "{i}Probably{/i} is not enough with my life on the line!"
+    show lucifrid invitinghips innocent at midright
     l "Oh, have some faith in me. When have I allowed harm to befall my dearest partner?"
+    show lucifrid guardedhips neutral at right
+    with move
+    "Heaving a small sigh, I concede to Lucifrid's plan and move behind the web."
+    #sfx fire crackling
+    #smoke particle vfx
     "With the librarian and fire spirit embroiled in combat, the library is well and truly ablaze now. I grow a little worried for our spidery friends."
-    "I search for Yang and his battalion. They’re safely perched in the web, ready to attack; my courageous little fighters. I probably shouldn’t distract them."
+    "My eyes search the room for Yang and his battalion." 
+    "They’re safely perched in the web, ready to attack; my courageous little fighters. I probably shouldn’t distract them."
     "It doesn’t take long for the librarian to get the upper hand over my summon and I trace its name on the page, bidding it to return to its slumber." 
-    e "Well fought, you may rest now." 
+    e smile "Well fought, you may rest now."
     "Then the librarian focuses all her heads on us, looking no wearier for taking out her previous opponent." 
-    #edelweiss uncomfortable
-    e "..."
+    e awkward "..."
     "There’s nothing to do but stick to Lucifrid’s plan. I swallow hard and try to dispel my doubts."
-    e "Here, kitty! If you’re quick you might make it before all your books are turned to ash."
-    e "Ack!"
+    e smug "Here, kitty! If you’re quick you might make it before all your books are turned to ash."
+    e conflicted "Ack!"
     "As smoke floods my respiratory system, I start coughing. This is more dangerous than I thought."
+    show lucifrid invitinghips worry at center
+    with move
     l "Edelweiss! Are you alright?"
     "I can hardly stop coughing as I try to force out a sentence."
-    e "S-smoke— we need to—" 
+    e slightblush "S-smoke— we need to—" 
     "Another cough."
     e "G-get out—"
     "Without a moment’s pause, Lucifrid grabs my hands. From the corner of my eye I see the librarian moving in on us, ready to pounce."
+    show lucifrid invitingclenched worry at center
     l "Quick, Edie, close your eyes!"
-    "I forcefully squint my eyes shut; half in obedience and half in the unwitting, childlike belief that a threat disappears when you can’t see it."
-    "I can still hear the cat-hydra’s gallop as the floor disappears beneath me and that familiar queasy feeling fills my stomach. He’s taking us back across the boundary!"
+    "I forcefully squint my eyes shut;{nw=0.5}"
+    pause 0.5
+    scene black
+    with fade
+    extend " half in obedience and half in the unwitting, childlike belief that a threat disappears when you can’t see it."
+    #sfx big cat footsteps
+    "I can still hear the cat-hydra’s gallop as the floor disappears beneath me and that familiar queasy feeling fills my stomach." 
+    "He’s taking us back across the boundary!"
     "Is that even safe? What’s going to happen to the librarian?"
     "I don’t have time to ponder as we stumble and crash back into the human realm, accompanied by our entire army of spiders."
-    e "Ow, ow, ow!"
+    
+    scene library placeholder
+    with MVNTurbulence04
+    with vpunch
+    show lucifrid guardedclenched displeased at enterleft(0.3,0.4)
+    pause 0.4 
+    with hpunch
+    e awkward "Ow, ow, ow!"
     "The two students occupying the library turn to look at the source of the sudden racket. Guess I have to find some way to explain appearing out of thin air later."
+    show lucifrid invitingclenched at midleft
     l "Don’t let your guard down!"
-    "But it’s too late. When I look up I see the librarian has followed through the pathway we made; the threads we spun enough to cut and scrape, but not enough to stop her."
-    "She bites, and with the unnatural speed only an apparition could muster, Lucifrid grabs me and pulls me out of her path."
-    "Adrenaline rushing through my veins, I muster all my focus to summon the tome." 
+    "But it’s too late." 
+    "When I look up I see the librarian has followed through the pathway we made; the threads we spun enough to cut and scrape, but not enough to stop her."
+    show lucifrid at right
+    with MoveTransition(0.1)
+    "She bites, and with the unnatural speed only an apparition could muster, Lucifrid grabs me and pulls me out of her path." 
     "That was way too close!"
+    #cg tome
+    hide lucifrid
+    "Adrenaline rushing through my veins, I muster all my focus to summon the tome."
+    #sfx skitter
     "Arachnids swarm our assailant, and she shrieks and shakes to drive them off."
     "Possessing none of his usual controlled nonchalance, Lucifrid jumps atop the feline monstrosity and bites down savagely on one of her necks."
+    #sfx cat wail
     "The spiders follow his lead in one coordinated biting motion and she wails in agony."
     l "Now!"
-    e "Speak thy name and thine allegiance be manifest!"
+    e2 "Speak thy name and thine allegiance be manifest!"
+    #end cg
     "I bash one of her heads with the tome and to my utter relief, ink starts pulling from her form onto the page."
-    "As her name is absorbed, she is transfigured back into a harmless house cat.Her paws land softly on the carpet, and she quickly scampers off."
+    "As her name is absorbed, she is transfigured back into a harmless house cat."
+    "Her paws land softly on the carpet, and she quickly scampers off."
+    #sfx skitter
     "Our army of familiars disbands and the spiders disappear to their usual hiding places."
-    "I collapse to the floor, tome clutched to my chest, breathing heavy. Lucifrid rushes over to me but doesn’t say a word."
+    "I collapse to the floor, tome clutched to my chest, breathing heavy."
+    show lucifrid guardedclenched worry at enterright
+    "Lucifrid rushes over to me but doesn’t say a word."
     "I follow his gaze and my stomach twists. The students..."
     "While Lucifrid saved me from the librarian’s bite, it seems her other heads reached their targets unhindered."
     "One of them wheezes with every breath, ribs hitching as if something inside won’t move the way it should." 
     "Another lies frighteningly still until a shudder runs through them, their jaw tightening around a sound of pain they don’t quite manage to suppress."
     "I listen for their breaths without meaning to."
     "This... is this my fault? Because I was here? Because Lucifrid had to protect me?"
+    show lucifrid guardedrelaxed wrysmile at center
     l "Don’t worry. They’ll be fine. I’m just glad you’re unharmed."
     "He smiles. Not a smirk, or a grin. A smile."
-    e "But..."
-    "The words don’t come to me. I’m not sure what better choices were available to me, but I can’t feel right about this."
+    e conflicted "But..."
+    "The words don’t come to me." 
+    "I’m not sure what better choices were available to me, but I can’t feel right about this."
+    show lucifrid neutral at midleft
+    with move
     "Lucifrid walks over to the wounded students and makes unfamiliar motions with his four arms."
-    #edelweiss confused
-    e "...?"
+    e awkward "...?"
     l "I can’t heal them, but they’ll forget what happened. No one will know we were here."
     #sfx footsteps
     "I freeze at the sound of someone approaching."
+    show lucifrid invitinghips at midleft
     l "Come, let’s get out of here. Our job is done."
     "I open my mouth to stammer a protest but I’m too tired to formulate my thoughts into words. I relent and let Lucifrid drag me back to our hideout, away from the chaos we caused."
+    show lucifrid at exitleftslow
+    pause 1.0
+    scene black
+    with fade
+    pause 1.0
 
-    #bg hallway
-    #bg hideout
-    #fade to black
-
-    #bg library
+    scene library placeholder
     #sfx footsteps
-    #ilya cold
+    show ilya stiff cold
     i "..."
     i "...it’s one thing to make a mess of things, but to not even clean it up..."
     if ilya_respect >= 1:
+        show ilya determined
         i "I expected better of you, Edelweiss."
     else:
+        show ilya sigh
         i "Just as I thought, you have no clue what you’ve gotten into, Edelweiss."
-    #ilya indignant
+    show ilya polite cold
     i "You leave me no choice. I can’t let this slide."
-    #fade to black
+    scene black
+    with fade
 
-    scene classroom day
-
+    #longer transition
+    scene hallway day
+    with MVNStainedGlass10
+    "When I walk to class that morning, I can't help but overhear a lively conversation from Classroom 2D."
     "Liese" "And after all that, I still missed the train!"
     "Phila" "I think that was entirely your own fault..."
     "Liese" "No way! The conductor should’ve understood my plight! Right, Mari?"
     "Marigold" "W-well, the timetable would get all messed up then. He did the best he could, I think."
     #sliding door sfx
-    #edelweiss sprite appears
+    scene classroom day
+    with MVNStainedGlass10
     "Liese" "Oh! Edelweiss!"
     "Phila" "Good morning!"
-    #edelweiss smiles
-    e "Morning! I thought I’d come check in!"
-    e "But it seems a certain someone is entirely back to normal."
+    e smile "Morning! I thought I’d come check in!"
+    e laugh "But it seems a certain someone is entirely back to normal."
     "Marigold" "They told me you went investigating on my behalf. Thank you, Edelweiss... You’d do that for someone you barely know..."
-    e "What can I say, I can’t resist a good mystery."
+    e smile "What can I say, I can’t resist a good mystery."
     "Phila" "So, did you figure out what happened?"
     "Marigold" "I still don’t know... My voice came back as suddenly as it disappeared."
-    e "I’m sure it’s all because of my efforts, {i}hehe!{/i}"
+    e smug "I’m sure it’s all because of my efforts, {i}hehe!{/i}"
     "Liese" "But... what did you do...?"
     #sliding door sfx
-    #ilya neutral/calm appears
-    #edelweiss uncomfortable
-    e "..."
+    show ilya stiff calm at enterleft
+    pause 1.3
+    e awkward "..."
     "Phila" "Ilya! Good morning!"
     "Liese" "Vice-president Ilya, what a pleasant sight early in the morning. Can I help you with anything?"
-    #ilya gentle
+    show ilya gentle
     i "Good morning Phila, Liese, Marigold."
     "He makes eye contact with them in turn as he says their names, to which they each grow a shade redder."
+    show ilya cold_smile
     i "Actually, my business today is with Edelweiss. You don’t mind if I borrow her for a moment, do you?"
     "Phila" "No, no! Go right ahead!"
     "Liese nods along emphatically as my blood runs cold. It might freeze in my veins if I keep looking at that icy smile."
-    e "Ah, sorry, I forgot I actually have fish feeding duty! Gotta head over to my classroom!"
-    #ilya cold smile
+    e awkward "Ah, sorry, I forgot I actually have fish feeding duty! Gotta head over to my classroom!"
+    show ilya polite
     i "No worries, I’ll assist you while we chat. I won’t take much of your time."
     e "...ahaha. Thank you."
     "Marigold" "Oh, he’s so kind..."
     "Don’t be fooled, Marigold. Why are you all so weak to his charms?!"
 
-    scene hallway
+    scene hallway day
+    with MVNStainedGlass10
+    show ilya stiff calm at enterright(0.7,0.7)
+    pause 0.7
     #sfx footsteps
-    e "Uh, yeah, I don’t actually need to feed the fish."
-    #ilya smile
+    e pout "Uh, yeah, I don’t actually need to feed the fish."
+    show ilya gentle at midright
     i "I know. Your classroom doesn’t have fish, Edelweiss. You have a rabbit."
+    show ilya calm at midright
     i "Why don’t you come to the student council room with me? We’ll have some privacy there."
     "Privacy? I guess president Rosiel must be busy with cultural festival preparations."
     "The way he phrases it doesn’t make it seem like a suggestion. Resigning myself to my fate, I follow him through the halls."
+    
     #sfx sliding door
-    #bg student council room
-    #ilya neutral
+    scene student council placeholder
+    with MVNStainedGlass10
+    show ilya stiff calm at enterleft
+    pause 1.3
     i "Tea?"
+    show ilya at midright
+    with move
     "Ilya walks over to the kettle without waiting for my response."
-    e "That’s alright." 
-    #ilya smile
+    e "That’s alright."
+    show ilya gentle at midright
     i "Hm? It’s not poisoned or anything."
-    #edelweiss laugh
-    e "We all know people usually announce their poisoning attempts beforehand."
+    e laugh "We all know people usually announce their poisoning attempts beforehand."
     i "I’ll take that as a yes then."
     "I’m slowly learning that talking to Ilya is like one of those video games where you’re presented with a choice but the question simply repeats until you choose the correct answer."
     #cup placed on table sfx
-    #sitting down sfx
-    #ilya solemn
+    show ilya at center
+    with move
     i "I visited the hospital yesterday. I thought you might want to know that Johan and Caitlin are doing alright considering the circumstances."
+    show ilya sigh 
     i "They’ll return home soon but they probably won’t make a complete recovery in time for the cultural festival."
     "Johan and Caitlin. I only learned their names after the fact, but they’re the students that got hurt in the library."
     "I cast my eyes downward and fiddle with the hem of my skirt."
-    #edelweiss uncomfortable
-    e "I... wish them a speedy recovery."
-    "There’s no use in pretending I don’t know what he’s talking about. I wanted to go visit them myself to apologise—but Lucifrid told me I couldn’t."
+    e awkward "I... wish them a speedy recovery."
+    "There’s no use in pretending I don’t know what he’s talking about." 
+    "I wanted to go visit them myself to apologise—but Lucifrid told me I couldn’t."
     "Something about how their memories are muddled, so it could mess with their mental state if I confused them further by apologising for something they don’t remember."
     "The whole situation makes my stomach turn, and not even being allowed to own up to my mistakes is just pouring salt in the wound."
+    show ilya polite calm
     i "Let me start by saying this."
     "Ilya couldn’t possibly make me feel worse about this than I already do."
     "I know it’s all my fault."
-    #ilya gentle
+    show ilya gentle
     i "I don’t blame you, Edelweiss."
-    e "...!"
+    e conflicted slightblush "...!"
+    show ilya stiff sigh
     i "That spider has been using you as a pawn in his battle for control of the school, and he doesn’t care who or what gets caught in the crossfire." 
+    show ilya determined
     i "Can’t you see? He’s showing you his true colours now."
 
 
@@ -2633,21 +2702,24 @@ label postchoice_ilyameeting:
 label postchoice_ilyajustify:
 
 
-    #ilya pity
+    show ilya pity
     i "Please listen to yourself. You’re making excuses for an apparition."
     "{i}I'm making excuses for Lucifrid?{/i} What does he know about Lucifrid and I?"
     "I should’ve known I wouldn’t convince him..."
+    show ilya sigh
     i "I didn’t know his influence had gotten this bad. I should’ve taken action sooner."
+    show ilya polite
     i "Forgive me my carelessness, Edelweiss. You’re my junior and I should’ve protected you."
-    #ilya cold
+    show ilya cold
     i "Rest assured that the next time I see that vile creature, I will reduce him to dust. I swear it on my honour as an exorcist." 
-    #ilya gentle
+    show ilya gentle
     i "And I have faith that you’ll thank me for it once you’re free from his grasp."
     "No... This isn’t what I wanted! I’ve messed everything up!"
     "I thought I could keep Lucifrid safe from him! He doesn’t deserve to be exorcised!"
     "And now I’m the one who doomed him with my selfish request, because I needed to be useful to my fellow students so badly."
     "No, perhaps it’s not that. If I’d just been a better diviner... If I’d paid more attention in my lessons, if I was more like Mother..."
-    "Can I persuade Ilya by telling him my soul is bound to Lucifrid’s? I don’t even know what that means in practical terms. He did say ‘neither life nor death shall come between us’."
+    "Can I persuade Ilya by telling him my soul is bound to Lucifrid’s?" 
+    "I don’t even know what that means in practical terms. He did say ‘neither life nor death shall come between us’..."
     "But what if he'll just use the information against me? I don't want to mess up anymore... I don't know what to do."
 
 
@@ -2655,67 +2727,68 @@ label postchoice_ilyajustify:
         "Well, Edelweiss, don't just stare at him. Say something!"
 
 
-        "You haven’t once tried talking with him!# You’d see Lucifrid’s not the one at fault here if you just gave him a chance! How will there ever be cooperation between diviners and exorcists if you simply force your way?!":
+        "You’d see Lucifrid’s not the one at fault here if you just gave him a chance!#How will there ever be cooperation between diviners and exorcists if you simply force your way?!":
             
             $ ilya_affection -= 1
             $ ilya_respect -= 1
             $ negative_arc += 1
+            $ notsoquiet = True
             
-            #ilya calm
+            show ilya polite calm
             i "I feared you would respond like this."
+            show ilya stiff determined
             i "I gave you a chance to do things your way. I can’t stand idly by while people get hurt due to your inexperience and grand ideals."
-            #ilya sigh
+            show ilya sigh
+            "He sighs."
             i "I wanted us to cooperate. I didn’t want to have to force anything."
+            show ilya polite
             i "Why do you trust that monster more than you trust your fellow student? He cares nothing for human lives, no matter how much he has made you believe you’re special."
             "I bite my lip, holding in the urge to say: ‘But I {i}am{/i} special to him.’"
             "Is Ilya right? Is Lucifrid performing an elaborate act?"
             "Even if all his affection is a farce, he still needs me. But then the question remains: for how long?"
             "Have I just caused trouble for him in the end? Just been a burden on him and Ilya at the same time?"
-            #edelweiss teary
-            e "You... you don’t know any of that..."
+            e tearful "You... you don’t know any of that..."
             e "Why would you— *sniff*"
             "I can’t stop my tears from welling up."
             e "You’re mean... But you keep pretending like you’re nice... That’s why I can’t trust you!"
-            #ilya baffled
+            show ilya baffled stiff
             i "..."
             "The ever-charming, perpetually calm student council vice-president is clearly at a loss for words."
             i "I, um, well..."
             #edelweiss angry
-            e "See! You’re not even denying it! Do whatever you want, I’ll never go along with your plans!"
-            e "Accusing someone of manipulating me when you’re doing the same stupid thing!"
-            "As hot tears involuntarily start rolling down my cheeks, I storm out of the room, leaving Ilya behind in his stupor. I can’t bear to hear more of what he has to say."
+            e angry "See! You’re not even denying it! Do whatever you want, I’ll never go along with your plans!"
+            e tearful "Accusing someone of manipulating me when you’re doing the same stupid thing!"
+            "As hot tears involuntarily start rolling down my cheeks, I storm out of the room, leaving Ilya behind in his stupor."
+            "I can’t bear to hear more of what he has to say."
             "So he’s our enemy now, so what? We’ll show him."
-
 
             jump postchoice_ilyafallout
 
 
 
-
-        "I’m truly sorry for what happened, Ilya.# I overestimated my abilities as a diviner, and I’ll work to make reparations. Please give me another chance to deal with Lucifrid by myself.":
+        "I’m truly sorry for what happened, Ilya, and I’ll work to make reparations.#Please give me another chance to deal with Lucifrid by myself.":
             
             $ ilya_affection += 1
             $ negative_arc += 1
             
-            #ilya gentle
+            show ilya sigh
             i "I’m sorry too, Edelweiss. It’s not that I don’t trust your intentions, but this is too dangerous for you alone."
-            #ilya pity
+            show ilya pity
             i "Please... don’t place the blame on yourself. We can work together to set this right, it’s not too late."
             "That pitying look again... He truly doesn’t trust me to accomplish anything by myself, does he?"
             "I suppose I can hardly blame him. I wouldn’t trust me either."
-            #edelweiss neutral
-            e "I would be happy to work together, but I won’t exorcise Lucifrid. He’s done nothing to warrant that. It would be akin to betraying my mother’s legacy."
-            #ilya calm
+            e neutral none "I would be happy to work together, but I won’t exorcise Lucifrid. He’s done nothing to warrant that. It would be akin to betraying my mother’s legacy."
+            show ilya calm stiff
             i "Then I’m afraid there is nothing left to discuss. When next we meet in the company of that apparition, you and I will be enemies."
-            #ilya gentle
+            show ilya gentle
             i "I won’t hold back, but I’ll be here for you once it’s over."
             "A shiver creeps up my back. He means it."
-            #edelweiss uncomfortable
-            e "I haven’t given up on convincing you."
-            #ilya gentle
+            e conflicted "I haven’t given up on convincing you."
+            show ilya polite
             i "And I, you."
             "Just like last time, the two of us shake hands, as if to formalise the breaking of our tenuous peace."
-            "May the righteous one win. Or something."
+            "May the righteous one win." 
+            "Or something."
 
 
             jump postchoice_ilyafallout
@@ -2723,42 +2796,42 @@ label postchoice_ilyajustify:
 
 
 
-        "Lucifrid did all this at my request.# It didn’t go perfectly, but we did get back the students’ voices that were stolen. You need us for when stronger apparitions inevitably threaten the school.":
+        "Lucifrid did this at my request, and though it didn't go perfectly, we {i}did{/i} get the apparition under control.#You'll need us when stronger apparitions inevitably threaten the school.":
             
             $ ilya_respect += 1
             $ positive_arc += 1
 
-
             "I try to get ahold of myself, gathering together what little composure I can find inside of me. No matter how I feel, I can’t let him get the better of me." 
             "Think. What would Lucifrid do? He’d posture and intimidate, overemphasising his own indispensability."
-            "I breathe in deeply and continue in his tradition." 
-            e "What would you have had me do, Ilya? Stand by and do nothing to win back our students’ voices?" 
-            #ilya gentle
+            "I breathe in deep and continue in his tradition." 
+            e determined none "What would you have had me do, Ilya? Stand by and do nothing to win back our students’ voices?" 
+            show ilya gentle stiff
             i "You could have come to me for help."
-            e "Yes, and then you would have killed the cat, and Lucifrid too while you were at it." 
-            #ilya annoyed smile
+            e angry "Yes, and then you would have killed the cat, and Lucifrid too while you were at it." 
+            show ilya annoyed_smile
             i "Exorcism is not {i}murder{/i}, Edelweiss."
-            e "All the same as you can’t condone my methods, I can’t condone yours."
+            e determined "All the same as you can’t condone my methods, I can’t condone yours."
             e "If you eliminate Lucifrid now, you lose all the apparitions the two of us have under our control as familiars."
-            e "Isn’t it strange that the students’ voices could get stolen to begin with? Haven’t you noticed that the apparitions’ influence is increasing?"
-            #ilya calm
+            e neutral"Isn’t it strange that the students’ voices could get stolen to begin with? Haven’t you noticed that the apparitions’ influence is increasing?"
+            show ilya calm 
             i "It hasn’t escaped my notice. That is precisely why we need to act before things escalate any further." 
-            e "You need us, Ilya. If Lucifrid has undisputed rule over the beyond, none of this will happen."
-            #ilya cold
+            e determined "You need us, Ilya. If Lucifrid has undisputed rule over the beyond, none of this will happen."
+            show ilya cold_smile
             i "Is that what you think?"
             "He laughs humourlessly."
             i "How do you know he isn’t the one behind all of this?"
-            e "What does he stand to gain by any of that?!"
+            e angry "What does he stand to gain by any of that?!"
             "Calm down, Edelweiss. If you lose your composure, he wins."
-            #ilya calm
+            show ilya calm
             i "There’s no convincing you, I can see that now. But you will see that I’m right in time, that this is for your good as well."
-            #edelweiss stern
-            e "I doubt that."
+            e determined "I doubt that."
+            show ilya determined
             i "..."
             e "..."
             "We stare pointedly at each other for a moment, neither of us wanting to relent."
             "There’s a strange glint in his eyes, almost like he’s enjoying this rivalry."
-            e "Well, there’s nothing more to talk about here."
+            e neutral "Well, there’s nothing more to talk about here."
+            show ilya calm polite
             i "I’ll see you out."
             #sliding door sfx
 
@@ -2766,56 +2839,77 @@ label postchoice_ilyajustify:
 label postchoice_ilyafallout:
     scene black
     with fade
+    scene hallway day
+    with MVNStainedGlass10
 
+    if notsoquiet:
+        "Since my confrontation with Ilya, the not-so-quiet dissolution of our armistice, I haven’t quite known how to proceed."
+    else:
+        "Since my confrontation with Ilya, the quiet dissolution of our armistice, I haven’t quite known how to proceed."
 
-    scene hallway
-    #add inline variable [quiet, not-so-quiet] in line below
-    "Since my confrontation with Ilya, the dissolution of our armistice, I haven’t quite known how to proceed."
     "Ilya is out for blood—do apparitions have blood?—that much is obvious, but I don’t think he can find Lucifrid on his own, or else he would’ve made a move much sooner." 
-    "Of course, I wanted to warn Lucifrid... but I don’t know Ilya’s tactics. If he’s somehow following me then I’d be leading him right to his target."
+    "Of course, I wanted to warn Lucifrid... but I don’t know Ilya’s tactics." 
+    "If he’s somehow following me then I’d be leading him right to his target."
     "As proven by our last battle, I’m little more than a liability. It’s not like I can smack Ilya in the head with a tome and make him our familiar..."
     "So these past few days I’ve been going straight home after classes, training with Emrys at home to learn more about the spirit realm."
-    "It feels like a futile endeavour. Our enemy is human, not apparition. But it’s the only thing I can do to attempt to shake off the feeling of uselessness that keeps haunting me."
+    "It feels like a futile endeavour. Our enemy is human, not apparition."
+    "But it’s the only thing I can do to attempt to shake off the feeling of uselessness that keeps haunting me."
     "I tell myself the distance between us is a strategic choice, but deep inside I hear that voice over and over:"
-    #bg blurs and line displays in middle of screen
-    "{i}Lucifrid is better off without you.{/i}"
-    #world comes into focus
-    #lucifrid intimidating
+    scene hallway day:
+        blur 15
+    centered "{i}Lucifrid is better off without you.{/i}"
+    show hallway day:
+        blur 0
+    show lucifrid guardedclenched displeased
     l "What on Earth do you think you’re doing?"
-    #edelweiss downcast
-    e "...Walking down the hall."
+    e pout "...Walking down the hall."
+    show lucifrid guardedhips frown
     l "Don’t you dare play dumb with me."
-    #lucy close up
-    l "What{w} are{w} you{w} doing?"
+    show lucifrid at halfcloseup
+    l "What{w} are{nw=0.5}"
+    show lucifrid at closeup
+    extend " you{w} doing?"
     "He backs me into a corner, his usual favourite tactic, and I can’t bring myself to look into his eyes."
-    e "I have my reasons."
-    e "{size=-8}Now please stop, you’re making me look weird in front of the other students.{/size}"
+    e slightblush "I have my reasons."
+    e conflicted "{size=-8}Now please stop, you’re making me look weird in front of the other students.{/size}"
+    show lucifrid displeased at closeup
     l "Oh, I’m making you look weird, is that it?"
     l "Yes, that would be a grave matter. Truly a fate worse than death."
     l "Why are you avoiding me, Edelweiss?"
-    l "You know that it’s pointless, yes? That you will not be rid of me in this lifetime? That our {i}souls{/i} are {i}bound{/i}?"
-    #ilya appears in the distance
-    e "...!"
+    show lucifrid neutral at closeup
+    l "You know that it’s pointless, yes? That you will not be rid of me in this lifetime?"
+    show lucifrid threateninghips frown at closeup
+    l "That our {i}souls{/i} are {i}bound{/i}?"
+    show ilya behind lucifrid:
+        xcenter 0.25
+        zoom 0.8
+    pause 0.5
+    e panic "...!"
     "Without time to think, I open the door Lucifrid has me cornered against."
     e "Quick!"
+
     #cg broom closet
+    scene black
+    with fade
+    #sfx door locking
     "The prince of spiders stumbles in after me and I turn the lock on the door."
     "Then I notice how very small this room is.{w} And how little space there is between us."
     #lucifrid angry
     l "Will you explain to me what exactly you’re trying to do?!"
     #edelweiss panic/teary
-    e "Shh! Please, just be quiet! I’ll explain everything if you promise you’ll be quiet."
+    e2 "Shh! Please, just be quiet! I’ll explain everything if you promise you’ll be quiet."
     #lucifrid neutral
     "Lucifrid’s angry expression fades when he notices the genuine panic in my voice."
     "I lower my voice to a whisper, afraid Ilya may find us."
-    e "I— I messed up..."
-    e "Of course, you know that I messed up... But you don’t know what it led to..."
-    e "I thought I could protect you!"
-    e "Ilya, that exorcist... He’s set on eliminating you. I-I couldn’t convince him otherwise."
-    e "It’s all because of me! But— but I can still set it right!"
-    e "If I can just stay away from you, then I can keep you safe."
-    e "...It’s the only good I can do now."
+    e2 "I— I messed up..."
+    e2 "Of course, you know that I messed up... But you don’t know what it led to..."
+    e2 "I thought I could protect you!"
+    e2 "Ilya, that exorcist... He’s set on eliminating you. I-I couldn’t convince him otherwise."
+    e2 "It’s all because of me! But— but I can still set it right!"
+    e2 "If I can just stay away from you, then I can keep you safe."
+    e2 "...It’s the only good I can do now."
     l "Edelweiss..."
+    #cg change?
     "Lucifrid takes hold of my chin and lifts my face to make me meet his gaze."
     "Blood rushes to my head and all I can think about is how unsightly I must seem to him in this moment."
     l "You’re an idiot."
@@ -2823,9 +2917,10 @@ label postchoice_ilyafallout:
     l "I am a deity of the otherworld. You are worried over nothing. You think I can’t handle something like this?"
     "Yes, he’s right. I’m an idiot. I know that. But... I didn’t know what to do."
     "I never know what to do. And yet I keep moving, and acting, and making things worse."
-    e "It doesn’t matter if you can handle it! Be honest, I’m a burden on you! You’d be better off without me holding you down!"
+    e2 "It doesn’t matter if you can handle it! Be honest, I’m a burden on you! You’d be better off without me holding you down!"
     #lucifrid intimidating
     l "Are you questioning my judgment, Edie?"
+    #cg change
     "He leans his forehead against mine as he continues. My heart feels like it’s beating in my throat."
     #lucifrid grin
     l "I won’t say this twice, so listen closely."
@@ -2841,13 +2936,14 @@ label postchoice_ilyafallout:
             #lucifrid pause
             "Something changes in Lucifrid then. He’s normally so quick to respond, so candid in his emotions, but now, he seems unsure."
             "I was expecting him to tease me for being an obedient little helper, but he lets the moment linger."
-            "My eyes trace his form. The way his hair falls over his brow; the way it curls at the nape of his neck. The deep vermillion of his eyes."
+            "My eyes trace his form." 
+            "The way his hair falls over his brow; the way it curls at the nape of his neck. The deep vermillion of his eyes."
             "Without thinking I cup his face in my hand."
             "He casually forces his touch upon me all the time, but when have I moved to touch him?"
             "He still doesn’t move. The slight smile he wears seems almost shy."
             "With my own heartbeat calmed and no longer filling up my ears, the quiet allows me to notice his for the first time."
             "He isn’t human, but he lives and breathes and feels."
-            e "I mean it, thank you. When I get like this... it’s almost impossible for me to shake myself out of it."
+            e2 "I mean it, thank you. When I get like this... it’s almost impossible for me to shake myself out of it."
             #cg changes to regular position
             l "It was never quite my intention to became an expert in the stirrings of the human heart, but it seems I hold at least a faint grasp over yours."
             l "Cheer up now, worrywart."
@@ -2862,13 +2958,13 @@ label postchoice_ilyafallout:
             l "I was being entirely earnest!"
             l "I’m busy enough managing all the threats upon our domain without you suffering existential crises."
             #edelweiss pout
-            e "See! Right back to the bullying! Your feigned concern is only self-serving in the end."
+            e2 "See! Right back to the bullying! Your feigned concern is only self-serving in the end."
             #lucifrid serious
             l "Though it may serve me well, that doesn’t mean the concern is feigned."
             l "You are free to believe what you will, so long as you obey my command."
             #lucifrid grin
             l "I will show you just how serious I am through actions rather than words."
-            e "First bullying, now threats of physical nature... I can hardly remember why I felt the need to protect you."
+            e2 "First bullying, now threats of physical nature... I can hardly remember why I felt the need to protect you."
             l "Perfect! Then it seems this crisis is resolved."
             jump postchoice_broomcloset
 
@@ -2876,33 +2972,35 @@ label postchoice_ilyafallout:
 label postchoice_broomcloset:
     "It’s hard to believe the prince of spiders is skilled at easing the pains and fears of teenage girls, but I can’t deny that I’m feeling better."
     "My mind cleared of its undue fog, a lingering question from before rises to the surface."
-    e "Something’s been on my mind lately because of Ilya’s threats. What would happen if you got exorcised while we have our contract?"
+    e2 "Something’s been on my mind lately because of Ilya’s threats. What would happen if you got exorcised while we have our contract?"
     l "I can’t believe you would entertain the thought! A deity of the beyond is not so easily bested."
-    e "That’s not answering the question."
+    e2 "That’s not answering the question."
     l "Because the question is completely divorced from reality!"
-    e "...you don’t actually know what will happen, do you?"
+    e2 "...you don’t actually know what will happen, do you?"
     l "Ah, I still remember the day I forced you into this arrangement. You were shaking like a leaf, trying to seem brave."
     l "You hated my guts, didn’t you?"
     l "And look at you now, worrying about the evil overlord, you pure, innocent soul!"
-    e "Who will have use of my abilities when you’re gone? You’re not the only one who can mix care with pragmatism, Lucy!"
+    e2 "Who will have use of my abilities when you’re gone? You’re not the only one who can mix care with pragmatism, Lucy!"
     #lucifrid blushes
     l "L-Lucy?"
     #edelweiss blushes
-    e "O-oh. Um."
-    e "You always call me Edie too..."
+    e2 "O-oh. Um."
+    e2 "You always call me Edie too..."
     l "Hmph. I suppose I can allow it this one time."
     "Our eyes meet and the world seems to freeze in time. Everything we were arguing about vanishes into thin air."
+    "I can feel his breath."
     "Suddenly the close quarters we find ourselves in seem too close for comfort."
     "I become hyper-aware of exactly how many centimeters are between us, how many layers separate us, and my heart starts to race."
     "The thought he might be able to hear my heart beating from this distance becomes too much for me to bear."
     "Surely Ilya will be gone by now."
     "Right?"
-    e "Ahem."
-    e "I-it’s probably safe. Let’s get out of here."
+    e2 "Ahem."
+    e2 "I-it’s probably safe. Let’s get out of here."
 
 
-    scene hallway 
-    #sfx crash 
+    scene hallway day
+    with MVNStainedGlass10
+    #sfx crash
     #sfx panting
     #sfx running
     "I struggle to catch my breath while running down the third floor hallway."
@@ -2913,19 +3011,20 @@ label postchoice_broomcloset:
     "This is bad."
     "The last thing I need is a repeat of the last time an apparition found its way to the light side."
     "I have to get it out of the way of the other students somehow!" 
-    "Without time to weigh my options, I run towards the courtyard. Everyone should still be in class, and an open area will at least minimise damage to the building."
+    "Without time to weigh my options, I run towards the courtyard."
+    "Everyone should still be in class, and an open area will at least minimise damage to the building."
     
     scene courtyard day
     with MVNStainedGlass10
 
-    e "Hah... hah..."
+    e awkward "Hah... hah..."
     "Pausing to catch my breath, I swivel around to face my adversary for the first time."
     "The horned humanoid creature dons a mask portraying a most eerie grin."
     "At first glance it doesn’t appear too powerful, but one can never judge an apparition by its physical form."
     "???" "Edelweiss... You shall pay for your crimes..."
     "Should I try to bargain with it? Well, it’s that or running. Without the Yang battalion or Lucifrid’s tome I’m not about to beat it into submission." 
     "Lucifrid will sense something amiss with me by virtue of our bond, I just need to bide my time until he gets here."
-    e "Don’t come any closer!"
+    e determined "Don’t come any closer!"
     #sfx bells
     "I hold out my belled staff, a minor family talisman I managed to persuade father to let me carry with me, and the horned apparition stops in its tracks."
     "It evidently looks the part of a spirit-repelling artifact, but the staff’s true power is dubious at best."
@@ -2936,8 +3035,8 @@ label postchoice_broomcloset:
     "???" "Even our librarian isn’t fit to rebuild anything, reduced to a mere pet."
     "???" "Your debt cannot be repaid, but spilling your blood will dull the ache, if but for a moment."
     "It’s not enough to bear the guilt on one side of this conflict, huh? Seems I’ve earned myself universal scorn."
-    e "Ah yes, spilling blood for ink. The height of justice."
-    e "Is that library worth putting your life on the line for?"
+    e unamused "Ah yes, spilling blood for ink. The height of justice."
+    e angry "Is that library worth putting your life on the line for?"
     #sfx bells
     "I shake my staff menacingly once more."
     "???" "Bwahahaha."
@@ -2945,163 +3044,168 @@ label postchoice_broomcloset:
     "???" "You don’t frighten me, human. We’ll see how strong you are when you can’t cower behind the spider prince."
     "Well, that’s about as far as dialogue will get me."
     "I jump backwards to put some extra distance between us, and still holding the staff towards it, begin chanting a rite I studied up on recently."
-    #edelweiss determined
-    e "Light unto light, dark unto dark. Stay thy hand, walk thy path."
+    #CG belled staff
+    e determined "Light unto light, dark unto dark. Stay thy hand, walk thy path."
     "The masked spirit is slowed, but keeps pushing towards me. As expected, the rite isn’t strong enough..."
     "A heavy feeling sinks into my stomach bit by bit."
     "Why isn’t Lucifrid here yet?"
-    #edelweiss panic
-    e "Light unto light, dark unto dark! Stay thy hand, walk thy path!"
+    e awkward "Light unto light, dark unto dark! Stay thy hand, walk thy path!"
     "As the apparition inches closer, sweat starts to form on my brow. I don’t know what else I’m supposed to do!"
-    "My eyes wander around for any sort of escape, then spot Ilya through the window. He’s heading this way! I don’t believe I’ve ever been so glad to see him."
+    "My eyes wander around for any sort of escape, then spot Ilya through the window."
+    "He’s heading this way! I don’t believe I’ve ever been so glad to see him."
+
+    show ilya polite determined at midright
+    with easeinright
     "Ilya bursts through the doors and into the courtyard. Though his movements are hurried, his expression doesn’t betray the slightest agitation."
     "Stress-fueled adrenaline coursing through my veins, I dash off to the side to hopefully give Ilya an opening to attack."
-    #ilya determined
     i "Edelweiss! Don’t stop chanting!"
     "Channelling my focus, I repeat the words once more."
-    e "Light unto light, dark unto dark. Stay thy hand, walk thy path."
+    e determined "Light unto light, dark unto dark. Stay thy hand, walk thy path."
+    #sfx bells
     "Ilya throws a number of paper talismans at the apparition then adds his bracelet’s jingling to my belled staff’s."
     "Our voices ring in unison, until his phrase changes."
+    show ilya stiff at midright
     i "Light unto light, dark unto dark. From nothing thy comest, and to nothing thy shalt return."
     "The apparition is cast to the ground by an invisible force and wails."
     "???" "Foul exorcist! This was not your fight to meddle in!"
     "???" "Anathema on you and your house!"
+    #flame/smoke vfx
+    #fire crackling sfx
     "The masked figure bursts into flame, disintegrating piece by piece."
     "I can’t help but avert my eyes."
     "???" "More of my kin will come for you, Edelweiss!"
     "Until its last breath it curses us, and the pained sound echoes horrifically."
     "As I try to focus on anything else, Ilya rushes over to me, face flushed with an unreadable expression."
-
-
+    #$ ilya_affection -= 10
 
 
     if ilya_affection >= 2:
-        #ilya worry
+        show ilya pity polite at center
+        with move
         i "Are you alright, Edelweiss?"
         "Ilya’s composure seems actually shaken, the worry apparent in his voice."
         i "This is precisely what I didn’t want happening to you..."
         "I let out a deep breath."
-        e "Y-yeah, I am. ...Thanks."
+        e awkward slightblush "Y-yeah, I am. ...Thanks."
         "There’s no use clinging on to my pride here. I would’ve been toast without him, and seeing his genuine emotion is almost disarming."
         "I was useless again by myself..."
-        #ilya neutral
+        show ilya determined
         i "What happened? Did that demon leave you to fight his battles all by yourself?"
-        #e distressed
-        e "N-no! I don’t know how it happened... It just suddenly appeared and started chasing me and calling my name."
-        e "Maybe I’m just a magnet for these things. It seems I’m only making everything worse..."
+        e conflicted none "N-no! I don’t know how it happened... It just suddenly appeared and started chasing me and calling my name."
+        e rueful "Maybe I’m just a magnet for these things. It seems I’m only making everything worse..."
         e "Lucifrid should’ve been able to sense I was in trouble. I don’t know what took him so long."
-        #ilya cold
+        show ilya cold stiff
         i "Sense? Why would he have sensed that?"
         "I swallow hard, unable to utter more than a small stammer. I said too much."
-        i "Haven’t I told you over and over? An apparition doesn’t form bonds like a human does—everything is transactional to them. As soon as you have no value, you will be discarded."
-        #edelweiss downcast
-        e "Y-you’re wrong. I still have value. Lucifrid and I... our souls are bound."
-        #ilya shock
+        show ilya pity
+        i "Haven’t I told you over and over? An apparition doesn’t form bonds like a human does—everything is transactional to them."
+        show ilya sigh polite
+        i "As soon as you have no value, you will be discarded."
+        e tearful "Y-you’re wrong. I still have value. Lucifrid and I... our souls are bound."
+        show ilya baffled stiff
         i "You... That’s what this was all along?!"
 
 
 
 
     else:
-        #ilya annoyed
+        show ilya frown stiff at center
+        with move
         i "You could’ve gotten yourself killed, Edelweiss. What were you thinking?!"
-        #edelweiss annoyed
-        e "The apparition didn’t exactly show up at my invitation."
+        e determined "The apparition didn’t exactly show up at my invitation."
+        show ilya cold
         i "Then why was it calling your name?"
-        #edelweiss upset
-        e "Because it hates my guts, Ilya!"
+        e angry "Because it hates my guts, Ilya!"
         e "Because every time I try to {i}fix{/i} something around here, every time I try to be a good person and follow my moral compass, I end up disappointing absolutely everyone involved."
-        e "Isn’t it nice to know you’re not the only one who thinks I’m an abject failure?"
+        e tearful slightblush "Isn’t it nice to know you’re not the only one who thinks I’m an abject failure?"
         e "Heck, count me in while we’re at it. Even {i}I{/i} have started hating my own guts."
-
+        #$ ilya_respect += 5
+        $ ilya_respect -= 5
 
         if ilya_respect >= 1:
-            #ilya strict
+            show ilya determined polite
             i "Stop it. Stop abasing yourself."
-            #ilya pity
+            show ilya pity
             i "I don’t... think you’re an ‘abject failure’."
-            #ilya gentle
+            show ilya gentle stiff
             i "I don’t."
+            show ilya sigh
             i "I just wish you would let yourself in with better company. ...Company that actually shows up when you’re in mortal peril."
         else:
-            #ilya cold
+            show ilya cold
             i "I’m sure wallowing in self-pity has been an indispensable tactic in your life so far, but perhaps you should try something constructive for once."
             i "Go on, cry to that spider for help and see how it’ll serve you."
+            show ilya frown polite
             i "Do you still believe he cares about you? Where is he now?"
 
 
-        #edelweiss verge of tears
-        e "..."
+        e tearful "..."
         e "...I’m sure he has his reasons."
-        e "The point is- I- I didn’t know these things could even cross over here all on their own! This whole school is a mess!"
-        #ilya frown
+        e conflicted "The point is- I- I didn’t know these things could even cross over here all on their own! This whole school is a mess!"
+        show ilya frown stiff
         i "That’s the thing, they never could do that! Something has upset the balance, but the mere involvement of a diviner shouldn’t be able to-"
-        #ilya shock
+        show ilya baffled
         i "Unless..."
         "He looks at me almost in horror."
         i "You made a contract with him, didn’t you?"
-        #edelweiss flinch
-        e "...!"
+        e panic none "...!"
 
 
-    #ilya pity
+    show ilya sigh
     i "If that’s the case then... what can I even do?"
+    show ilya determined
     i "This can’t go on like this, Edelweiss. This contract between the two of you is slowly melding the light and dark side of the barrier into one amalgamation."
     i "I’ve never seen anything this disordered occur, but it must be because of your respective affinities."
     "Can I trust what he says? Is this another tactic to get me on his side?"
     "...Is everything really my fault again?"
-    #edelweiss downcast
-    e "..."
-    #ilya stern
+    e conflicted "..."
+    show ilya polite
     i "Do you think this is what it means to keep the balance between the realms? That {i}this{/i} is your duty as a diviner?"
-    #edelweiss pensive
-    e "It’s not what I set out to do... But I don’t think it’s all bad."
-    e "I have real power now, I can do something to protect this school."
+    e rueful "It’s not what I set out to do... But I don’t think it’s all bad."
+    e neutral "I have real power now, I can do something to protect this school."
+    show ilya cold stiff
     i "You have no clue what you’ve gotten yourself into."
     i "This needs to be set right, one way or another."
     if ilya_affection >= 2:
+        show ilya determined polite
         i "I will save you, Edelweiss. You can depend on me."
     else:
+        show ilya polite
         i "I will do what I must, Edelweiss. That I promise."
     "When I avert my eyes to avoid Ilya’s piercing gaze, I notice Lucifrid glaring daggers at us from the roof, and I start to piece things together."
     "Lucifrid isn’t late, and he certainly hasn’t abandoned me. He simply couldn’t approach without risking exorcism at Ilya’s hands."
     "The roof is as close as he can get without being noticed."
-    #edelweiss neutral
-    e "I have to go."
+    e determined "I have to go."
     "Ilya blankly nods at me as I leave the courtyard."
 
-
-    scene hallway
-    with fade
-    scene classroom evening
-    #bg hideout
+    scene hallway day
+    with MVNStainedGlass10
+    scene hideout evening
+    with MVNStainedGlass10
     #cut-in yang
-    #edelweiss small smile
-    e "...Hey little guy."
+    e rueful "...Hey little guy."
     "Yang patters over to me from under a desk as soon as I enter the room."
     "I have no idea if he has the emotional intelligence to tell that I could use company right now, but I’m grateful all the same."
     "There’s so much happening and I’ve barely had a moment to process it all."
     "When I was younger, when her passing still felt less like a scar and more like a wound, I used to imagine talking to Mother to get my thoughts in order."
     "It’s been a while but... maybe it would help. Mother would know what to do in this situation, I’m sure."
 
-
-    #bg blurs
+    scene hideout evening:
+        blur 10
     #edelweiss’ Mom silhouette sprite appears
     "Mom" "What is it, Edie? Tell me what’s on your mind, I’m here to listen."
-
 
 label mom_convo:
         
     menu:
         "Where do I even begin?"
 
-
         "Talk about being a diviner#" if momconvodiviner == 0:
             $ momconvodiviner += 1
             
-            e "Well, one thing’s never changed. I’m still trying my hardest to be like you, Mother."
-            e "I just... don’t know if I’m doing the right thing anymore."
-            e "How far should I go to live up to your expectations?"
+            e smile none "Well, one thing’s never changed. I’m still trying my hardest to be like you, Mother."
+            e rueful "I just... don’t know if I’m doing the right thing anymore."
+            e conflicted "How far should I go to live up to your expectations?"
 
 
             menu:
@@ -3127,14 +3231,12 @@ label mom_convo:
 
         "Talk about Lucifrid#" if momconvolucy == 0:
 
-
             $ momconvolucy += 1
 
-
-            e "Well, you know about Lucifrid, don’t you? He’s the spider apparition who I bound my soul to."
-            e "I didn’t really realise the gravity of the situation at the start, but I thought I was making the best of it."
-            e "And now, our bond may be causing a whole lot of trouble..."
-            e "Well, it’s not about that at all, is it?"
+            e neutral "Well, you know about Lucifrid, don’t you? He’s the spider apparition who I bound my soul to."
+            e awkward "I didn’t really realise the gravity of the situation at the start, but I thought I was making the best of it."
+            e conflicted "And now, our bond may be causing a whole lot of trouble..."
+            e rueful slightblush "Well, it’s not about that at all, is it?"
             "I make a sound somewhere between a sigh and a laugh."
             e "I just can’t get to the point, I can’t face my own feelings."
 
@@ -3149,7 +3251,6 @@ label mom_convo:
                 "My feelings keep swaying between one extreme and the other.#":
                     $ lucy_yan += 1
 
-
             "Mom" "You’ve gotten entangled in his web now."
             "Mom" "And the more you struggle, the more you get stuck."
             "Mom" "I’ve always told you, haven’t I? That no good comes from getting so wrapped up in the affairs of apparitions."
@@ -3157,20 +3258,16 @@ label mom_convo:
             "She smiles and shakes her head. There’s no condemnation in her tone."
             "Mom" "Look out for yourself, alright?"
 
-
             jump mom_convo
 
 
         "Talk about Ilya#" if momconvoilya == 0:
 
-
             $ momconvoilya += 1
 
-
-            e "So there’s more than one person who’s been meddling in my life... There’s an exorcist attending this school—his name is Ilya."
-            e "At first I was excited to find someone else who knows about the spirit realm, but we uh, haven’t really been seeing eye to eye."
-            e "He’s determined to get rid of Lucifrid... Thinks he’s doing it for my own good."
-
+            e neutral none "So there’s more than one person who’s been meddling in my life... There’s an exorcist attending this school—his name is Ilya."
+            e awkward "At first I was excited to find someone else who knows about the spirit realm, but we uh, haven’t really been seeing eye to eye."
+            e conflicted "He’s determined to get rid of Lucifrid... Thinks he’s doing it for my own good."
 
             menu:
                 "Sometimes I find myself wondering if he’s right, wondering what would have happened if I met Ilya before getting caught up in Lucifrid’s plans.#":
@@ -3180,18 +3277,15 @@ label mom_convo:
                 "He’s an arrogant prick. I’ll prove him wrong soon enough.#":
                     $ ilya_affection -= 3
 
-
             "Mom" "An exorcist... I was hoping an encounter like that would help broaden your understanding."
-            "Mom" "In an ideal world, exorcists and diviners would work together — kind where possible, unrelenting where necessary."
+            "Mom" "In an ideal world, exorcists and diviners would work together—kind where possible, unrelenting where necessary."
             "Mom" "But it seems like things are never quite that simple in reality."
             "Mom" "There’s nothing you can do but trust in your own judgment."
-
 
             jump mom_convo
 
 
         "I think I've addressed everything.#" if momconvoilya >= 1 and momconvolucy >= 1 and momconvodiviner >= 1:
-
 
             jump postchoice_momconvo
 
@@ -3200,104 +3294,134 @@ label postchoice_momconvo:
     "For a moment, the vision of my mother becomes almost tangible."
     "Mom" "Don’t make the same mistake I did, Edie. Choose your own happiness."
     "The same mistake she did? What does that mean?"
-    "She laughs softly and fades from view. How- Was I... really talking to her?"
+    scene hideout evening:
+        blur 0
+    "She laughs softly and fades from view. How— Was I... really talking to her?"
     "Giving no answer, the room grows still."
     "Yang and I sit together in silence for a moment, but it doesn’t take long for Lucifrid to show up."
-    #lucifrid wrathful
+    show lucifrid guardedclenched frown at enterleft
+    pause 1.3
     "I know that look on his face... This can’t be good."
     l "I saw you fraternising with that exorcist."
+    show lucifrid guardedhips
     l "Go ahead, I’ll give you one chance to explain that the two of you were not plotting against me."
     "He says it calmly, but his tone is laced with venom."
-    e "Are you out of your mind?! I was attacked by an apparition! If Ilya didn’t show up, I could’ve well been dead!"
+    e angry "Are you out of your mind?! I was attacked by an apparition! If Ilya didn’t show up, I could’ve well been dead!"
     "Yang crawls up to my shoulder, as if to bolster me. Lucifrid pays him no heed."
+    show lucifrid ominous at halfcloseup
     l "Oh, is that how you see it? You’re relying on him now?"
+    show lucifrid frown at halfcloseup
     l "No, Edelweiss, you’ve got that very wrong. The only reason I didn’t step in—couldn’t step in—is because of that meddlesome human."
+    show lucifrid guardedclenched wrathful at halfcloseup
     l "He’s successfully convincing you to his side now, is he?!"
     "Suddenly his voice grows cutting and shrill, and I shrink back. What’s gotten into him?"
-    e "What did you want me to do? Reject his help?! I was scared, Lucifrid!{w} ...I’m still scared."
-    #lucifrid frown
-    l "Well, don’t be! The danger has passed! I will never hurt you. When have I ever neglected to protect you?!"
+    e conflicted "What did you want me to do? Reject his help?! I was scared, Lucifrid!{w} ...I’m still scared."
+    show lucifrid frown at halfcloseup
+    l "Well, don’t be! The danger has passed! I will never hurt you."
+    l "When have I ever neglected to protect you?!"
+    $ lucy_yan -= 5
+    $ positive_arc += 5
 
 
     if lucy_yan <= 1 and positive_arc >= 3:
         $ true_ending += 1
-        #edelweiss verge of tears
-        e "P-please stop yelling... I know you’re not really like this. I trust you, Lucifrid, can’t you try to trust me too?"
+        e tearful slightblush "P-please stop yelling... I know you’re not really like this. I trust you, Lucifrid, can’t you try to trust me too?"
         "I try to stay calm but my voice crumbles anyway. I choke out a sob, biting my lip hard to prevent myself from crying."
         "Crying won’t solve anything."
+        show lucifrid displeased guardedrelaxed at halfcloseup
         l "..."
         "He falters."
         l "...I just can’t stand to see you with {i}him{/i}. Out of my reach."
         "Despite my best attempts, a single tear silently makes its way down my cheek."
+        show lucifrid worry invitingrelaxed at halfcloseup
         l "E-Edelweiss... I’m sorry... I’m sorry!"
         "He reaches out to catch my tear. I let him."
         "I won’t let anyone convince me he’s the villain. Not even Lucifrid himself."
-        l "I don’t feel like myself lately. You’ve made me weak, and I hate it!"
+        show lucifrid guardedrelaxed neutral at halfcloseup
+        l "I don’t feel like myself lately." 
+        show lucifrid displeased at halfcloseup
+        l "You’ve made me weak, and I hate it!"
         l "How can I be in control of anything if I’m not even in control of myself?!"
+        show lucifrid wrysmile at halfcloseup
         l "Nothing is going like it was meant to go."
-        e "But you don’t have to be in control all the time."
-        e "In fact, well, these are just my thoughts but- {w}...Hmm, no, maybe it’s stupid."
+        e awkward none "But you don’t have to be in control all the time."
+        e "In fact, well, these are just my thoughts but-{w}"
+        show edelweiss conflicted
+        extend " ...Hmm, no, maybe it’s stupid."
+        show lucifrid neutral at halfcloseup
         l "No, go on. I want to hear."
-        e "It’s an impossible goal to begin with, right? What are we really in control of?"
+        e rueful "It’s an impossible goal to begin with, right? What are we really in control of?"
         e "Certainly not the world around us, or the people in it. If you think everything is marching to your tune, it’s an illusion!"
-        e "And the more you believe that it is, the more uneasy you become when things veer off course."
+        e conflicted "And the more you believe that it is, the more uneasy you become when things veer off course."
         e "Because if it’s all in the palm of your hand, then anything that goes wrong is your fault, right?"
-        e "And- and- Some things are valuable {i}because{/i} they’re out of your control."
-        e "Do you think I’m here because you willed it so? Because you’ve employed all your tactics and used all your talents?"
-        e "If that’s so, then there’s no meaning in it."
-        #edelweiss blush
-        e "Sorry, I’m rambling..."
+        e awkward "And- and- Some things are valuable {i}because{/i} they’re out of your control."
+        e neutral "Do you think I’m here because you willed it so? Because you’ve employed all your tactics and used all your talents?"
+        e rueful "If that’s so, then there’s no meaning in it."
+        e awkward deepblush "Sorry, I’m rambling..."
+        show lucifrid wrysmile at halfcloseup
         l "You’re the only one who dares address me like this, Edelweiss."
+        show lucifrid neutral at halfcloseup
         l "I don’t know if I agree with what you’re saying but..."
         l "Keep doing it."
         "He pauses pensively, then opens his mouth only to close it again."
+        show lucifrid wrysmile at halfcloseup
         l "I’ll give you my trust. Don’t betray it."
+        show lucifrid threateninghips evilsmile at halfcloseup
         l "If it leads me to ruin, I’ll make sure you go down with me."
 
 
     else: 
-        e "Stop acting like this! All you’re doing is proving Ilya’s point! If you don’t think of me as a tool, then try to treat me better than one."
+        e "Stop acting like this! All you’re doing is proving Ilya’s point!"
+        e angry "If you don’t think of me as a tool, then try to treat me better than one."
+        show lucifrid invitinghips grin at halfcloseup
         "Lucifrid suddenly bursts into laughter."
         l "A tool?"
+        show lucifrid evilsmile at halfcloseup
         l "If you were a {i}tool{/i} to me, all of this would be much easier! Oh, if only."
+        show lucifrid guardedhips at halfcloseup
         l "No, a tool could not unsettle me like this. If all I needed was your absolute obedience, I could rely on so many methods."
-        #lucifrid wry smile
+        show lucifrid wrysmile at halfcloseup
         l "Somewhere along the way, I started wanting something more of you. You’ve made all my methods impotent."
-
 
         menu:
             "I deflate like a balloon as all my pent-up anger floods out of me.#":
 
-
                 $ negative_arc += 1
-
 
                 "I suppose I got exactly what I wanted."
                 "Yes, he needs me now, and he’s worse off for it. I’m worse than useless, I’m a liability."
-                e "I never meant to do anything like that..."
+                e conflicted slightblush "I never meant to do anything like that..."
+                show lucifrid invitinghips evilsmile at halfcloseup
                 l "Well, it’s a good thing I’m so magnanimous and forgiving."
                 "He pats my head."
-                e "No, it’s not a good thing. I can see it already—you’re going to get yourself killed for my sake."
-                e "The contract you thought would be a help is going to be nothing but a hindrance."
+                e determined none "No, it’s not a good thing. I can see it already—you’re going to get yourself killed for my sake."
+                e conflicted "The contract you thought would be a help is going to be nothing but a hindrance."
+                show lucifrid invitingrelaxed grin
                 l "Stop, stop, that’s nothing for you to concern yourself with. You only need to follow my lead and everything will be alright."
+                show lucifrid threateningrelaxed evilsmile
                 l "The prince of spiders will ascend to kingship, one way or the other. And you will be my queen."
 
 
             "The pent-up anger inside of me threatens to explode.#":
 
-
                 $ lucy_yan += 1
                 $ lucy_distrust = True
 
-
                 e "Oh, I see, you like me, so you’re going to treat me {i}worse{/i} than a tool!"
-                e "This isn’t grade school! You don’t have to bully the girls you like! What if you tried being nice?"
+                e determined "This isn’t grade school! You don’t have to bully the girls you like! What if you tried being nice?"
                 e "You ever consider that?"
+                show lucifrid guardedrelaxed neutral
                 l "Being {i}nice{/i} hasn’t gotten me anywhere in life, Edie."
-                l "Every single time I’ve tried to trust someone, it has been to my detriment. Apparitions are vile creatures, the exorcist isn’t wrong. But don’t think humans are any different."
-                e "Well I’m not ‘humans’, I’m me. And the least you could do is trust me after I’ve stuck by your side despite everything."
+                show lucifrid guardedopen
+                l "Every single time I’ve tried to trust someone, it has been to my detriment."
+                show lucifrid guardedhips displeased
+                l "Apparitions are vile creatures, the exorcist isn’t wrong. But don’t think humans are any different."
+                e angry "Well I’m not ‘humans’, I’m me. And the least you could do is trust me after I’ve stuck by your side despite everything."
+                show lucifrid evilsmile
                 l "That doesn’t prove much when it was the only choice I left you."
-                e "I have choices. Maybe I’ll make a different one soon."
+                e determined "I have choices. Maybe I’ll make a different one soon."
+                show lucifrid guardedclenched ominous
+                l "{cps=3}...{/cps}We'll see."
                 "His eyes grow cold. A miasma of oppressive darkness spills out from him."
                 "Everything around me feels lifeless and still, like I am suddenly the only thing alive in this world."
                 "Lucifrid doesn’t say another word. It feels like something inside him has cracked, but I don’t know what."
@@ -3319,7 +3443,8 @@ label postchoice_momconvo:
 
 label post_Lucifridmeltdown:
 
-
+    play sound "audio/sfx/kurage-kosho/wind.mp3"
+    hide lucifrid
     "The wind from the open window rustles through the abandoned classroom, blowing a stray leaf inside."
     "I look outside at the waving treetops; they show hints of their autumn colours already."
     "It feels like ages have passed since I met him, but I suppose it hasn’t even been two months since that fateful encounter."
@@ -3334,12 +3459,14 @@ label post_Lucifridmeltdown:
 
         "What good will it do to confide in him? He won’t believe what I have to say, especially once he figures out the knowledge comes from Ilya."
         "I’m tired. I’ll figure out some way to deal with this later. Maybe Emrys could help..."
-        e "Can I go home for today?"
+        e neutral "Can I go home for today?"
+        show lucifrid guardedrelaxed neutral
         l "Do as you please."
         
-        scene hallway
-        with fade
+        scene hallway day
+        with MVNStainedGlass10
         scene classroom evening
+        with MVNStainedGlass10
         "And so I trudge off. I look for Emrys in our classroom, but it seems he’s headed home for the day already."
         "Well, that’s alright. I don’t know if I have the energy to go over the whole affair with him right now anyway."
         "I slump down at my desk, wanting to be neither here, nor home, nor anywhere."
@@ -4388,6 +4515,7 @@ label endings:
             "I can smell the smoke."
             "And then there’s nothing left of them."
             "Not even ashes."
+            "..."
             "..."
             "..."
             "My pain is gone."

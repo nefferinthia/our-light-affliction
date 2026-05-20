@@ -33,12 +33,12 @@ screen say(who, what):
             spacing -20
             window: 
                 style "button0"
-                imagebutton action ShowMenu('save'):
+                imagebutton action ShowMenu('preferences'):
                     idle "gui/menu button 1.png"
                     hover "gui/menu button 1 hover.png"
                 text "Menu":
-                    yalign 0.4
-                    xalign 0.1
+                    yalign 0.5
+                    xalign 0.2
             
             window:
                 style "button1"
@@ -46,8 +46,8 @@ screen say(who, what):
                     idle "gui/menu button 2.png"
                     hover "gui/menu button 2 hover.png"
                 text "Save":
-                    yalign 0.5
-                    xalign 0.5
+                    yalign 0.6
+                    xalign 0.6
 
             window: 
                 style "button2"
@@ -55,8 +55,8 @@ screen say(who, what):
                     idle "gui/menu button 3.png"
                     hover "gui/menu button 3 hover.png"
                 text "Load":
-                    yalign 0.6
-                    xalign 0.1
+                    yalign 0.85
+                    xalign 0.2
 
     ## If there's a side image, display it in front of the text.
     add SideImage() xalign 0.0 yalign 1.0 xoffset -30
@@ -135,8 +135,6 @@ screen quick_menu():
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
