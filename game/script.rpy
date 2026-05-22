@@ -40,8 +40,8 @@ label start:
     n "To intertwine the mortal realm with the realm beyond can lead to naught but misfortune."
 
     nvl clear
-    scene classroom day
 
+    scene classroom day
     #sfx skitter
 
     "Out of the corner of my eye I see something crawling. It's {i}them{/i} again."
@@ -871,9 +871,9 @@ label start:
     "The air around us contorts and I squint my eyes shut, feeling briefly like I might lose consciousness."
     "All sense perception leaves me except a hazy weightlessness and the feeling of Lucifrid's hand in mine. For a brief moment I am nowhere and everywhere."
     
-    scene classroom day
-    #classroom beyond
-    with MVNTurbulence04
+    scene classroom beyond:
+        function WaveShader (0.7,0.7,1.0)
+    with MVNTurbulence04 
     
     "My feet land on solid ground again and I open my eyes. There stands the prince of spiders with his battalion of familiars, cast in a dim, eerie light. The classroom around us appears... normal."
     "Upon closer inspection, there are eyes peering out from places they shouldn’t be, and everything sways and twists periodically, as though the edges between objects are not quite laws, and more like suggestions of physics."
@@ -1538,15 +1538,14 @@ label postchoice_lucycourtyard:
     "I nod at him in turn, blushing involuntarily. Alright, that’s enough. Stop daydreaming."
     i "Why don’t you come inside? We’re the only ones here this afternoon."
     
-    scene student council placeholder
+    scene student council room
     with MVNStainedGlass10
-
     #sfx sliding door
     "A steaming cup of tea warms my hands as I sit at the table across from Ilya."
     "It’s my first time in the student council room, and my eyes wander around to various decorations and accolades crowding the shelves."
     show ilya stiff calm
     i "Ahem."
-    "Ilya clears his throat to draw my attention back to him."
+R     "Ilya clears his throat to draw my attention back to him."
     i "You must be wondering why I called you here. Allow me to get straight to the point."
     i "As a member of the student council I concern myself with the well-being of the whole student body."
     i "Have you noticed strange happenings around yourself lately? Has anything been bothering you?"
@@ -1833,7 +1832,7 @@ label postchoice_ilyameeting:
             #sfx knock
             "I knock three times, then let myself in."
 
-            scene student council placeholder
+            scene student council room
             show ilya stiff calm
             with MVNStainedGlass10
 
@@ -2365,8 +2364,8 @@ label postchoice_ilyameeting:
     #sfx boundary
     extend " close my eyes."
     "The floor beneath me dissolves and my awareness slips. The only thing I can feel is the soft warmth of Lucifrid’s hands—my anchor."
-    scene hallway day
-    #bg hallway beyond
+    scene hallway beyond:
+        function WaveShader (0.7,0.7,1.0)
     with MVNTurbulence04
     "I open my eyes a little too soon, and the disorienting sight of the world around me slotting together like puzzle pieces turns my stomach. Lucifrid steadies me when I almost fall over."
     "One day I will get used to crossing the barrier. One day."
@@ -2648,7 +2647,7 @@ label postchoice_ilyameeting:
     "The way he phrases it doesn’t make it seem like a suggestion. Resigning myself to my fate, I follow him through the halls."
     
     #sfx sliding door
-    scene student council placeholder
+    scene student council room
     with MVNStainedGlass10
     show ilya stiff calm at enterleft
     pause 1.3
@@ -3601,13 +3600,14 @@ label endings:
         "Lucifrid#" if true_ending >= 1:
             "I get up and walk towards the fourth floor."
 
-            scene hallway
+            scene hallway day
+
             "I don’t know what’s going to happen. I don’t know what we should do. But I know that as long as we’re together, we can handle anything."
             "I’m still nervous and scared, but I’m not unsure."
             "We’re going to save Emrys. What happens after that, we’ll figure out when we get there."
 
-            scene classroom day
-            #bg hideout
+            scene hideout day
+
             "The hideout is crowded with spiders. They must be spilling over from the other side."
             "Past me would have been terrified, but their glittering eyes are strangely comforting now."
             "It means their master can’t be far."
@@ -4322,6 +4322,7 @@ label endings:
             "A spider."
             "Before I realise it, I’m moving towards it, reaching out my hand."
             "My fingers are inches away when—"
+            #sfx boot crushing insect
             "Ilya must not have seen it. His boot comes down with a squelch."
             "He squeezes my hand, and I turn back towards him."
             i "I love you too, Edelweiss."
@@ -4460,6 +4461,7 @@ label endings:
             "Mom" "Don’t you worry. You’ll never have to feel alone again."
             "Mom" "We can stay together..."
             #mom’s mask cracks
+            #sfx glass shatter
             "Mom" "Forever."
             "A terrible, dark energy spills out from her at that moment."
             e "H-huh?"
