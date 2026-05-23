@@ -9,6 +9,29 @@ define l = Character("Lucifrid", image="lucifrid")
 define i = Character("Ilya", image="ilya")
 define n = Character(None, kind=nvl)
 
+init python:
+
+    renpy.music.register_channel("music1", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix='', file_suffix='', buffer_queue=True)
+
+    def audio_crossFade(fadeTime, music, musicVolume):
+        oldChannel = None
+        newChannel = None
+        if renpy.music.get_playing(channel="music") is not None and renpy.music.get_playing(channel="music1") is None:
+            oldChannel = "music"
+            newChannel = "music1"
+        elif renpy.music.get_playing(channel="music") is None and renpy.music.get_playing(channel="music1") is not None:
+            oldChannel = "music1"
+            newChannel = "music"
+        elif renpy.music.get_playing(channel="music") is None and renpy.music.get_playing(channel="music1") is None:
+            oldChannel = None
+            newChannel = "music"
+            
+        if oldChannel is not None:
+            renpy.music.stop(channel= oldChannel, fadeout=fadeTime)
+            
+        if newChannel is not None:
+            renpy.music.play(music, channel=newChannel, loop=None,fadein=fadeTime, relative_volume=musicVolume)
+
 #HOLD UP YOU CAN CHANGE EXPRESSIONS MID-LINE
 #lines longer than 1 laptop screen should be split in 2
 
@@ -42,7 +65,7 @@ label start:
     nvl clear
 
     scene classroom day
-    #sfx skitter
+    play sound "audio/sfx/maou tamashii/skitter.ogg"
 
     "Out of the corner of my eye I see something crawling. It's {i}them{/i} again."
     "I don’t know what happened to this school. We’ve been having a serious spider plague."
@@ -94,15 +117,14 @@ label start:
 
     e "Most likely. But something is off. Why do I see them without even focussing on it? They're just bugs, spiritual power nigh zero."
 
-    #sfx skitter
+    play sound "audio/sfx/maou tamashii/skitter.ogg"
 
     "Suddenly the spiders all seem to stand on high alert and rush out of the classroom."
     "I can’t help myself—I need to find out what’s going on."
     "It’s my duty to keep the balance between the realms. This is way more important than homework!"
     "I get up casually to follow the spiders down the hallway."
 
-    #sfx chair movement
-
+    play sound "audio/sfx/osabisi/chair movement.ogg"
     "Emrys rises from his desk."
     em "Where do you think you’re going?"
 
@@ -143,7 +165,7 @@ label start:
     scene hallway day
     with MVNStainedGlass10
 
-    #sfx creak
+    play sound "audio/sfx/freesound/floor creak.mp3"
     "As we climb the staircase, the lights grow dimmer. Wooden floorboards creak underneath my loafers and the dust in the air makes my throat go dry."
     "Only a few steps later I feel an uncomfortable shiver creep across my back."
     "Did I imagine it?"
@@ -162,14 +184,14 @@ label start:
     "I turn around again and look ahead into the dark hallway, so dark that I can’t even tell where it ends."
     "Wait, where's Emrys? My eyes trail to where he was standing, but not a trace of him remains."
     "Oh, this is bad. He came to keep an eye on me and now I’m the one who put him in danger!"
-    #sfx door slamming shut
+    
+    play sound "audio/sfx/freesound/door slam.mp3"
     "?!"
     "What was that sound? I rush to where it seemed to be coming from."
-    #sfx creak
+    
+    play sound "audio/sfx/freesound/door creak.mp3"
     "A classroom door slings slightly ajar with a creak, and hundreds of shining, scarlet eyes peer at me ominously from the other side."
     "I swallow hard. Okay, calm down, you've got this. For Emrys."
-
-    #door sfx
 
     scene hideout day empty
     with MVNStainedGlass10
@@ -196,8 +218,7 @@ label start:
 
     show lucifrid evilsmile invitinghips at closeup
 
-    #sfx swoosh
-
+    play sound "audio/sfx/filmcow/swoosh.ogg"
     "The boy apparition is upon me in a flash, his movements sudden. {i}Inhuman{/i}. I back away instinctively—his face is too close."
     e "You’ve been looking for me? What business do you have with me?"
     "I try to stay calm, but I’m at an undeniable disadvantage. I can't falter here, I just have to bluff my way through."
@@ -206,7 +227,8 @@ label start:
     show lucifrid guardedopen neutral at closeup
 
     l "Well, first things first, I believe an introduction is in order."
-    #sfx finger snap
+
+    play sound "audio/sfx/otologic/finger snap.mp3"
     "At the snap of his fingers, the door behind me shuts and his familiars fall into a practiced formation."
     "He bows to me as he says his next line."
 
@@ -255,7 +277,8 @@ label start:
     show edelweiss determined
 
     e "Your business is with me, isn’t it?"
-    #sfx footsteps
+
+    play sound "audio/sfx/yamicafe/footsteps.ogg"
     "He walks up to me. With every step forward he takes, I take one step backward, until my back is against the wall."
 
     show lucifrid evilsmile guardedopen at halfcloseup
@@ -289,7 +312,9 @@ label start:
     "His four hands press against the wall behind me, pinning me in place. Before I have time to process what’s happening he presses his lips against mine."
     show lucifrid neutral at closeup
     l "Let this be proof of the invisible ties that bind us, now and forever. Neither life nor death shall come between us."
-    #sfx finger snap
+    
+    play sound "audio/sfx/otologic/finger snap.mp3"
+    
     "He snaps his fingers again and Emrys falls from his web. A procession of spiders softens his fall and parades him out of the classroom."
     show lucifrid neutral at halfcloseup
     l "Don’t worry, they’ll deliver him safely back to where he came from."
@@ -493,8 +518,9 @@ label start:
     show lucifrid guardedhips
 
     l "But fine, let me show you exactly where you fit into my plans..."
-    #sfx clap
-    "He claps his hands—all four of them—and sinks two of his arms into the desk arrangement, seemingly phasing them out of existence."
+
+    play sound "audio/sfx/kurage-kosho/clap.mp3" volume 1.0
+    "He claps one pair of hands, and sinks the other two into the desk arrangement, seemingly phasing them out of existence."
     "Is he... reaching into the beyond? Interesting."
 
     hide lucifrid
@@ -510,17 +536,17 @@ label start:
     "Mom" "You’ve made your own mess, so it’s your duty now to get yourself out of it. Rise to the challenge, it can only help you grow."
     "The encouragement somehow doesn’t ring as hollow as expected. Is she... really there?"
     "But that would be impossible."
-    #book smack sfx
+
+    play sound "audio/sfx/otologic/book smack.mp3"
     "I snap out of my reverie with a start."
 
     show lucifrid guardedhips displeased
-
     l "Edelweiss... pay attention. This part is important."
 
     show lucifrid invitinghips neutral
-
     l "Here. This is my tome. Everything contained in it is mine to control."
-    #sfx pages turning
+
+    play sound "audio/sfx/otologic/pages turning.mp3"
     "He rifles through the pages, stopping upon a page filled with red ink that seems like it has barely dried."
     "I can’t make out any of the characters until he slowly drags his finger over the words."
 
@@ -607,7 +633,8 @@ label start:
     scene classroom day
     show emrys casual small_smile
     with MVNStainedGlass10
-    #school bell sfx
+    play sound "audio/sfx/otologic/school bell.mp3"
+
     em "Alright, I'll give you the keyword and you tell me what you know."
     show edelweiss smile
     e "Mm-hm."
@@ -799,7 +826,6 @@ label start:
     show lucifrid innocent invitingrelaxed
 
     l "I didn't know you thought of me that way, Edie."
-    #sfx fabric shufffle
     "Lucifrid languidly slings two arms around me as I try my best to keep my composure."
     "I’m going to regret this, aren’t I?"
 
@@ -867,7 +893,6 @@ label start:
 
     scene black
     with MVNTurbulence04
-    #sfx boundary
     "The air around us contorts and I squint my eyes shut, feeling briefly like I might lose consciousness."
     "All sense perception leaves me except a hazy weightlessness and the feeling of Lucifrid's hand in mine. For a brief moment I am nowhere and everywhere."
     
@@ -899,7 +924,7 @@ label start:
     "I shiver as I jolt back. The room is so cold that even the light glinting menacingly off Lucifrid’s web seems like it could freeze."
     "As he clenches a fist, the web spun around the teacher’s desk coils and cinches, slicing through solid wood with ease."
 
-    #sfx ghost cry
+    play sound "audio/sfx/maou tamashii/ghost.ogg"
     show lucifrid smug
 
     l "Heh, I think someone didn’t like that."
@@ -914,7 +939,9 @@ label start:
 
     l "Terribly afraid I can’t do that."
     "Lucifrid’s familiars have begun clambering up the creature’s robes."
-    #sfx "arrow" swish
+    
+    play sound "audio/sfx/taira-komori/icicle.mp3"
+
     "Right as I start to feel a tinge of pity for it, it dashes forward, scattering the arachnid battalion on its vestments and shooting icicles in our direction."
     "Ghost" "Stay away..."
     "Lucifrid avoids the attack nimbly, stopping one of the projectiles just short of hitting me in the process."
@@ -946,7 +973,8 @@ label start:
     #CG tome
     "Instead of waiting for a signal, I decide to cut his playtime short and run ahead with the tome in tow."
     e "State thy name and thine allegiance be manifest!"
-    #sfx book smack
+
+    play sound "audio/sfx/otologic/book smack.mp3"
     "I smash the creature with all the strength I can muster. I don't even hear the syllables it spits out over the sound of the blood rushing to my head."
     "Ink flows across the tome’s opened pages and the creature slinks away. Immediately the air calms and warmth returns to the room."
     "The breath I didn't know I was holding in slips out with a sigh."
@@ -1065,7 +1093,6 @@ label start:
     show lucifrid neutral
     l "Now hush, let's move."
 
-    #sfx boundary
     scene black
     with MVNTurbulence04
     scene hideout evening
@@ -1085,14 +1112,16 @@ label start:
     with fade
     scene hideout day
     with MVNStainedGlass10
-    #sfx door creak
+    play sound "audio/sfx/freesound/door creak.mp3"
+    
     "Hmm?"
     "Now this is unusual. It seems like I’m the first one to arrive at our hideout."
     "Almost two weeks have passed since my first meeting with the prince of spiders, and I guess I’ve settled into the rhythm of our after school meetings."
     "I’ve learned that while I am on academy grounds there is no way to escape him. I’ve made my peace with that fact—so I might as well go willingly."
 
     "I draw a small sigil on the blackboard in chalk, meant to draw out any apparitions in hiding."
-    #sfx skitter
+    
+    play sound "audio/sfx/maou tamashii/skitter.ogg"
     "A number of spiders scurry out of their webs towards me, but Lucifrid is nowhere in sight."
 
     show edelweiss smile
@@ -1125,14 +1154,15 @@ label start:
     e "You did well, little Yang."
     "I pet the favoured child, fastest runner of the cohort, and give him his well-earned reward."
     
-    #sfx footsteps
+    play sound "audio/sfx/yamicafe/footsteps.ogg"
     "The sound of footsteps makes my hair stand on end. An apparition...?"
     "But there is nothing to be afraid of."
 
     show edelweiss determined
 
     e "Yang battalion, apprehend the intruder!"
-    #sfx skitter
+    
+    play sound "audio/sfx/maou tamashii/skitter.ogg"
     "The spiders rush behind me and shoot their strings."
 
     show lucifrid threateninghips worry
@@ -1169,9 +1199,11 @@ label start:
     "Many apparitions have various forms, the more intricate forms becoming impossible to maintain as they lose power."
     "I wonder if Lucifrid manifests himself in different ways than this; this form doesn’t seem too strenuous in upkeep."
     "I've gotten used to helping him by now. I lend my assistance in various ways: sometimes it's a fight like against the ice spirit, sometimes it's nothing more than using his tome to administer the final rites. Like now."
+    
     #CG tome
-    #sfx pages turning
-    "Drawing upon a larger sigil inscribed in one of the desks, I manifest the spider prince’s tome. Its pages scramble open as I recite the incantation."
+    "Drawing upon a larger sigil inscribed in one of the desks, I manifest the spider prince’s tome."
+    play sound "audio/sfx/otologic/pages turning.mp3"
+    extend " Its pages scramble open as I recite the incantation."
     e "State thy name and thine allegiance be manifest."
     "The bird croaks something indeterminable, though the tome does not discriminate."
     "Laid to rest on the page, the bird’s physical form fades and the abandoned classroom quiets down once again."
@@ -1245,8 +1277,10 @@ label start:
     l "It’s a fool’s errand to try and live up to the expectations of forces outside your understanding."
     l "If someone doesn’t like what you’re doing, you just have to become strong enough that they can’t begin to object."
     show lucifrid grin
-    #sfx plastic crinkle  
-    "His tone is uncharacteristically serious, but before I can comment on it he switches back to his usual demeanour, making a big show out of grasping his ice cream wrapper and crushing it in his hand like an insect."
+    
+    "His tone is uncharacteristically serious, but before I can comment on it he switches back to his usual demeanour,"
+    play sound "audio/sfx/filmcow/plastic crinkle.ogg"
+    extend " making a big show out of grasping his ice cream wrapper and crushing it in his hand like an insect."
     
     menu:
         "How should I respond to this?"
@@ -1339,7 +1373,8 @@ label postchoice_lucycourtyard:
     
     scene classroom day
     with MVNStainedGlass10
-    #sfx school bell
+    play sound "audio/sfx/otologic/school bell.mp3"
+
     "As much as I’m starting to get used to chasing apparitions and appeasing spider princes, the supernatural unfortunately doesn’t excuse me from exams."
 
     show edelweiss unamused
@@ -1361,8 +1396,11 @@ label postchoice_lucycourtyard:
     show emrys big_smile
 
     em "Thought you’d never ask!"
-    #sfx place lunchbox
-    "Emrys leans down to rummage through his bag, digging out two lunchboxes and placing them on his desk."
+
+    "Emrys leans down to rummage through his bag, digging out two lunchboxes"
+    play sound "audio/sfx/filmcow/place down item.ogg"
+    extend " and placing them on his desk."
+
     "I waste no time in unwrapping mine as he outlines today’s menu."
 
     show emrys small_smile
@@ -1407,7 +1445,7 @@ label postchoice_lucycourtyard:
 
     hide emrys
     hide lucifrid
-    #sfx footsteps
+    play sound "audio/sfx/yamicafe/footsteps.ogg"
 
     "President" "So sorry to interrupt your lunch! I think most of you have seen me around but just in case, I’m Rosiel, your student council president!"
     "President" "As you all know, the cultural festival is coming up again and we’d like to have representatives from each class to help with general affairs rather than their class’ own exhibit."
@@ -1423,9 +1461,11 @@ label postchoice_lucycourtyard:
     extend " As compensation I shall take one lamb skewer."
     e determined "{size=-8}No. You. Won’t.{/size}" 
     "I grip onto my last skewer like it’s a piece of driftwood in a seastorm but Lucifrid doesn’t relent."
+
+    play sound "audio/sfx/filmcow/lunchbox sliding.ogg"
     "My lunchbox slides dangerously close to the edge of the desk and I make a sudden leap to prevent the impending disaster."
-    #sfx slide/clatter/something
-    #sfx footsteps
+    
+    play sound "audio/sfx/yamicafe/footsteps.ogg"
     "A tall upperclassman sidles up beside me and places a hand on my shoulder."
     show lucifrid:
         zoom 1.0
@@ -1540,12 +1580,14 @@ label postchoice_lucycourtyard:
     
     scene student council room
     with MVNStainedGlass10
-    #sfx sliding door
+
+    play sound "audio/sfx/osabisi/sliding door.ogg"
+
     "A steaming cup of tea warms my hands as I sit at the table across from Ilya."
     "It’s my first time in the student council room, and my eyes wander around to various decorations and accolades crowding the shelves."
     show ilya stiff calm
     i "Ahem."
-R     "Ilya clears his throat to draw my attention back to him."
+    "Ilya clears his throat to draw my attention back to him."
     i "You must be wondering why I called you here. Allow me to get straight to the point."
     i "As a member of the student council I concern myself with the well-being of the whole student body."
     i "Have you noticed strange happenings around yourself lately? Has anything been bothering you?"
@@ -1569,7 +1611,9 @@ R     "Ilya clears his throat to draw my attention back to him."
     "But even if he could, how could he help me? This situation is my own responsibility to solve. There’s nothing to learn from letting others clean up my messes."
     show ilya stiff determined
     i "Alright. You leave me no choice but to change my approach."
-    #sfx bells jingling
+
+    play sound "audio/sfx/vita-chi sozaikan/bells gentle.ogg"
+
     "Ilya places a bracelet made of bells on the table. Each bell is engraved with symbols and as I look closer I realise that I recognise most of them."
     "I suppose the look on my face reveals enough. Only someone who knows about the world beyond the boundary would have this on them."
     show ilya calm
@@ -1827,10 +1871,11 @@ label postchoice_ilyameeting:
             "I suppose I best keep up with my own lies and reinforce the boyfriend narrative. Everyone in class suspects me of something anyway..."
             "And Lucifrid already stole my lunch the other day, I shouldn’t reward him for it."
             "Besides, I can’t help but feel I owe Ilya for accepting the boyfriend ploy so gracefully."
+
             scene hallway day
             with MVNStainedGlass10
-            #sfx knock
-            "I knock three times, then let myself in."
+            play sound "audio/sfx/vita-chi sozaikan/door knock 2.ogg"
+            "I knock two times, then let myself in."
 
             scene student council room
             show ilya stiff calm
@@ -1840,7 +1885,8 @@ label postchoice_ilyameeting:
             "Ilya looks up from a small stack of papers, pen paused mid-air."
             i "I wasn't expecting anyone."
             e smile "Hope I'm not interrupting."
-            #sfx putting down pen
+            
+            play sound "audio/sfx/otologic/put down pen.mp3"
             show ilya gentle
             "His stiff posture relaxes slightly. He smiles as though he recently remembered how to do it and his face isn’t used to the expression yet."
             i "Not at all. What can I help you with?"
@@ -1850,8 +1896,11 @@ label postchoice_ilyameeting:
             "I hold the container up a little awkwardly, and he cocks his head, slightly puzzled. Is he waiting for me to say something?"
             e smile "I can’t eat them all by myself!"
             show ilya polite
-            #sfx place down item
-            "He gestures to the seat across from him without saying a word and I sit down, carefully placing the container between us."
+
+            "He gestures to the seat across from him without saying a word and I sit down,"
+            play sound "audio/sfx/filmcow/place down item.ogg"
+            extend " carefully placing the container between us."
+            
             "He opens it, staying silent while examining the skewers. I feel like I’m being graded."
             "After what feels like ages, he takes a small, thoughtful bite."
             i "..."
@@ -1922,7 +1971,7 @@ label postchoice_ilyameeting:
             scene hideout day
             show lucifrid invitingrelaxed grin
             with MVNStainedGlass10
-            #sfx door
+            play sound "audio/sfx/freesound/door creak.mp3"
 
             "Lucifrid is lounging atop his so-called throne."
             "He grins when I enter, folding two of his arms behind his head, while the other two cradle a particularly smug-looking spider."
@@ -2013,7 +2062,9 @@ label postchoice_ilyameeting:
             e angry slightblush "Lucifrid!"
             l grin guardedopen "See? It suits you."
             l evilsmile guardedrelaxed "Now we both match your offering."
-            #sfx skitter
+            
+            play sound "audio/sfx/maou tamashii/skitter.ogg"
+
             "He laughs, and the spiders seem to skitter in time with the rhythm of his laughter."
             "I wipe my cheek, and after a moment’s hesitation rub my sauce-covered finger on his face in retaliation."
             "He laughs, unbothered, and something about the gleam in his eyes makes me nervous."
@@ -2044,7 +2095,8 @@ label postchoice_ilyameeting:
 
     hide emrys
     "With our after school objective in mind, the day crawls by at a snail’s pace."
-    #sfx school bell
+
+    play sound "audio/sfx/otologic/school bell.mp3"
     "By the time the bell sounds, I fear the clock may be burnt onto my retinas like a ghost-image on a CRT screen."
     "But no, the only ghosts here are the ones haunting the beyond; and perhaps now our student body."
     "I lock eyes with Emrys and we make a coordinated dash for the hallway."
@@ -2054,7 +2106,6 @@ label postchoice_ilyameeting:
 
     "The two afflicted students are from different classes, so we have to split up to investigate."
     "The female student is my target. My best bet would be asking her classmates, and she's in class 2D."
-    #sfx chatter japanese
     "I intercept a group of girls spilling out of classroom 2D while chatting merrily."
     e neutral "Excuse me, you’re classmates of Marigold’s, right?"
     "The girls nod in assent."
@@ -2085,7 +2136,7 @@ label postchoice_ilyameeting:
     em "Let’s go."
 
     scene library placeholder
-    #sfx sliding door
+    play sound "audio/sfx/osabisi/sliding door.ogg"
     #music quiets
     #dust particle vfx
     "The library air is heavy with dust, forcing a cough from my throat." 
@@ -2126,8 +2177,10 @@ label postchoice_ilyameeting:
     em "{size=-8}But it’s visible. {i}Touchable{/i}. Are you sure?{/size}"
     "I nod. We both know what that means: it has to be powerful."
     e smile "{size=+10}Well, thanks for helping us out! We’ll be on our way now!{/size}"
-    #sfx cat hiss
+    
+    play sound "audio/sfx/freesound/cat hiss.mp3"
     "I purposefully raise my voice and the cat bares its teeth at me."
+    
     show emrys determined:
         xpos 500
     "Boy" "No, no, Patches, calm down!"
@@ -2138,7 +2191,7 @@ label postchoice_ilyameeting:
 
     scene hallway day
     with MVNStainedGlass10
-    #sfx sliding door
+    play sound "audio/sfx/osabisi/sliding door.ogg"
     show emrys determined casual at enterright(0.7,0.7)
     pause 0.7
     em "What exactly were you trying to do?"
@@ -2190,12 +2243,15 @@ label postchoice_ilyameeting:
 
     scene hideout evening
     with MVNStainedGlass10
-    #sfx door slam
+    
+    play sound "audio/sfx/freesound/door slam.mp3"
+
     e "Lucifrid! Where are you?"
     show emrys confused casual at enterleft(0.3,1.0)
     pause 1.0
     em "It’s a wonder that door is still whole if you treat it this roughly all the time."
-    #sfx skitter
+    
+    play sound "audio/sfx/maou tamashii/skitter.ogg"
     "Spiders blink their manifold scarlet eyes in silence, patiently awaiting their master’s return."
     "Emrys isn't nearly as unsettled by them as I was at first."
     "We look around the hideout for a sign of Lucifrid, to no avail."
@@ -2212,7 +2268,7 @@ label postchoice_ilyameeting:
     show emrys confused:
         xpos 500
     with MoveTransition(0.2)
-    #sfx chair creak
+    play sound "audio/sfx/filmcow/chair squeak 3.ogg"
     "Startled, Emrys jumps up from the chair with a flinch."
     l "Do not casually take my throne, human."
     "He says it dismissively, in a way I haven’t heard him speak to me. As if getting upset with Emrys would be impossibly far beneath him."
@@ -2302,10 +2358,10 @@ label postchoice_ilyameeting:
     e rueful "Thanks, Emrys..."
     show emrys at exitleft
     pause 0.5
-    #sfx door
+    play sound "audio/sfx/freesound/door creak.mp3"
+    
     show lucifrid at center
     with move
-
     "A weight I didn’t know I was carrying lifts from my shoulders now that everything is out in the open, but I don’t know if I did the right thing." 
     "The enmity between these two is palpable."
     "If only they could see they’re on the same side..."
@@ -2361,7 +2417,6 @@ label postchoice_ilyameeting:
     "I place my hands back into his gently and"
     scene black
     with MVNTurbulence04
-    #sfx boundary
     extend " close my eyes."
     "The floor beneath me dissolves and my awareness slips. The only thing I can feel is the soft warmth of Lucifrid’s hands—my anchor."
     scene hallway beyond:
@@ -2382,7 +2437,6 @@ label postchoice_ilyameeting:
     with dissolve
     scene library placeholder
     with MVNTurbulence04
-    #sfx creak
     #bg library beyond
     show lucifrid guardedrelaxed neutral at enterleft(0.3,0.7)
     pause 0.7
@@ -2416,7 +2470,8 @@ label postchoice_ilyameeting:
     l "And that is assuming the best, who says you are not amassing forces to oppose me? Appearing in some beguiling, innocent form before the students to win them to your cause."
     "I bite my thumb, my eyes darting between the two of them."
     "This negotiation doesn’t seem to be going the way we hoped. Is there anything I can do to help?"
-    #sfx cat hiss
+    
+    play sound "audio/sfx/freesound/cat hiss.mp3"
     "The catgirl hisses in my direction."
     "Cat" "First I’ll remove this human distraction, then I can be sure you are in your right mind."
     "Her form flickers and shifts as she grows into a monstrous, many-headed feline hydra. Her beastly proportions rip her out of Lucifrid’s web with ease."
@@ -2424,7 +2479,7 @@ label postchoice_ilyameeting:
     show lucifrid displeased at right
     with MoveTransition(0.2)
     "Both of us dash to the side, ducking behind a bookshelf just as"
-    #sfx claw swipe/table breaking
+    play sound "audio/sfx/osabisi/crash.ogg"
     show battle effect 3b
     with vpunch
     $ renpy.pause(0.5, hard=True)
@@ -2440,21 +2495,23 @@ label postchoice_ilyameeting:
 
     hide lucifrid
     #CG tome
+    play sound "audio/sfx/otologic/pages turning.mp3"
     "I focus my thoughts on a spirit we subdued recently and the tome flutters open to the page where its name is inlaid."
     "I place my hand over the thick ink and chant the invocation."
     e2 "Heed the voice that calls, honour the ties that bind."
-    #sfx bite
     "The librarian doesn’t wait for my summoning ritual and bites at me with one of her heads."
 
     show lucifrid invitinghips displeased at midright
     with move
     l "Charge!"
-    #sfx skitter
-    "Luckily Lucifrid has less need for preparation. His spiders rush in without hesitation at his command, creating a veritable wall between me and my feline assailant."
+    
+    "Luckily Lucifrid has less need for preparation."
+    play sound "audio/sfx/maou tamashii/skitter.ogg"
+    extend " His spiders rush in without hesitation at his command, creating a veritable wall between me and my feline assailant."
     "In the meantime, the fire spirit I called for rises up from the tome and an idea sprouts in my mind."
     "We’re on the defensive now, and we can’t compete with her brute strength. We’re going to need trickery of some kind."
     e determined "Go! Raze the shelves!"
-    #sfx woosh
+
     show fire slash
     $ renpy.pause(0.5, hard=True)
     "The fire spirit flies off on burning wings at my command, setting aflame the defenseless books at the slightest touch."
@@ -2463,7 +2520,8 @@ label postchoice_ilyameeting:
     e laugh "I hope you didn’t need those!"
     show lucifrid guardedrelaxed grin at midright
     l "I was never much of a reader anyway."
-    #sfx cat growl
+    
+    play sound "audio/sfx/taira-komori/big cat growl.mp3"
     "The cat-hydra seems to grow even angrier, growling, hissing and charging after the fire spirit."
     "The distraction affords Lucifrid the time to spin a dense web around us as a protective barrier, his underlings working industriously to fortify its gaps."
     show lucifrid guardedopen neutral at midright
@@ -2479,7 +2537,8 @@ label postchoice_ilyameeting:
     show lucifrid guardedhips neutral at right
     with move
     "Heaving a small sigh, I concede to Lucifrid's plan and move behind the web."
-    #sfx fire crackling
+    
+    play sound "audio/sfx/taira-komori/fire.mp3"
     #smoke particle vfx
     "With the librarian and fire spirit embroiled in combat, the library is well and truly ablaze now. I grow a little worried for our spidery friends."
     "My eyes search the room for Yang and his battalion." 
@@ -2507,7 +2566,7 @@ label postchoice_ilyameeting:
     scene black
     with fade
     extend " half in obedience and half in the unwitting, childlike belief that a threat disappears when you can’t see it."
-    #sfx big cat footsteps
+
     "I can still hear the cat-hydra’s gallop as the floor disappears beneath me and that familiar queasy feeling fills my stomach." 
     "He’s taking us back across the boundary!"
     "Is that even safe? What’s going to happen to the librarian?"
@@ -2532,10 +2591,12 @@ label postchoice_ilyameeting:
     #cg tome
     hide lucifrid
     "Adrenaline rushing through my veins, I muster all my focus to summon the tome."
-    #sfx skitter
+    
+    play sound "audio/sfx/maou tamashii/skitter.ogg"
     "Arachnids swarm our assailant, and she shrieks and shakes to drive them off."
     "Possessing none of his usual controlled nonchalance, Lucifrid jumps atop the feline monstrosity and bites down savagely on one of her necks."
-    #sfx cat wail
+    
+    play sound "audio/sfx/taira-komori/big cat growl.mp3"
     "The spiders follow his lead in one coordinated biting motion and she wails in agony."
     l "Now!"
     e2 "Speak thy name and thine allegiance be manifest!"
@@ -2543,7 +2604,8 @@ label postchoice_ilyameeting:
     "I bash one of her heads with the tome and to my utter relief, ink starts pulling from her form onto the page."
     "As her name is absorbed, she is transfigured back into a harmless house cat."
     "Her paws land softly on the carpet, and she quickly scampers off."
-    #sfx skitter
+    
+    play sound "audio/sfx/maou tamashii/skitter.ogg"
     "Our army of familiars disbands and the spiders disappear to their usual hiding places."
     "I collapse to the floor, tome clutched to my chest, breathing heavy."
     show lucifrid guardedclenched worry at enterright
@@ -2565,7 +2627,10 @@ label postchoice_ilyameeting:
     "Lucifrid walks over to the wounded students and makes unfamiliar motions with his four arms."
     e awkward "...?"
     l "I can’t heal them, but they’ll forget what happened. No one will know we were here."
-    #sfx footsteps
+
+    play sound "audio/sfx/yamicafe/footsteps.ogg"
+    pause 0.5
+
     "I freeze at the sound of someone approaching."
     show lucifrid invitinghips at midleft
     l "Come, let’s get out of here. Our job is done."
@@ -2577,7 +2642,8 @@ label postchoice_ilyameeting:
     pause 1.0
 
     scene library placeholder
-    #sfx footsteps
+    play sound "audio/sfx/yamicafe/footsteps.ogg"
+    pause 0.5
     show ilya stiff cold
     i "..."
     i "...it’s one thing to make a mess of things, but to not even clean it up..."
@@ -2600,9 +2666,11 @@ label postchoice_ilyameeting:
     "Phila" "I think that was entirely your own fault..."
     "Liese" "No way! The conductor should’ve understood my plight! Right, Mari?"
     "Marigold" "W-well, the timetable would get all messed up then. He did the best he could, I think."
-    #sliding door sfx
+
+    play sound "audio/sfx/osabisi/sliding door.ogg"
     scene classroom day
     with MVNStainedGlass10
+
     "Liese" "Oh! Edelweiss!"
     "Phila" "Good morning!"
     e smile "Morning! I thought I’d come check in!"
@@ -2613,7 +2681,8 @@ label postchoice_ilyameeting:
     "Marigold" "I still don’t know... My voice came back as suddenly as it disappeared."
     e smug "I’m sure it’s all because of my efforts, {i}hehe!{/i}"
     "Liese" "But... what did you do...?"
-    #sliding door sfx
+
+    play sound "audio/sfx/osabisi/sliding door.ogg"
     show ilya stiff calm at enterleft
     pause 1.3
     e awkward "..."
@@ -2636,8 +2705,8 @@ label postchoice_ilyameeting:
     scene hallway day
     with MVNStainedGlass10
     show ilya stiff calm at enterright(0.7,0.7)
+    play sound "audio/sfx/yamicafe/footsteps.ogg"
     pause 0.7
-    #sfx footsteps
     e pout "Uh, yeah, I don’t actually need to feed the fish."
     show ilya gentle at midright
     i "I know. Your classroom doesn’t have fish, Edelweiss. You have a rabbit."
@@ -2646,7 +2715,7 @@ label postchoice_ilyameeting:
     "Privacy? I guess president Rosiel must be busy with cultural festival preparations."
     "The way he phrases it doesn’t make it seem like a suggestion. Resigning myself to my fate, I follow him through the halls."
     
-    #sfx sliding door
+    play sound "audio/sfx/osabisi/sliding door.ogg"
     scene student council room
     with MVNStainedGlass10
     show ilya stiff calm at enterleft
@@ -2661,7 +2730,9 @@ label postchoice_ilyameeting:
     e laugh "We all know people usually announce their poisoning attempts beforehand."
     i "I’ll take that as a yes then."
     "I’m slowly learning that talking to Ilya is like one of those video games where you’re presented with a choice but the question simply repeats until you choose the correct answer."
-    #cup placed on table sfx
+    
+    play sound "audio/sfx/filmcow/place down cup.ogg"
+    
     show ilya at center
     with move
     i "I visited the hospital yesterday. I thought you might want to know that Johan and Caitlin are doing alright considering the circumstances."
@@ -2832,7 +2903,7 @@ label postchoice_ilyajustify:
             e neutral "Well, there’s nothing more to talk about here."
             show ilya calm polite
             i "I’ll see you out."
-            #sliding door sfx
+            play sound "audio/sfx/osabisi/sliding door.ogg"
 
 
 label postchoice_ilyafallout:
@@ -2890,8 +2961,9 @@ label postchoice_ilyafallout:
     #cg broom closet
     scene black
     with fade
-    #sfx door locking
-    "The prince of spiders stumbles in after me and I turn the lock on the door."
+    "The prince of spiders stumbles in after me and I"
+    play sound "audio/sfx/taira-komori/door locking.mp3"
+    extend " turn the lock on the door."
     "Then I notice how very small this room is.{w} And how little space there is between us."
     #lucifrid angry
     l "Will you explain to me what exactly you’re trying to do?!"
@@ -2999,9 +3071,10 @@ label postchoice_broomcloset:
 
     scene hallway day
     with MVNStainedGlass10
-    #sfx crash
-    #sfx panting
-    #sfx running
+    play sound "audio/sfx/osabisi/crash.ogg"
+    pause 0.5
+    play sound "audio/sfx/yamicafe/running.mp3"
+    queue sound "audio/sfx/vita-chi sozaikan/panting.ogg"
     "I struggle to catch my breath while running down the third floor hallway."
     "Something is after me, but I’m not about to stick around to find out what it is." 
     "Where’s Lucifrid when you need him? Why is an apparition haunting the light side so aggressively?"
@@ -3024,7 +3097,9 @@ label postchoice_broomcloset:
     "Should I try to bargain with it? Well, it’s that or running. Without the Yang battalion or Lucifrid’s tome I’m not about to beat it into submission." 
     "Lucifrid will sense something amiss with me by virtue of our bond, I just need to bide my time until he gets here."
     e determined "Don’t come any closer!"
-    #sfx bells
+    
+    play sound "audio/sfx/vita-chi sozaikan/bells gentle.ogg"
+
     "I hold out my belled staff, a minor family talisman I managed to persuade father to let me carry with me, and the horned apparition stops in its tracks."
     "It evidently looks the part of a spirit-repelling artifact, but the staff’s true power is dubious at best."
     "But this isn’t the first time I’m posturing in front of apparitions, and something tells me it won’t be the last."
@@ -3036,7 +3111,9 @@ label postchoice_broomcloset:
     "It’s not enough to bear the guilt on one side of this conflict, huh? Seems I’ve earned myself universal scorn."
     e unamused "Ah yes, spilling blood for ink. The height of justice."
     e angry "Is that library worth putting your life on the line for?"
-    #sfx bells
+    
+    play sound "audio/sfx/taira-komori/bells intense.mp3"
+
     "I shake my staff menacingly once more."
     "???" "Bwahahaha."
     "The creature laughs derisively."
@@ -3060,7 +3137,9 @@ label postchoice_broomcloset:
     i "Edelweiss! Don’t stop chanting!"
     "Channelling my focus, I repeat the words once more."
     e determined "Light unto light, dark unto dark. Stay thy hand, walk thy path."
-    #sfx bells
+    
+    play sound "audio/sfx/taira-komori/bells intense.mp3"
+    
     "Ilya throws a number of paper talismans at the apparition then adds his bracelet’s jingling to my belled staff’s."
     "Our voices ring in unison, until his phrase changes."
     show ilya stiff at midright
@@ -3567,7 +3646,8 @@ label endings:
     "No response."
     e "Emrys?!"
     "I call out louder, but the sound seems to get swallowed in the darkness of a room that has no perceivable end."
-    #sfx door slam
+    
+    play sound "audio/sfx/freesound/door slam.mp3"
     "Did Emrys go in there? Is he lost in the beyond now?" 
     "No, calm down. Even if he did go in, it’s not too late."
     "I’ll go back to the classroom one more time, to see if he simply returned some other way."
@@ -3814,7 +3894,8 @@ label endings:
             "I collapse to the ground, filled with sadness, yet no tears find their way out."
             
             scene classroom evening
-            #school bell sfx
+            with MVNStainedGlass10
+            play sound "audio/sfx/otologic/school bell.mp3"
             em "Are you coming?"
             em "That essay isn’t going to write itself."
             e "Yeah, yeah, I didn’t forget."
@@ -3827,16 +3908,18 @@ label endings:
             "Everything is the same."
             "I take a deep breath and heave myself up from my chair."
 
-            scene hallway
+            scene hallway day
+            with MVNStainedGlass10
             "Leaving the classroom, I make my way towards the staircase then stop in front of it. Something inside me hesitates."
             "I still look around for apparitions as if by habit. Only now, there’s no way to tell if they are there."
             "I thought losing my diviner abilities would feel like losing a limb, but it’s more like setting down a heavy bag."
             "I was carrying it for so long, I forgot how it felt to be without it."
             "As I walk on, the steps creak beneath my loafers. All the way up to the fourth floor."
 
-            #sfx creak
             scene classroom evening
-            "The door creaks terribly. I guess no one’s been up here."
+            play sound "audio/sfx/freesound/door creak.mp3"
+
+            "The door makes a terrible noise. I guess no one’s been up here."
             "My chest feels heavy as I look around the room. Everything is exactly as we left it. Why wouldn’t it be?"
             "..."
             "Is it naive to hope for some trace of him here?"
@@ -3844,7 +3927,7 @@ label endings:
             #black screen
             "I close my eyes and rest my head on my knees."
             e "Lucifrid... Are you there?"
-            #sfx chair squeeking
+            play sound "audio/sfx/filmcow/chair squeak 3.ogg"
             #cg with semi-transparent lucifrid
             e "W-what was that?"
             "I look over at the chair he always sat in, but he’s not there. Of course he’s not."
@@ -3882,7 +3965,7 @@ label endings:
             "With shaky steps, I make my way towards the abandoned fourth floor classroom."
 
             #transition hallway
-            #sliding door sfx
+            #door sfx
             #transition abandoned classroom 
 
             e "Lucifrid?"
@@ -3963,7 +4046,9 @@ label endings:
             "Ilya fixes his eyes on us."
             i "And I doubt they’re about to give in willingly."
             "He reaches for his sword, no doubt one of his family’s relics."
-            #sword unsheathing sfx
+
+            play sound "audio/sfx/yamicafe/sword unsheathing.mp3"
+
             e "...!"
             e "Stop this! We have the same goal! Lucifrid has a plan to undo the convergence, isn’t that what you want?"
             i "Hah. You want me to trust him? You’re blind, Edelweiss. You’ve been completely taken in by him."
@@ -4049,12 +4134,13 @@ label endings:
             l "Neither life nor death shall come between us."
             #screen black
             "I close my eyes."
-            #sfx slash/crush idk
-            #sfx gasp inhale
-        
+            play sound "audio/sfx/freesound/stab.ogg"
+            queue sound "audio/sfx/freesound/gasp.ogg"
 
-            #sfx school bells
+            #longer transition
             scene hallway
+            with MVNStainedGlass10
+            play sound "audio/sfx/otologic/school bell.mp3"
             #silhouette sprites displayed
             "As always, I watch the students filter out of class 2C at the end of the day."
             #emrys appears
@@ -4110,8 +4196,8 @@ label endings:
             scene hallway
 
             "I move with hurried steps towards the student council room."
-            #sfx knock
-            #sfx sliding door
+            play sound "audio/sfx/vita-chi sozaikan/door knock 2.ogg"
+            play sound "audio/sfx/osabisi/sliding door.ogg"
             #bg student council room
             #ilya taken aback
             i "Edelweiss."
@@ -4127,7 +4213,9 @@ label endings:
             "My anxiety conjures a sharp-tongued response, but it doesn’t make it past my lips. Perhaps he’s right."
             "I sit down on the couch. I can’t settle." 
             "I play with my shirt sleeve, unbuttoning then buttoning the cuff. Then unbuttoning it again."
-            #sfx place cup
+            
+            play sound "audio/sfx/filmcow/place down cup.ogg"
+
             "He places a cup of tea on the table and sits down on the opposite end of the couch."
             i "I hope this will calm you down."
             i "Can you tell me what’s going on?"
@@ -4195,7 +4283,8 @@ label endings:
             "I examine Ilya. He has a sheathed sword strapped to his back, and is holding a veritable mountain of paper talismans."
             e "Can I help with anything?"
             i "Help me affix these to the doorframe."
-            "As we make our preparations, my mind wanders. I guess I won’t be seeing Yang and the others again."
+            "As we make our preparations, my mind wanders."
+            "I guess I won’t be seeing Yang and the others again..."
             "It’s alright. It’ll be alright. I can leave it to Ilya."
 
             scene hideout
@@ -4204,6 +4293,9 @@ label endings:
             "Classes ended less than half an hour ago. It’s around the time Lucifrid and I usually meet, and as expected, he appears when he senses me."
             l "Now what have we here, are the two of you ganging up on me?"
             "He grins, but there’s no amusement in his voice."
+            
+            play sound "audio/sfx/yamicafe/sword unsheathing.mp3"
+
             "Ilya unsheathes his sword and I can’t bring myself to say anything."
             l "This is a joke, right? You led him here for me to defeat, Edelweiss? Would’ve appreciated the heads-up."
             i "You’re wrong. {i}I{/i} will be the one to defeat {i}you{/i} and restore order to this school."
@@ -4276,8 +4368,7 @@ label endings:
             "His heart beats violently."
             
             scene classroom evening
-            #sfx school bell
-            #sfx voices
+            play sound "audio/sfx/otologic/school bell.mp3"
             "..."
             em "Earth to Edelweiss! Class is over."
             e "...Hm?"
@@ -4322,7 +4413,7 @@ label endings:
             "A spider."
             "Before I realise it, I’m moving towards it, reaching out my hand."
             "My fingers are inches away when—"
-            #sfx boot crushing insect
+            play sound "audio/sfx/freesound/squelch.ogg"
             "Ilya must not have seen it. His boot comes down with a squelch."
             "He squeezes my hand, and I turn back towards him."
             i "I love you too, Edelweiss."
@@ -4343,23 +4434,29 @@ label endings:
             
             "Once again I stand before the storage room door, shaking. My hand trembles as it reaches out."
             "Stop it, Edelweiss. Stop it! Stop letting your irrational nerves have such power over you!"
-            #sfx sliding door loud
-            #sfx footsteps
+            
+            play sound "audio/sfx/osabisi/sliding door.ogg"
+            queue sound "audio/sfx/yamicafe/footsteps.ogg"
             "It’s fine. I’m a diviner. I have my staff and my wits, the beyond is no match for me."
             "Mother, please, watch over me..."
+            
             #bg hallway beyond
             "There is no stomach churning or vertigo to mark the crossing this time, but I can’t say I feel at ease. The boundary has been reduced from a reality to a word."
-            #sfx bells
+            
+            play sound "audio/sfx/vita-chi sozaikan/bells gentle.ogg"
             "As I walk on, I hold my belled staff out in front of me; its chime both a balm to my nerves and a signal to Emrys— I am here."
+            
             #bg hallway beyond
             "I hear laboured breathing coming from one of the classrooms up ahead. Could it be...?"
             "I walk over slowly and quietly, keeping my staff still, and peer inside."
             "Just an apparition. Best move on before it spots me."
-            #sfx bells
+            
+            play sound "audio/sfx/vita-chi sozaikan/bells gentle.ogg"
             "So I keep walking, and walking. My heart sinks with each step."
             "I can’t recall the last time I felt so alone."
+            
             #bg hallway beyond
-            #sfx crash
+            play sound "audio/sfx/osabisi/crash.ogg"
             "...What’s that?!"
             "I turn around with a start."
             #emrys wounded cg?
@@ -4395,7 +4492,8 @@ label endings:
             "He laughs heartily, then grasps his arm in pain."
             "I can’t help but laugh a little too."
             em "Well, there’s no point staying here."
-            #sfx footsteps
+
+            play sound "audio/sfx/yamicafe/footsteps.ogg"
             #bg hallway beyond
             "Reunited, we turn back the way I came, hoping we can exit the way we came."
             "This is the part where my plan falters."
@@ -4460,8 +4558,7 @@ label endings:
             "She wraps her arms around me. The warmth feels deeply familiar."
             "Mom" "Don’t you worry. You’ll never have to feel alone again."
             "Mom" "We can stay together..."
-            #mom’s mask cracks
-            #sfx glass shatter
+            play sound "audio/sfx/taira-komori/glass shatter.ogg"
             "Mom" "Forever."
             "A terrible, dark energy spills out from her at that moment."
             e "H-huh?"
