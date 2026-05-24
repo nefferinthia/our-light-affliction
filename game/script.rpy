@@ -56,6 +56,8 @@ label start:
 
     scene black
 
+    #some sounds arent playing so fix the audio encoding
+
     n "To those of us who can see {i}them{/i}...{w} there are two paths available."
     n "One is to work towards peace in equilibrium with the realm beyond as diviners,"
     n "the other to stand firm in protecting humans by eradicating dangerous apparitions as exorcists."
@@ -165,7 +167,7 @@ label start:
     scene hallway day
     with MVNStainedGlass10
 
-    play sound "audio/sfx/freesound/floor creak.mp3"
+    play sound "audio/sfx/freesound/floor creak.ogg"
     "As we climb the staircase, the lights grow dimmer. Wooden floorboards creak underneath my loafers and the dust in the air makes my throat go dry."
     "Only a few steps later I feel an uncomfortable shiver creep across my back."
     "Did I imagine it?"
@@ -185,11 +187,11 @@ label start:
     "Wait, where's Emrys? My eyes trail to where he was standing, but not a trace of him remains."
     "Oh, this is bad. He came to keep an eye on me and now I’m the one who put him in danger!"
     
-    play sound "audio/sfx/freesound/door slam.mp3"
+    play sound "audio/sfx/freesound/door slam.ogg"
     "?!"
     "What was that sound? I rush to where it seemed to be coming from."
     
-    play sound "audio/sfx/freesound/door creak.mp3"
+    play sound "audio/sfx/freesound/door creak.ogg"
     "A classroom door slings slightly ajar with a creak, and hundreds of shining, scarlet eyes peer at me ominously from the other side."
     "I swallow hard. Okay, calm down, you've got this. For Emrys."
 
@@ -282,7 +284,7 @@ label start:
     "He walks up to me. With every step forward he takes, I take one step backward, until my back is against the wall."
 
     show lucifrid evilsmile guardedopen at halfcloseup
-
+    stop sound
     l "So, will you offer yourself in exchange for him?"
     l "I’d be happy to let him go if I receive something more... valuable."    
     "Ugh, this was his plan all along, wasn’t it? I walked right into his trap."
@@ -923,10 +925,11 @@ label start:
     l "Stay back, Edelweiss. These threads are sharper than they look."
     "I shiver as I jolt back. The room is so cold that even the light glinting menacingly off Lucifrid’s web seems like it could freeze."
     "As he clenches a fist, the web spun around the teacher’s desk coils and cinches, slicing through solid wood with ease."
-
+    
     play sound "audio/sfx/maou tamashii/ghost.ogg"
-    show lucifrid smug
+    pause 0.5
 
+    show lucifrid smug
     l "Heh, I think someone didn’t like that."
 
     play sound "audio/sfx/kurage-kosho/wind.mp3"
@@ -939,10 +942,10 @@ label start:
 
     l "Terribly afraid I can’t do that."
     "Lucifrid’s familiars have begun clambering up the creature’s robes."
-    
-    play sound "audio/sfx/taira-komori/icicle.mp3"
 
-    "Right as I start to feel a tinge of pity for it, it dashes forward, scattering the arachnid battalion on its vestments and shooting icicles in our direction."
+    "Right as I start to feel a tinge of pity for it, it dashes forward,"
+    play sound "audio/sfx/taira-komori/icicle.mp3"
+    extend " scattering the arachnid battalion on its vestments and shooting icicles in our direction."
     "Ghost" "Stay away..."
     "Lucifrid avoids the attack nimbly, stopping one of the projectiles just short of hitting me in the process."
     "No time to feel sorry now."
@@ -958,6 +961,8 @@ label start:
     l "Hehehe, haha! Is that all you've got?"
     "Then it rushes forward just slightly too desperately and carelessly gets tangled in the spider prince’s web. It's trapped now."
     "Lucifrid responds by toyingly flexing his fingers, the web cutting and slicing with his every move."
+
+    play sound "audio/sfx/maou tamashii/ghost.ogg"
     "Ghost" "Uuuh..."
     "Isn’t he being too cruel? Our opponent is defenseless!"
 
@@ -974,7 +979,6 @@ label start:
     "Instead of waiting for a signal, I decide to cut his playtime short and run ahead with the tome in tow."
     e "State thy name and thine allegiance be manifest!"
 
-    play sound "audio/sfx/otologic/book smack.mp3"
     "I smash the creature with all the strength I can muster. I don't even hear the syllables it spits out over the sound of the blood rushing to my head."
     "Ink flows across the tome’s opened pages and the creature slinks away. Immediately the air calms and warmth returns to the room."
     "The breath I didn't know I was holding in slips out with a sigh."
@@ -1112,7 +1116,7 @@ label start:
     with fade
     scene hideout day
     with MVNStainedGlass10
-    play sound "audio/sfx/freesound/door creak.mp3"
+    play sound "audio/sfx/freesound/door creak.ogg"
     
     "Hmm?"
     "Now this is unusual. It seems like I’m the first one to arrive at our hideout."
@@ -1445,7 +1449,6 @@ label postchoice_lucycourtyard:
 
     hide emrys
     hide lucifrid
-    play sound "audio/sfx/yamicafe/footsteps.ogg"
 
     "President" "So sorry to interrupt your lunch! I think most of you have seen me around but just in case, I’m Rosiel, your student council president!"
     "President" "As you all know, the cultural festival is coming up again and we’d like to have representatives from each class to help with general affairs rather than their class’ own exhibit."
@@ -1471,6 +1474,7 @@ label postchoice_lucycourtyard:
         zoom 1.0
         yalign 1.0  
     show ilya calm
+    stop sound
     i "Is everything alright?"
     show lucifrid grin
     l "Ehehe!"
@@ -1578,10 +1582,9 @@ label postchoice_lucycourtyard:
     "I nod at him in turn, blushing involuntarily. Alright, that’s enough. Stop daydreaming."
     i "Why don’t you come inside? We’re the only ones here this afternoon."
     
+    play sound "audio/sfx/osabisi/sliding door.ogg"
     scene student council room
     with MVNStainedGlass10
-
-    play sound "audio/sfx/osabisi/sliding door.ogg"
 
     "A steaming cup of tea warms my hands as I sit at the table across from Ilya."
     "It’s my first time in the student council room, and my eyes wander around to various decorations and accolades crowding the shelves."
@@ -1756,7 +1759,7 @@ label postchoice_ilyameeting:
 
     scene hideout day
     with MVNStainedGlass10
-    #open door sfx
+    play sound "audio/sfx/freesound/door creak.ogg"
     e determined "Lucifrid! I have... something to... report!"
 
     show lucifrid thinkingrelaxed neutral
@@ -1971,7 +1974,7 @@ label postchoice_ilyameeting:
             scene hideout day
             show lucifrid invitingrelaxed grin
             with MVNStainedGlass10
-            play sound "audio/sfx/freesound/door creak.mp3"
+            play sound "audio/sfx/freesound/door creak.ogg"
 
             "Lucifrid is lounging atop his so-called throne."
             "He grins when I enter, folding two of his arms behind his head, while the other two cradle a particularly smug-looking spider."
@@ -2178,7 +2181,7 @@ label postchoice_ilyameeting:
     "I nod. We both know what that means: it has to be powerful."
     e smile "{size=+10}Well, thanks for helping us out! We’ll be on our way now!{/size}"
     
-    play sound "audio/sfx/freesound/cat hiss.mp3"
+    play sound "audio/sfx/freesound/cat hiss.ogg"
     "I purposefully raise my voice and the cat bares its teeth at me."
     
     show emrys determined:
@@ -2244,7 +2247,7 @@ label postchoice_ilyameeting:
     scene hideout evening
     with MVNStainedGlass10
     
-    play sound "audio/sfx/freesound/door slam.mp3"
+    play sound "audio/sfx/freesound/door slam.ogg"
 
     e "Lucifrid! Where are you?"
     show emrys confused casual at enterleft(0.3,1.0)
@@ -2358,7 +2361,7 @@ label postchoice_ilyameeting:
     e rueful "Thanks, Emrys..."
     show emrys at exitleft
     pause 0.5
-    play sound "audio/sfx/freesound/door creak.mp3"
+    play sound "audio/sfx/freesound/door creak.ogg"
     
     show lucifrid at center
     with move
@@ -2471,7 +2474,7 @@ label postchoice_ilyameeting:
     "I bite my thumb, my eyes darting between the two of them."
     "This negotiation doesn’t seem to be going the way we hoped. Is there anything I can do to help?"
     
-    play sound "audio/sfx/freesound/cat hiss.mp3"
+    play sound "audio/sfx/freesound/cat hiss.ogg"
     "The catgirl hisses in my direction."
     "Cat" "First I’ll remove this human distraction, then I can be sure you are in your right mind."
     "Her form flickers and shifts as she grows into a monstrous, many-headed feline hydra. Her beastly proportions rip her out of Lucifrid’s web with ease."
@@ -3148,7 +3151,7 @@ label postchoice_broomcloset:
     "???" "Foul exorcist! This was not your fight to meddle in!"
     "???" "Anathema on you and your house!"
     #flame/smoke vfx
-    #fire crackling sfx
+    play sound "audio/sfx/taira-komori/fire.mp3"
     "The masked figure bursts into flame, disintegrating piece by piece."
     "I can’t help but avert my eyes."
     "???" "More of my kin will come for you, Edelweiss!"
@@ -3647,7 +3650,7 @@ label endings:
     e "Emrys?!"
     "I call out louder, but the sound seems to get swallowed in the darkness of a room that has no perceivable end."
     
-    play sound "audio/sfx/freesound/door slam.mp3"
+    play sound "audio/sfx/freesound/door slam.ogg"
     "Did Emrys go in there? Is he lost in the beyond now?" 
     "No, calm down. Even if he did go in, it’s not too late."
     "I’ll go back to the classroom one more time, to see if he simply returned some other way."
@@ -3917,7 +3920,7 @@ label endings:
             "As I walk on, the steps creak beneath my loafers. All the way up to the fourth floor."
 
             scene classroom evening
-            play sound "audio/sfx/freesound/door creak.mp3"
+            play sound "audio/sfx/freesound/door creak.ogg"
 
             "The door makes a terrible noise. I guess no one’s been up here."
             "My chest feels heavy as I look around the room. Everything is exactly as we left it. Why wouldn’t it be?"
@@ -3965,7 +3968,7 @@ label endings:
             "With shaky steps, I make my way towards the abandoned fourth floor classroom."
 
             #transition hallway
-            #door sfx
+            play sound "audio/sfx/freesound/door creak.ogg"
             #transition abandoned classroom 
 
             e "Lucifrid?"
