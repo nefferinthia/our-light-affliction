@@ -32,9 +32,6 @@ init python:
         if newChannel is not None:
             renpy.music.play(music, channel=newChannel, loop=None,fadein=fadeTime, relative_volume=musicVolume)
 
-#HOLD UP YOU CAN CHANGE EXPRESSIONS MID-LINE
-#lines longer than 1 laptop screen should be split in 2
-
 label start:
     
     default positive_arc = 0
@@ -72,9 +69,7 @@ label start:
     "Out of the corner of my eye I see something crawling. It's {i}them{/i} again."
     "I don’t know what happened to this school. We’ve been having a serious spider plague."
 
-    show edelweiss determined
-
-    e "Look, they're back! The spiders! There’s a whole bunch of them right there in the corner."
+    e determined "Look, they're back! The spiders! There’s a whole bunch of them right there in the corner."
     "Emrys looks to where I point but merely shoots me a confused glance."
 
     show emrys casual confused

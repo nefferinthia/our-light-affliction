@@ -48,7 +48,19 @@ transform enterright(end_x=0.5, duration=1.3):
     yalign 1.0
     easein duration xcenter end_x
 
-layeredimage lucifrid: 
+define evening_matrix = TintMatrix(Color(rgb=(0.9804, 0.9176, 0.8118)))*SaturationMatrix(0.95)
+image lucifrid evening = LayeredImageProxy("lucifrid", Transform(matrixcolor=evening_matrix))
+image emrys evening = LayeredImageProxy("emrys", Transform(matrixcolor=evening_matrix))
+image ilya evening = LayeredImageProxy("ilya", Transform(matrixcolor=evening_matrix))
+image side edelweiss evening = LayeredImageProxy("side edelweiss", Transform(matrixcolor=evening_matrix))
+
+define beyond_matrix = TintMatrix(Color(rgb=(0.9608, 0.9059, 1.0)))*SaturationMatrix(0.95)
+image lucifrid beyond = LayeredImageProxy("lucifrid", Transform(matrixcolor=beyond_matrix))
+image emrys beyond = LayeredImageProxy("emrys", Transform(matrixcolor=beyond_matrix))
+image ilya beyond = LayeredImageProxy("ilya", Transform(matrixcolor=beyond_matrix))
+image side edelweiss beyond = LayeredImageProxy("side edelweiss", Transform(matrixcolor=beyond_matrix))
+
+layeredimage lucifrid:
     zoom 0.5
 
     always "lucifrid_base"
