@@ -16,15 +16,16 @@ screen main_menu():
     tag menu
 
     add "main_menu_background"
+    style_prefix "mm"
 
     vbox:
-        xpos 60
+        xpos 120
         yalign 0.5
-        spacing 6
+        spacing 25
 
-        textbutton _("Start") action Start()
+        textbutton _("New game") action Start()
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Continue") action ShowMenu("load")
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
@@ -41,3 +42,10 @@ screen main_menu():
             ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
+style mm_button_text:
+    size 45
+    font "fonts/Cheboygan.ttf"
+    idle_color '#BBAF9D'
+    hover_color '#F12F34'
+    selected_color '#96211D'
+    insensitive_color '#8888887f'

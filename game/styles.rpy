@@ -25,7 +25,7 @@ define config.check_conflicting_properties = True
 # The text font for dialogue and choice menus
 define gui.text_font = gui.preference("font", "AveriaSerif-Light.ttf")
 # The text font for buttons
-define gui.interface_text_font = gui.preference("interface_font", "Cheboygan.ttf")
+define gui.interface_text_font = gui.preference("interface_font", "AveriaSerif-Regular.ttf")
 # The default size of in-game text
 define gui.text_size = gui.preference("size", 38)
 # The font for character names
@@ -33,7 +33,7 @@ define gui.name_text_font = gui.preference("name_font", "AveriaSerif-Regular.ttf
 # The size for character names
 define gui.name_text_size = gui.preference("name_size", 42)
 
-# Size of the namebox in pixels
+# Size of the namebox in pixels 
 define gui.namebox_size = 175
 
 ## Localization ################################################################
@@ -65,35 +65,38 @@ style input:
 
 style hyperlink_text:
     hover_underline True
-    color "#f93c3e"
+    color "#F12F34"
 
 style gui_text:
-    color '#3e1111'
+    color '#96211D'
     size gui.text_size
     font gui.interface_text_font
 
 style button:
     xysize (None, None)
     padding (0, 0)
+    hover_sound "audio/ui/button hover.mp3"
+    activate_sound "audio/ui/button click.mp3"
 
 style button_text:
     is gui_text
     yalign 0.5
     xalign 0.0
     ## The color used for a text button when it is neither selected nor hovered.
-    idle_color '#683b3b'
+    idle_color '#BBAF9D'
     ## The color that is used for buttons and bars that are hovered.
-    hover_color '#ff8335'
+    hover_color '#F12F34'
     ## The color used for a text button when it is selected but not focused. A
     ## button is selected if it is the current screen or preference value.
-    selected_color '#420101'
+    selected_color '#96211D'
     ## The color used for a text button when it cannot be selected.
     insensitive_color '#8888887f'
+
 
 style label_text:
     is gui_text
     size 36
-    color '#f93c3e'
+    color '#96211D'
 
 
 style bar:

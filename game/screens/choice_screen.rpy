@@ -55,11 +55,12 @@ style choice3:
     padding (30, 30, 220, 30)
 
 style choice_button_text:
-    yalign 0.5
-
-style choice_button_text:
     is default # This means it doesn't use the usual button text styling
     xalign 0.5 yalign 0.5
     idle_color "#ccc"
     hover_color "#fff"
     insensitive_color "#444"
+
+style choice_button:
+    hover_sound None
+    activate_sound None

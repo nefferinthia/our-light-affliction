@@ -60,6 +60,7 @@ style confirm_prompt:
 style confirm_prompt_text:
     textalign 0.5
     align (0.5, 0.5)
+    color "#43292A"
     layout "subtitle"
 
 style confirm_hbox:
@@ -71,6 +72,9 @@ style confirm_button:
 
 style confirm_button_text:
     textalign 0.5
+    color "#43292A"
+    hover_color "#779B75"
+    font gui.name_text_font
 
 
 ## Skip indicator screen #######################################################

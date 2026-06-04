@@ -48,6 +48,13 @@ transform enterright(end_x=0.5, duration=1.3):
     yalign 1.0
     easein duration xcenter end_x
 
+transform pan:
+    subpixel True
+    zoom 2.0
+    xalign 0.5
+    yoffset -900
+    linear 2.5 yoffset -100
+
 define evening_matrix = TintMatrix(Color(rgb=(0.9804, 0.9176, 0.8118)))*SaturationMatrix(0.95)
 image lucifrid evening = LayeredImageProxy("lucifrid", Transform(matrixcolor=evening_matrix))
 image emrys evening = LayeredImageProxy("emrys", Transform(matrixcolor=evening_matrix))

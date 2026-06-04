@@ -1,6 +1,4 @@
-﻿# The script of the game goes in this file.
-
-define config.gl2 = True 
+﻿define config.gl2 = True 
 
 define e = Character("Edelweiss", image="edelweiss")
 define e2 = Character("Edelweiss")
@@ -52,8 +50,6 @@ label start:
     default bad_ending = 0
 
     scene black
-
-    #some sounds arent playing so fix the audio encoding
 
     n "To those of us who can see {i}them{/i}...{w} there are two paths available."
     n "One is to work towards peace in equilibrium with the realm beyond as diviners,"
@@ -194,7 +190,7 @@ label start:
     with MVNStainedGlass10
 
     "There he is—hanging in a large web against the wall. Surrounding him are numerous of the spiders we followed here and some of their larger brethren."
-    #vertical pan of lucifrid
+    
     "A boy about our age stands facing him. Four eyes, four arms and a wide, fanged grin betray his inhuman nature. If I had to guess, he's the one controlling the spider troops."
     "I can’t let my guard down here, apparitions don’t usually meddle in human affairs."
     "If I can only figure out what he wants, we should be able to resolve this."
@@ -303,17 +299,20 @@ label start:
     l "We’re going to have to work on the bond of trust between us. I already said I wouldn’t treat you badly..."
     "Ugh, you won’t manipulate me with that cute act!"
     "I can't tell at all what his intentions are, or whether anything he's saying is sincere, and it unsettles me."
+    show lucifrid neutral at halfcloseup
 
-    show lucifrid evilsmile at closeup
+    show lucyintro placeholder
+    window hide
+    $ renpy.pause(2,hard=True)
     l "Well, then, let’s make our contract."
-    "His four hands press against the wall behind me, pinning me in place. Before I have time to process what’s happening he presses his lips against mine."
-    show lucifrid neutral at closeup
+    "His four hands press against the wall behind me, pinning me in place." 
+    "Before I have time to process what’s happening he presses his lips against mine."
     l "Let this be proof of the invisible ties that bind us, now and forever. Neither life nor death shall come between us."
+    hide lucyintro placeholder
     
     play sound "audio/sfx/otologic/finger snap.mp3"
     
     "He snaps his fingers again and Emrys falls from his web. A procession of spiders softens his fall and parades him out of the classroom."
-    show lucifrid neutral at halfcloseup
     l "Don’t worry, they’ll deliver him safely back to where he came from."
     show lucifrid grin at halfcloseup
     l "Now, we have work to do, my dearest partner!"
@@ -391,13 +390,18 @@ label start:
     l "Do you not trust my judgment?"
 
     show lucifrid neutral guardedrelaxed at normal
-    #move the sprite across the screen
+
     "He turns on his heels and paces the room as he continues."
+    show lucifrid neutral guardedrelaxed:
+        linear 1.0 xpos 0.7
     l "The boundary is thinnest in this exact location. If an apparition wants to cross over into this world, they’re likely to pass through this classroom."
+    show lucifrid neutral guardedrelaxed:
+        linear 2.0 xpos 0.3
     l "Not to mention I can tap into my powers more easily without crossing over."
     "I listen to his explanation as I follow his instructions to tidy up the room, gathering up the belongings of students who have probably long graduated."
 
-    show lucifrid invitingrelaxed innocent
+    show lucifrid invitingrelaxed innocent:
+        linear 1.0 xalign 0.5
 
     "Lucifrid smiles and pats my head. Well, tries to, as I push one of his four hands away."
     l "You’re surprisingly obedient, aren’t you?"
@@ -969,14 +973,15 @@ label start:
     l "I can even express it in your terms. I believe it goes... \"when in Rome\"?"
     "That smug little..."
 
-    hide lucifrid
-    #CG tome
+    show tome placeholder
     "Instead of waiting for a signal, I decide to cut his playtime short and run ahead with the tome in tow."
-    e "State thy name and thine allegiance be manifest!"
+    e2 "State thy name and thine allegiance be manifest!"
 
     "I smash the creature with all the strength I can muster. I don't even hear the syllables it spits out over the sound of the blood rushing to my head."
     "Ink flows across the tome’s opened pages and the creature slinks away. Immediately the air calms and warmth returns to the room."
     "The breath I didn't know I was holding in slips out with a sigh."
+
+    hide tome placeholder
     "Lucifrid dissolves his webs with a swift exhale, his expression displeased."
 
     show lucifrid neutral guardedopen
@@ -1199,13 +1204,14 @@ label start:
     "I wonder if Lucifrid manifests himself in different ways than this; this form doesn’t seem too strenuous in upkeep."
     "I've gotten used to helping him by now. I lend my assistance in various ways: sometimes it's a fight like against the ice spirit, sometimes it's nothing more than using his tome to administer the final rites. Like now."
     
-    #CG tome
+    show tome placeholder
     "Drawing upon a larger sigil inscribed in one of the desks, I manifest the spider prince’s tome."
     play sound "audio/sfx/otologic/pages turning.mp3"
     extend " Its pages scramble open as I recite the incantation."
-    e "State thy name and thine allegiance be manifest."
+    e2 "State thy name and thine allegiance be manifest."
     "The bird croaks something indeterminable, though the tome does not discriminate."
     "Laid to rest on the page, the bird’s physical form fades and the abandoned classroom quiets down once again."
+    hide tome placeholder
 
     show lucifrid guardedrelaxed grin
 
@@ -1561,18 +1567,16 @@ label postchoice_lucycourtyard:
     
     scene black
     with fade
-
     scene hallway day
     with MVNStainedGlass10
-
-    #ilya intro CG 
-
+    show ilyaintro
     "As I approach, Ilya stands by the student council room still as a statue."
     "The setting sun fragments his silhouette into a myriad of glowing colours and I start to understand what had my classmates so enraptured."
     "He looks like a renaissance painting."
     "I guess I wouldn’t mind if he really was my boyfriend."
     "I start to imagine us walking home from school, hand in hand."
     "When he notices me, he nods his head politely."
+    show ilyaintrosmile
     i "Edelweiss, I’m glad you came."
     "I nod at him in turn, blushing involuntarily. Alright, that’s enough. Stop daydreaming."
     i "Why don’t you come inside? We’re the only ones here this afternoon."
@@ -2133,7 +2137,7 @@ label postchoice_ilyameeting:
     "Emrys’ eyes glimmer and he looks like he wants to say something for a moment, but he merely nods."
     em "Let’s go."
 
-    scene library placeholder
+    scene library
     play sound "audio/sfx/osabisi/sliding door.ogg"
     #music quiets
     #dust particle vfx
@@ -2159,7 +2163,6 @@ label postchoice_ilyameeting:
     "Boy" "They got into a big fight, which ended up louder than the noise he was complaining about to begin with."
     "Boy" "I left to find some actual peace and quiet so I don’t know what happened after that..."
     "Bingo! They were here together right before things went south. It has to be connected!"
-    #insert silhouette image cat?
     "At that moment, a cat jumps onto the table almost pontifically. The underclassman’s eyes soften as he moves to pet it."
     show emrys confused:
         xpos 500
@@ -2433,9 +2436,9 @@ label postchoice_ilyameeting:
     
     scene black
     with dissolve
-    scene library placeholder
+    scene library beyond:
+        function WaveShader (0.7,0.7,1.0)
     with MVNTurbulence04
-    #bg library beyond
     show lucifrid guardedrelaxed neutral at enterleft(0.3,0.7)
     pause 0.7
     "The library..."
@@ -2492,12 +2495,13 @@ label postchoice_ilyameeting:
     e smile "Oh, I would never."
 
     hide lucifrid
-    #CG tome
+    show tome placeholder
     play sound "audio/sfx/otologic/pages turning.mp3"
     "I focus my thoughts on a spirit we subdued recently and the tome flutters open to the page where its name is inlaid."
     "I place my hand over the thick ink and chant the invocation."
     e2 "Heed the voice that calls, honour the ties that bind."
     "The librarian doesn’t wait for my summoning ritual and bites at me with one of her heads."
+    hide tome placeholder
 
     show lucifrid invitinghips displeased at midright
     with move
@@ -2570,7 +2574,7 @@ label postchoice_ilyameeting:
     "Is that even safe? What’s going to happen to the librarian?"
     "I don’t have time to ponder as we stumble and crash back into the human realm, accompanied by our entire army of spiders."
     
-    scene library placeholder
+    scene library
     with MVNTurbulence04
     with vpunch
     show lucifrid guardedclenched displeased at enterleft(0.3,0.4)
@@ -2586,10 +2590,8 @@ label postchoice_ilyameeting:
     with MoveTransition(0.1)
     "She bites, and with the unnatural speed only an apparition could muster, Lucifrid grabs me and pulls me out of her path." 
     "That was way too close!"
-    #cg tome
-    hide lucifrid
-    "Adrenaline rushing through my veins, I muster all my focus to summon the tome."
     
+    "Adrenaline rushing through my veins, I muster all my focus to summon the tome."
     play sound "audio/sfx/maou tamashii/skitter.ogg"
     "Arachnids swarm our assailant, and she shrieks and shakes to drive them off."
     "Possessing none of his usual controlled nonchalance, Lucifrid jumps atop the feline monstrosity and bites down savagely on one of her necks."
@@ -2597,8 +2599,10 @@ label postchoice_ilyameeting:
     play sound "audio/sfx/taira-komori/big cat growl.mp3"
     "The spiders follow his lead in one coordinated biting motion and she wails in agony."
     l "Now!"
+    show tome placeholder
+    hide lucifrid
     e2 "Speak thy name and thine allegiance be manifest!"
-    #end cg
+    hide tome placeholder
     "I bash one of her heads with the tome and to my utter relief, ink starts pulling from her form onto the page."
     "As her name is absorbed, she is transfigured back into a harmless house cat."
     "Her paws land softly on the carpet, and she quickly scampers off."
@@ -2639,7 +2643,7 @@ label postchoice_ilyameeting:
     with fade
     pause 1.0
 
-    scene library placeholder
+    scene library
     play sound "audio/sfx/yamicafe/footsteps.ogg"
     pause 0.5
     show ilya stiff cold
@@ -2823,7 +2827,6 @@ label postchoice_ilyajustify:
             i "..."
             "The ever-charming, perpetually calm student council vice-president is clearly at a loss for words."
             i "I, um, well..."
-            #edelweiss angry
             e angry "See! You’re not even denying it! Do whatever you want, I’ll never go along with your plans!"
             e tearful "Accusing someone of manipulating me when you’re doing the same stupid thing!"
             "As hot tears involuntarily start rolling down my cheeks, I storm out of the room, leaving Ilya behind in his stupor."
@@ -2925,6 +2928,7 @@ label postchoice_ilyafallout:
     "I tell myself the distance between us is a strategic choice, but deep inside I hear that voice over and over:"
     scene hallway day:
         blur 15
+    window hide
     centered "{i}Lucifrid is better off without you.{/i}"
     show hallway day:
         blur 0
@@ -2956,12 +2960,14 @@ label postchoice_ilyafallout:
     "Without time to think, I open the door Lucifrid has me cornered against."
     e "Quick!"
 
-    #cg broom closet
     scene black
-    with fade
+    with MVNStainedGlass10
     "The prince of spiders stumbles in after me and I"
     play sound "audio/sfx/taira-komori/door locking.mp3"
     extend " turn the lock on the door."
+    show broomcloset placeholder
+    window hide
+    $ renpy.pause(2,hard=True)
     "Then I notice how very small this room is.{w} And how little space there is between us."
     #lucifrid angry
     l "Will you explain to me what exactly you’re trying to do?!"
@@ -3118,13 +3124,15 @@ label postchoice_broomcloset:
     "???" "You don’t frighten me, human. We’ll see how strong you are when you can’t cower behind the spider prince."
     "Well, that’s about as far as dialogue will get me."
     "I jump backwards to put some extra distance between us, and still holding the staff towards it, begin chanting a rite I studied up on recently."
-    #CG belled staff
+    show tome placeholder
+    #belled staff
     e determined "Light unto light, dark unto dark. Stay thy hand, walk thy path."
     "The masked spirit is slowed, but keeps pushing towards me. As expected, the rite isn’t strong enough..."
     "A heavy feeling sinks into my stomach bit by bit."
     "Why isn’t Lucifrid here yet?"
     e awkward "Light unto light, dark unto dark! Stay thy hand, walk thy path!"
     "As the apparition inches closer, sweat starts to form on my brow. I don’t know what else I’m supposed to do!"
+    hide tome placeholder
     "My eyes wander around for any sort of escape, then spot Ilya through the window."
     "He’s heading this way! I don’t believe I’ve ever been so glad to see him."
 
@@ -3152,7 +3160,6 @@ label postchoice_broomcloset:
     "???" "More of my kin will come for you, Edelweiss!"
     "Until its last breath it curses us, and the pained sound echoes horrifically."
     "As I try to focus on anything else, Ilya rushes over to me, face flushed with an unreadable expression."
-    #$ ilya_affection -= 10
 
 
     if ilya_affection >= 2:
@@ -3182,8 +3189,6 @@ label postchoice_broomcloset:
         i "You... That’s what this was all along?!"
 
 
-
-
     else:
         show ilya frown stiff at center
         with move
@@ -3195,8 +3200,6 @@ label postchoice_broomcloset:
         e "Because every time I try to {i}fix{/i} something around here, every time I try to be a good person and follow my moral compass, I end up disappointing absolutely everyone involved."
         e tearful slightblush "Isn’t it nice to know you’re not the only one who thinks I’m an abject failure?"
         e "Heck, count me in while we’re at it. Even {i}I{/i} have started hating my own guts."
-        #$ ilya_respect += 5
-        $ ilya_respect -= 5
 
         if ilya_respect >= 1:
             show ilya determined polite
@@ -3320,10 +3323,8 @@ label mom_convo:
             menu:
                 "He’s domineering and selfish and unreasonable and capricious, and it makes me afraid to trust him.#":
                     $ positive_arc -= 3
-                    #locks you out of true ending
                 "He’s domineering and selfish and unreasonable and capricious, and I think I love him.#":
                     $ ilya_affection -= 3
-                    #locks you out of ilya ending
                 "My feelings keep swaying between one extreme and the other.#":
                     $ lucy_yan += 1
 
@@ -3630,9 +3631,12 @@ label endings:
     scene hallway
     "I don’t know what else there is for me to do, so I head out to look for Emrys. The storage room next to the broom closet, right."
     "The broom closet..."
-    #broomcloset cg shows up in bw
+    show broomcloset placeholder:
+        matrixcolor SaturationMatrix(0.0)
+    with pixellate
     #edelweiss blushes
     e "..."
+    hide broomcloset placeholder
     "I force the memory back into my subconscious and make my way over."
     e "...Hmm?"
     "There’s a strange energy emanating from the door to the storage room. It’s like the sense an apparition’s presence gives off, but lighter, more suffused."
@@ -3850,6 +3854,9 @@ label endings:
             "If I can just look at his face a little longer."
             "If I can just hold him in my arms a little longer."
             "No, none of that would make this any easier to accept."
+            show lucykiss1 placeholder
+            window hide
+            $ renpy.pause(2,hard=True)
             "Again, he interlaces his fingers with mine and uses his other arms to press me against the wall."
             "But softly, this time. Gently."
             l "You remember how we made our contract, I’m sure?"
@@ -3868,15 +3875,17 @@ label endings:
             "I can sense Lucifrid hesitate, the look in his eyes unsure. He’s so close I can feel his breath on my skin."
             "The most indescribable feeling comes over me. I want to kiss him more than anything, but I know that it will be the end."
             e "No one ever told me love would make me strong."
+            show lucykiss placeholder
             "I press my body against his and close the distance between our lips."
             "My arms pull him in as if to touch as many inches of our forms together at once."
-            "Who knew a boy of such thorny character would feel so soft?"
+            "Who knew a boy of such thorny character could feel so soft?"
             "Our lips are careful at first, but the realisation that this is the last chance we have quickly makes us greedy."
             "I bite his bottom lip and he smiles against me, wasting no time in taking me up on the challenge."
             "We struggle against each other rapturously, afraid to squander a single second."
             "For humans and apparitions alike, time progresses in a straight line from past to future."
-            "But I’ve been told that time is another dimension, and that perhaps, to someone on the outside, all moments exist in perpetuity."
+            "But I’ve been told that time is simply another dimension we don't have access to, and that perhaps, to someone on the outside, all moments exist in perpetuity."
             "Even if I never reach there, this moment too, is eternal."
+            show lucykiss1 placeholder
             "We break from each other to catch our breaths, and I look at him. I try to memorise every little detail about him, even knowing that it’s futile."
             l "Edelweiss..."
             e "Lucifrid..."
@@ -3885,12 +3894,17 @@ label endings:
             "As soon as he speaks the words, something snaps inside my chest."
             "All this time, I was being held together by something I didn’t know I had."
             "My insides are collapsing, scrambling, desperate and confused by the lack of something intangible yet indispensable."
+            scene black
+            with dissolve
+            scene hallway day
+            with MVNStainedGlass10
             "Though my eyes are fixed on him, I can’t focus. I don’t want to blink, but I can’t resist any longer."
             "And when I look up, he is gone."
             "The spiders, the webs, the fire spirit—they’re all gone. Only Ilya remains."
             "My body feels weak. My mind blank."
             "I collapse to the ground, filled with sadness, yet no tears find their way out."
-            
+
+            #longer transition
             scene classroom evening
             with MVNStainedGlass10
             play sound "audio/sfx/otologic/school bell.mp3"
@@ -3926,7 +3940,7 @@ label endings:
             "I close my eyes and rest my head on my knees."
             e "Lucifrid... Are you there?"
             play sound "audio/sfx/filmcow/chair squeak 3.ogg"
-            #cg with semi-transparent lucifrid
+            #semi-transparent lucifrid sprite
             e "W-what was that?"
             "I look over at the chair he always sat in, but he’s not there. Of course he’s not."
             "But when I look closer, I see something else."
@@ -3941,12 +3955,14 @@ label endings:
             e "You’re there, aren’t you?"
             "My voice shakes."
             e "Only the prince of spiders could pull off something like that!"
-            #lucifrid hugs edelweiss cg
-            #screen pans over it for a moment
+            show lucyhug placeholder
+            window hide
+            $ renpy.pause(2,hard=True)
             "A faint warmth envelops me, and I find myself smiling through my tears."
             "I’m sure if he could speak to me now, he would be scolding me."
             l "{i}Unbelievable! I give you a gift, and you reward me with tears?{/i}"
             e "...I’ll take good care of him, I promise."
+            hide lucyhug placeholder
             "I cradle Yang in my hands and walk to the door." 
             "Before I leave, I turn back to the empty room." 
             e "Don’t forget, Lucifrid. Neither life nor death." 
@@ -3994,7 +4010,7 @@ label endings:
             e "You even knew the cause?! Did you know this would be the outcome from the very day we met?"
             e "How can I trust you when you don't even tell me anything?"
             l "What good would have come of it?! If everything's going to collapse and you're powerless to stop it, wouldn't you rather live freely until the moment it does?"
-            "I bite my thumb. Fuck. Isn't that the exact same logic I was using to justify not addressing this?"
+            "I bite my thumb. Isn't that the exact same logic I was using to justify not addressing this?"
             "What's wrong with me?"
             e "...You're right. You're right and I'm a hypocrite. I'm all talk of lofty ideals but I can't do a thing to back them up."
             e "Ilya told me all this would happen and I never said a word to you."
@@ -4083,7 +4099,8 @@ label endings:
             i "Edelweiss, look at him! Is this the creature you want to protect?!"
             i "Open your eyes! It’s never too late to make the right choice!"
             "It is, Ilya. It is. I don’t have the will to fight this anymore."
-            #spider hybrid lucy cg
+
+            show spiderboy placeholder
             "When I look over at Lucifrid, he is no longer the boy that I knew."
             "His face is unchanged, but his top half is unclothed; skin hard and glossy, melded into chitinous armour."
             "Below the waist there is not even the semblance of humanity left. All hard shell and squelching joints. Arachnid anatomy where there used to be flesh and bone."
@@ -4098,9 +4115,9 @@ label endings:
             l "Edelweiss, close your eyes."
             "Before I can process his command, before I can even blink, Lucifrid closes the distance."
             "Wait— That’s not— Emrys?!"
+            scene black
             "He screams."
             "Ilya throws himself in front of my best friend and a horrible,{w} wet{w} crunch resounds."
-            "I want to close my eyes, but I can’t."
             "My heart pounds intolerably."
             "My throat feels too strained to even breathe."
             i "...hrgh..."
@@ -4108,9 +4125,12 @@ label endings:
             "He’s alive!"
             "And Emrys— Emrys is safe."
             "Everything is okay. It’s okay. It’s all okay."
+            scene hallway beyond
             em "Edelweiss, y-you can’t stay with that thing."
             em "Save yourself."
             em "Edelweiss!"
+
+            show spiderboy placeholder
             l "Now, now, don’t get upset. I wasn’t {i}trying{/i} to hurt you!"
             l "This all went exactly according to plan."
             "Emrys is quivering. I wish I could take away his fear."
@@ -4130,7 +4150,8 @@ label endings:
             e "Lucifrid, I’m scared."
             l "Shh, you’ll be okay. I’m with you."
             l "Neither life nor death shall come between us."
-            #screen black
+
+            scene black
             "I close my eyes."
             play sound "audio/sfx/freesound/stab.ogg"
             queue sound "audio/sfx/freesound/gasp.ogg"
@@ -4150,6 +4171,7 @@ label endings:
             e "I’m here."
             "I know he can’t hear me. But maybe I can impress the slightest bit of comfort upon him all the same."
             "He shakes his head and keeps walking. I know his destination."
+            "Without thinking, I follow behind him."
             "Still, I pause before entering."
             #bg student council room
             #emrys sprite
@@ -4163,7 +4185,8 @@ label endings:
             "He pulls me close."
             l "No, how could I be?"
             l "You chose me."
-            #cg of edelweiss and lucifrid as apparition royals
+            
+            show beyondroyals placeholder
             "I barely notice the world around us giving way, replaced by my new home."
             "Lucifrid seats himself on his throne, and I take my place beside him."
             "Here, every atom moves in blissful obedience to his will."
@@ -4234,7 +4257,7 @@ label endings:
             "My eyes fix on him expectantly. My breath is erratic."
             "There’s not enough air in the room. Not in the entire world, it seems."
             i "It’s not your fault, Edelweiss."
-            "Ilya knows everything, and yet, he’s not judging me? I don’t understand."
+            "Ilya knows everything. And yet, he’s not judging me? I don’t understand."
             "Tears blur the corners of my vision but I try to steady myself."
             "I want to lean into him. To leave myself in his hands.{w} He said it, right?"
             "He said it."
@@ -4355,6 +4378,9 @@ label endings:
             "But it’s over now."
             "I can’t move or speak. I just want to rest."
             i "Here. Let me help you."
+            show ilyaending placeholder
+            window hide
+            $ renpy.pause(2,hard=True)
             "Ilya lifts me in his arms and holds my limp body against his."
             "There is warmth here."
             "All else may be gone, but this warmth alone remains."
@@ -4365,6 +4391,7 @@ label endings:
             "I rest my head against his chest and close my eyes."
             "His heart beats violently."
             
+            #longer transition
             scene classroom evening
             play sound "audio/sfx/otologic/school bell.mp3"
             "..."
@@ -4457,7 +4484,6 @@ label endings:
             play sound "audio/sfx/osabisi/crash.ogg"
             "...What’s that?!"
             "I turn around with a start."
-            #emrys wounded cg?
             "Emrys!"
             "He’s on the floor, blood trickling down his forehead, and a shadowy figure looms over him."
             "I rush over and shake my staff in time with the syllables of my chant."
