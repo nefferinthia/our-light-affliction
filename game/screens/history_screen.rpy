@@ -16,7 +16,7 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    add HBox(Transform("#292835", xsize=350), "#21212db2") # The background; can be whatever
+    # add HBox(Transform("#292835", xsize=350), "#21212db2") # The background; can be whatever
 
     use game_menu(_("History"))
 
@@ -24,6 +24,7 @@ screen history():
         style_prefix 'game_menu'
         mousewheel True draggable True pagekeys True
         scrollbars "vertical" yinitial 1.0
+        xoffset -100
 
         has vbox
 
@@ -57,9 +58,8 @@ screen history():
 
 define gui.history_allow_tags = { "alt", "noalt", "rt", "rb", "art" }
 
-
 style history_frame:
-    xsize 1400
+    xsize 1200
     ysize None
     background None
 

@@ -13,7 +13,11 @@ screen game_menu(title):
 
     style_prefix "game_menu"
 
+    window: 
+        if title == _("History"):
+            background Image("gui/history screen.png")
     vbox:
+        
         xpos 60 yalign 0.5
         spacing 6
 
@@ -70,15 +74,17 @@ style return_button:
     yoffset -45
 
 style game_menu_viewport:
-    xsize config.screen_width-420
+    xsize config.screen_width-620
     ysize config.screen_height-200
-    align (0.5, 0.5)
+    align (1.0, 0.5)
 
 style game_menu_side:
     yfill True
     align (1.0, 0.5)
 
 style game_menu_vscrollbar:
+    yalign 0.5
+    ysize config.screen_height-200
     unscrollable "hide"
 
 style game_menu_label:
