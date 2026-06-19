@@ -53,13 +53,14 @@ label start:
 
     n "To those of us who can see {i}them{/i}...{w} there are two paths available."
     n "One is to seek peace in equilibrium with the realm beyond as diviners,"
-    n "the other to stand protect humans by eradicating dangerous apparitions as exorcists."
+    n "the other to protect humans by eradicating dangerous apparitions as exorcists."
     n "But inscribed upon the gate to both these paths stands a warning that all must heed:"
     n "To intertwine the mortal realm with the realm beyond can lead to naught but misfortune."
 
     nvl clear
 
     scene classroom day
+    play music "audio/bgm/Ordinary life.ogg"
     play sound "audio/sfx/maou tamashii/skitter.ogg"
 
     "Out of the corner of my eye I see something crawling. It's {i}them{/i} again."
@@ -87,7 +88,7 @@ label start:
 
     #cut in image of spiders? opt.
 
-    "But it’s strange, even for someone with diviner blood, simple creatures often escape notice."
+    "But it’s strange. Even for someone with diviner blood, simple creatures often escape notice."
     "They’re just spiders. There's nothing noteworthy about them."
     "Pitch-black with red eyes... They’re creepy. I wish I couldn’t see them."
     "At the desk beside me, Emrys is working diligently on our homework, but I can’t seem to focus."
@@ -158,9 +159,10 @@ label start:
     scene hallway day
     with MVNStainedGlass10
 
+    play music "audio/bgm/Out of place.ogg"
     play sound "audio/sfx/freesound/floor creak.ogg"
     "As we climb the staircase, the lights grow dimmer. Wooden floorboards creak underneath my loafers and the dust in the air makes my throat go dry."
-    "Only a few steps later an uncomfortable shiver crees across my back."
+    "Only a few steps later an uncomfortable shiver creeps across my back."
     "Did I imagine it?"
     "No, I really feel something!"
 
@@ -187,6 +189,7 @@ label start:
     "I swallow hard. Okay, calm down, you've got this. For Emrys."
 
     scene hideout day empty
+    play music "audio/bgm/Lucifrid's theme.ogg"
     with MVNStainedGlass10
 
     "There he is—strung up in a large web against the wall. Surrounding him are the spiders we followed here, and some of their larger brethren."
@@ -432,7 +435,7 @@ label start:
     "Emrys better be real grateful."
 
     hide lucifrid
-
+    play music "audio/bgm/Spider's Covenant.ogg"
     "The sun sinks further and further as I thoroughly clean the dusty classroom."
     "In the meantime, Lucifrid lounges around while playing with his familiars."
     "They still give me the creeps..."
@@ -593,7 +596,7 @@ label start:
 
     show lucifrid neutral guardedopen
 
-    l "There’s many who don’t even have capability for reason, though most are of the live and let live mentality."
+    l "There’s many who don’t even have capability for reason, though most are of the 'live and let live' mentality."
 
     show lucifrid evilsmile
 
@@ -633,6 +636,7 @@ label start:
     scene black
     with fade
     scene classroom day
+    play music "audio/bgm/Ordinary life.ogg"
     show emrys casual small_smile
     with MVNStainedGlass10
     play sound "audio/sfx/otologic/school bell.mp3"
@@ -756,7 +760,8 @@ label start:
     "We make our way down to the first floor and Emrys takes a last minute bathroom break. Tension builds up inside me."
     "This is so not the time! We have to get out of here!"
     "...Is what I’d like to say, but I have to play it cool. Instead I wait patiently by the front entrance."
-
+    
+    play music "audio/bgm/Out of place.ogg"
     show lucifrid frown guardedclenched
 
     l "What exactly do you think you’re doing?" 
@@ -857,6 +862,7 @@ label start:
     scene hideout day
     show lucifrid guardedrelaxed
     with MVNStainedGlass10
+    play music "audio/bgm/Lucifrid's theme.ogg"
 
     l "Are we clear on the plan?"
     e "I follow your lead and stay behind you until you’ve subdued the enemy, at which point I’ll open the tome and say: ‘Speak thy name and thine allegiance be manifest.’"
@@ -900,6 +906,7 @@ label start:
     scene classroom beyond:
         function WaveShader (0.7,0.7,1.0)
     with MVNTurbulence04 
+    play music "audio/bgm/Out of place.ogg"
     
     "My feet land on solid ground. I open my eyes." 
     "There stands the prince of spiders with his battalion of familiars, cast in a dim, eerie light. The classroom around us appears... normal."
@@ -933,12 +940,18 @@ label start:
     l "Heh, I think someone didn’t like that."
 
     play sound "audio/sfx/kurage-kosho/wind.mp3"
+    play music "audio/bgm/Conflict.ogg"
     "The breeze howls into a gale. As Lucifrid's web spans more and more of the classroom, frost crystallises on every thread."
+
+    show lucifrid at midleft
+    with move
+    show ghost at midright
+    with dissolve
     "A glacial maelstrom gathers itself into a ghastly cloaked figure. Its long hair billows, obscuring its features as it wheezes at us."
     "Ghost" "Leave this place."
 
-    show lucifrid grin
-    show lucifrid innocent
+    show lucifrid grin at midleft
+    show lucifrid innocent at midleft
 
     l "Terribly afraid I can’t do that."
     "Lucifrid’s familiars have begun clambering up the creature’s robes."
@@ -950,13 +963,13 @@ label start:
     "Lucifrid avoids the attack nimbly, stopping one of the projectiles just short of hitting me in the process."
     "No time to feel sorry now."
 
-    show lucifrid neutral
+    show lucifrid neutral at midleft
 
     l "Take cover and bide your time."
     "I follow his instructions and hide behind a student’s desk, watching as he continues to taunt the snow spirit."
     "It seems to lose its temper the longer it fails to hit a single strike."
 
-    show lucifrid threateninghips grin
+    show lucifrid threateninghips grin at midleft
 
     l "Hehehe, haha! Is that all you've got?"
     "It rushes forward too desperately and carelessly gets tangled in the spider prince’s web. It's helplessly trapped."
@@ -970,11 +983,12 @@ label start:
 
     e "Did no one ever teach you not to play with your food?"
     l "Ah, a classic human saying, isn't it? But where do you think we are?"
-    show lucifrid evilsmile
+    show lucifrid evilsmile at midleft
     l "I can even express it in your terms. I believe it goes... \"when in Rome\"?"
     "That smug little..."
 
-    show tome placeholder
+    show tome
+    hide ghost
     "Instead of waiting for a signal, I cut his playtime short and run ahead with the tome in tow."
     e2 "State thy name and thine allegiance be manifest!"
 
@@ -982,10 +996,12 @@ label start:
     "Ink flows across the tome’s opened pages and the creature slinks away. Immediately the air calms and warmth returns to the room."
     "The breath I didn't know I was holding in slips out with a sigh."
 
-    hide tome placeholder
+    play music "audio/bgm/Spider's Covenant.ogg"
+    hide tome
     "Lucifrid dissolves his webs with a swift exhale, his expression displeased."
 
     show lucifrid neutral guardedopen
+    with move
 
     l "You’re not too good at taking orders, are you? My cumbersome partner."
 
@@ -1117,6 +1133,7 @@ label start:
     with fade
     scene hideout day
     with MVNStainedGlass10
+    play music "audio/bgm/Ordinary life.ogg"
     play sound "audio/sfx/freesound/door creak.ogg"
     
     "Hmm?"
@@ -1159,6 +1176,7 @@ label start:
     e "You did well, little Yang."
     "I pet the favoured child, fastest runner of the cohort, and give him his well-earned reward."
     
+    play music "audio/bgm/Out of place.ogg"
     play sound "audio/sfx/yamicafe/footsteps.ogg"
     "Footsteps. My hair stands on end. An apparition...?"
     "But there is nothing to be afraid of."
@@ -1191,6 +1209,7 @@ label start:
     scene black
     with fade
     scene hideout day
+    play music "audio/bgm/Ordinary life.ogg"
     show lucifrid neutral guardedrelaxed
     with MVNStainedGlass10
 
@@ -1205,14 +1224,14 @@ label start:
     "I wonder if Lucifrid manifests himself in different ways; this form doesn’t seem too strenuous in upkeep."
     "I've gotten used to helping him by now. I lend my assistance in various ways: sometimes it's a fight like the ice spirit, sometimes it's nothing more than using his tome to administer the final rites. Like now."
     
-    show tome placeholder
+    show tome
     "Drawing upon a larger sigil inscribed in one of the desks, I manifest the spider prince’s tome."
     play sound "audio/sfx/otologic/pages turning.mp3"
     extend " Its pages scramble open as I recite the incantation."
     e2 "State thy name and thine allegiance be manifest."
     "The bird croaks something indeterminate, though the tome does not discriminate."
     "Laid to rest on the page, the bird’s physical form fades and the abandoned classroom quiets down once more."
-    hide tome placeholder
+    hide tome
 
     show lucifrid guardedrelaxed grin
 
@@ -1241,6 +1260,7 @@ label start:
 
     scene courtyard evening
     with MVNStainedGlass10
+    play music "audio/bgm/Spider's Covenant.ogg"
     
     "The two of us sit down on a bench in the courtyard, ice cream in hand, basking in the last rays of sun of a clement summer afternoon."
     "The breeze rustles through the trees, obscuring quiet snippets of conversation between students on their way home."
@@ -1381,6 +1401,7 @@ label postchoice_lucycourtyard:
     
     scene classroom day
     with MVNStainedGlass10
+    play music "audio/bgm/Ordinary life.ogg"
     play sound "audio/sfx/otologic/school bell.mp3"
 
     "As much as I’m getting used to chasing apparitions and appeasing spider princes, the supernatural unfortunately doesn’t excuse me from exams."
@@ -1453,11 +1474,18 @@ label postchoice_lucycourtyard:
 
     hide emrys
     hide lucifrid
+    with dissolve
+    show femalestudent3
+    with easeinright
 
     "President" "So sorry to interrupt your lunch! I think most of you have seen me around but just in case, I’m Rosiel, your student council president!"
     "President" "As you all know, the cultural festival is coming up again and we’d like to have representatives from each class to help with general affairs rather than their class’ own exhibit."
 
+    hide femalestudent3
+    with dissolve
+
     show lucifrid thinkinghips evilsmile
+    with dissolve
     l "Don’t you volunteer now, Edie. I know how much of a good samaritan you are, but I can’t have you slacking off from your duties."
     e pout "{size=-8}I wouldn’t have volunteered anyway!{/size}" 
     "I hiss under my breath and kick his shin. With everyone’s eyes focussed on the announcement, it should slip under the radar."
@@ -1513,46 +1541,56 @@ label postchoice_lucycourtyard:
 
     e awkward slightblush "A-alright. I’ll be there."
     
-    hide ilya
-    pause 1.5
-    show emrys neutral
+    show ilya at exitright(0.5)
+    pause 1.2
+    show emrys neutral at center
 
     em "Hmm...  Any idea what he wants from you?"
     "I shrug."
     e neutral none "Your guess is as good as mine."
 
-    hide emrys
+    show emrys at midleft
+    with move
+    show femalestudent1:
+        xcenter 0.6
+    show femalestudent2 at midright
+    with dissolve
 
     "Classmate" "I can't believe it! Ilya noticed you! What did you do to catch his eye?!"
     e awkward "Should I know who he is? I don’t think I did anything."
     "Other Classmate" "He’s the student council vice-president and top of his year in academics!" 
-    "Other Classmate" "He’s always polite but it’s rumoured he’s not close to anyone. He’s so mysterious and dreamy..."
+    "Other Classmate" "He’s always polite but it’s rumoured he isn't close with anyone. He’s so mysterious and dreamy..."
     "Classmate" "You have to tell us what you talked about after!"
     e smug "Hehe, I’ll see what I can do. If you want details on him you’ll have to find some way to repay me..."
+
+    hide femalestudent1
+    hide femalestudent2
+    with dissolve
     "Discouraged, the two classmates slink away to pack up their lunches. Emrys leans in closer."
 
-    show emrys alert neutral
+    show emrys alert neutral at center
+    with move
 
     em "Do you want me to go with you? You never know how it’ll end up. It’s easy to get pressured into things."
     e smile "Oh, don’t worry so much! He’s a student council member, they’re all about proper conduct."
     e smug "Unless you don’t like me being alone with another guy?"
     "I tease Emrys to get him to back off. It’s a failsafe strategy."
     
-    show emrys casual
+    show emrys casual at center
 
     em "It’s my duty to look after you, Edelweiss. It has nothing to do with my personal feelings."
     
-    show emrys small_smile
+    show emrys small_smile at center
 
     em "Besides, what happened to that boyfriend of yours?"
     "Oh, right. {i}That{/i}."
     "Emrys laughs softly."
 
-    show emrys alert
+    show emrys alert at center
 
     em "That’s what’s really going on here, isn’t it? Don’t worry, I’ll keep your secret."
     
-    show emrys confused
+    show emrys confused at center
     
     em "Wouldn’t want the whole school on your case."
     "{cps=3}...{/cps}That is not the conclusion I thought he would draw."
@@ -1563,20 +1601,23 @@ label postchoice_lucycourtyard:
     e conflicted "Please don’t tell anyone..."
     "If my lie is exposed, I don’t know if Ilya or his admirers will sooner have my head. Let’s hope I never find out."
     
-    show emrys casual small_smile
+    show emrys casual small_smile at center
     
     em "All safe with me. So long as he makes you happy."
     e rueful none "Thanks, Emrys. I’ll be off then."
-    
+
+    ###########################################################
+
     scene black
     with fade
     scene hallway day
     with MVNStainedGlass10
+    play music "audio/bgm/Under the moon.ogg"
     show ilyaintro
     "As I approach, Ilya stands by the student council room still as a statue."
     "The setting sun fragments his silhouette into a myriad of glowing colours. I start to understand what had my classmates so enraptured."
     "He looks like a renaissance painting."
-    "I wouldn’t mind if he really was my boyfriend."
+    "...I wouldn’t mind if he really was my boyfriend."
     "I imagine us walking home from school, hand in hand."
     "When he notices me, he nods his head politely."
     show ilyaintrosmile
@@ -1761,9 +1802,9 @@ label postchoice_ilyameeting:
 
     scene hideout day
     with MVNStainedGlass10
+    play music "audio/bgm/Lucifrid's theme.ogg"
     play sound "audio/sfx/freesound/door creak.ogg"
     e determined "Lucifrid! I have... something to... report!"
-
     show lucifrid thinkingrelaxed neutral
     l "My, my! What’s got my darling assistant all out of breath?"
     l thinkingopen evilsmile "Calm down, take a seat."
@@ -1827,10 +1868,16 @@ label postchoice_ilyameeting:
     with fade
     scene classroom day
     with MVNStainedGlass10
+    play music "audio/bgm/Ordinary life.ogg"
 
     "The next couple of days are peaceful. I continue my hunts with Lucifrid after school, and keep my head down in class."
     "I can't let my grades slip too much and risk supplementary lessons, or worse—roped into helping organise the festival."
     "I don't want a reputation for being a delinquent either, with all the sneaking around on school grounds after hours."
+
+    show femalestudent1 at midright
+    show femalestudent2 at midleft:
+        xzoom -1.0
+
     "Classmate" "Edelweiss! How did the rice dumplings turn out?"
     e neutral "Oh... yeah."
     "I lift the lid of the small container, revealing the food I made in home economics—three skewers glazed in glossy sauce."
@@ -1863,6 +1910,8 @@ label postchoice_ilyameeting:
     "The two girls eye me, suspicious."
     "Other Classmate" "If you say so."
     "Here’s what they don't tell you about lying. You tell one lie, and it starts asking for friends.  And the more they pile up, the harder it is to keep your story straight."
+    show femalestudent1 at exitright(0.7)
+    show femalestudent2 at exitright(0.3)
     "The one with a boyfriend winks at me as they walk away."
     "But the question remains... who {i}should{/i} I give these to?"
 
@@ -1884,6 +1933,7 @@ label postchoice_ilyameeting:
             "I knock two times, then let myself in."
 
             scene student council room
+            play music "audio/bgm/Under the moon.ogg"
             show ilya stiff calm
             with MVNStainedGlass10
 
@@ -1976,6 +2026,7 @@ label postchoice_ilyameeting:
             scene hallway day
             with MVNStainedGlass10
             scene hideout day
+            play music "audio/bgm/Spider's Covenant.ogg"
             show lucifrid invitingrelaxed grin
             with MVNStainedGlass10
             play sound "audio/sfx/freesound/door creak.ogg"
@@ -2088,6 +2139,7 @@ label postchoice_ilyameeting:
     scene classroom day
     show emrys alert determined
     with MVNStainedGlass10
+    play music "audio/bgm/Ordinary life.ogg"
 
     em "Hey, did you hear? There’s been some worrying rumours."
     e smile "Thought you weren’t the gossiping type. What’s this about then?"
@@ -2114,6 +2166,13 @@ label postchoice_ilyameeting:
     "The two afflicted students are from different classes, so we have to split up to investigate."
     "The female student is my target. My best bet would be asking her classmates, and she's in class 2D."
     "I intercept a group of girls spilling out of classroom 2D while chatting merrily."
+    show femalestudent1:
+        xcenter 0.35
+        xzoom -1.0
+    show femalestudent2:
+        xcenter 0.54
+    show femalestudent3:
+        xcenter 0.7
     e neutral "Excuse me, you’re classmates of Marigold’s, right?"
     "The girls nod in assent."
     "Liese" "You’re wondering about the voice thing, right? I don’t know what everyone’s making such a big deal out of. She must have just done too much karaoke..."
@@ -2126,7 +2185,11 @@ label postchoice_ilyameeting:
     "Liese" "Ugh, please don’t remind me of that ordeal."
     "Phila" "I’m a little worried about her. Will you let us know if you find anything?"
     e smile "Of course, leave it to me! Thanks for telling me what you know."
-    #girls leave
+    
+    show femalestudent1 at exitleftslow(0.35)
+    show femalestudent2 at exitleftslow(0.54)
+    show femalestudent3 at exitleftslow(0.7)
+    pause 1.1
     
     show emrys casual small_smile
     em "So, any leads?"
@@ -2145,7 +2208,9 @@ label postchoice_ilyameeting:
 
     scene library
     play sound "audio/sfx/osabisi/sliding door.ogg"
-    #music quiets
+    $ renpy.music.set_volume(0.5, channel="music")
+    $ renpy.music.set_volume(0.5, channel="music1")
+    
     #dust particle vfx
     "The library air is heavy with dust. I stifle a cough." 
     "A slight breeze blows from the window, but nothing else disturbs the stillness of the room."
@@ -2163,6 +2228,7 @@ label postchoice_ilyameeting:
         xpos 500 
     with ease
     e smile "Sorry to disturb you. Were you here last Wednesday too? Do you happen to have seen Marigold?"
+    show malestudent at midright
     "The underclassman knits his brows together."
     "Boy" "Yes, she was very hard to miss..."
     "Boy" "She was sighing and complaining, and that boy who’s always glued to the computer, well, I’ve never heard him say more than two words until that moment."
@@ -2191,13 +2257,15 @@ label postchoice_ilyameeting:
     show emrys determined:
         xpos 500
     "Boy" "No, no, Patches, calm down!"
-    "The boy shoots us a cutting glare."
+    "The boy scowls at us."
     "Boy" "What did I tell you about noise?"
     "Boy" "If you’re not here to read, then be off."
     "Emrys shoots me an annoyed glance as we scurry out of the library."
 
     scene hallway day
     with MVNStainedGlass10
+    $ renpy.music.set_volume(1.0, channel="music")
+    $ renpy.music.set_volume(1.0, channel="music1")
     play sound "audio/sfx/osabisi/sliding door.ogg"
     show emrys determined casual at enterright(0.7,0.7)
     pause 0.7
@@ -2250,7 +2318,6 @@ label postchoice_ilyameeting:
 
     scene hideout evening
     with MVNStainedGlass10
-    
     play sound "audio/sfx/freesound/door slam.ogg"
 
     e "Lucifrid! Where are you?"
@@ -2269,6 +2336,7 @@ label postchoice_ilyameeting:
         xpos 700
     with ease
     "Growing tired of waiting, Emrys sits down on Lucifrid’s usual chair. The room darkens immediately."
+    play music "audio/bgm/Lucifrid's theme.ogg"
     show lucifrid guardedclenched frown:
         xpos 1420
     "Lucifrid materialises from a corner obscured by a crawling mass of his familiars."
@@ -2367,6 +2435,7 @@ label postchoice_ilyameeting:
     pause 0.5
     play sound "audio/sfx/freesound/door creak.ogg"
     
+    play music "audio/bgm/Spider's Covenant.ogg"
     show lucifrid at center
     with move
     "A weight I didn’t know I was carrying lifts from my shoulders—but I don’t know if I did the right thing." 
@@ -2429,6 +2498,7 @@ label postchoice_ilyameeting:
     scene hallway beyond:
         function WaveShader (0.7,0.7,1.0)
     with MVNTurbulence04
+    play music "audio/bgm/Out of place.ogg"
     "I open my eyes a little too soon, and the disorienting sight of the world around me slotting together like puzzle pieces turns my stomach. Lucifrid steadies me when I almost fall over."
     "One day I will get used to crossing the barrier. One day."
     "We find ourselves in a hallway packed with mirrors familiar to me by now." 
@@ -2449,6 +2519,7 @@ label postchoice_ilyameeting:
     pause 0.7
     "The library..."
     "The layout is identical to its light side counterpart but the details are all different, like the same page in a colouring book filled in by different people."
+    show catgirl at enterright (0.7)
     "Nightgown flowing, a petite girl with catlike features trots over to us, her expression stern. Her ears perk up when she spots Lucifrid."
     "Cat" "Your Dark Majesty, what brings you to my library today?"
     "She addresses him respectfully but curtly, giving both of us small nods of acknowledgement."
@@ -2468,19 +2539,31 @@ label postchoice_ilyameeting:
     "Cat" "With all due respect, Your Majesty, why do you take the humans’ side? Did this girl cast a spell on you?"
     "Cat" "I can only imagine you would have laughed with me over this a little while ago." 
     "Cat" "The library is mine to oversee, and ought to be a place of calm and quiet. The students knowingly broke that agreement; their punishment is deserved."
-    show lucifrid guardedhips displeased at midleft
+    show lucifrid guardedhips displeased:
+        xcenter 0.6
+    show catgirl:
+        xcenter 0.85
+    with move
     "His casual grin falling from his face, Lucifrid backs the girl into a corner and spins a web round her feet."
     l "I don’t take kindly to your implications. Know your place—your every freedom exists because I allow it."
-    show lucifrid guardedclenched at midleft
+    show lucifrid guardedclenched:
+        xcenter 0.6
     l "Every day you draw more attention to me and my designs by playing around on the light side. Is my rule a game to you?"
-    show lucifrid frown at midleft
+    show lucifrid frown:
+        xcenter 0.6
     l "And that is assuming the best, who says you aren't amassing forces to oppose me—appearing in some beguiling, innocent form to win the students to your cause."
     "I bite my thumb, eyes darting between the two of them."
     "This isn't going the way we hoped. Is there nothing I can do to help?"
     
     play sound "audio/sfx/freesound/cat hiss.ogg"
     "The catgirl hisses in my direction."
+
+    play music "audio/bgm/Conflict.ogg"
     "Cat" "First I’ll remove this human distraction, then I can be sure you are in your right mind."
+    hide catgirl
+    with dissolve
+    show lucifrid at center
+    with move
     "Her form flickers and shifts as she grows into a monstrous, many-headed feline hydra. Her beastly proportions rip through Lucifrid’s web with ease."
     "It’s safe to say the time for negotiations is over."
     show lucifrid displeased at right
@@ -2501,13 +2584,13 @@ label postchoice_ilyameeting:
     e smile "Oh, I would never."
 
     hide lucifrid
-    show tome placeholder
+    show tome
     play sound "audio/sfx/otologic/pages turning.mp3"
     "I focus my thoughts on a spirit we subdued recently. The tome flutters open to the page where its name is inlaid."
     "I place my hand over the thick ink and chant the invocation."
     e2 "Heed the voice that calls, honour the ties that bind."
     "The librarian doesn’t wait for my summoning ritual and bites at me with one of her heads."
-    hide tome placeholder
+    hide tome
 
     show lucifrid invitinghips displeased at midright
     with move
@@ -2605,16 +2688,17 @@ label postchoice_ilyameeting:
     play sound "audio/sfx/taira-komori/big cat growl.mp3"
     "The spiders follow his lead in one coordinated biting motion and she wails in agony."
     l "Now!"
-    show tome placeholder
+    show tome
     hide lucifrid
     e2 "Speak thy name and thine allegiance be manifest!"
-    hide tome placeholder
+    hide tome
     "I bash one of her heads with the tome and to my utter relief, ink bleeds from her form onto the page."
     "As her name is absorbed, she is transfigured back into a harmless house cat."
     "Her paws land softly on the carpet, and she quickly scampers off."
     
     play sound "audio/sfx/maou tamashii/skitter.ogg"
     "Our army of familiars disbands and the spiders disappear to their usual hiding places."
+    play music "audio/bgm/Out of place.ogg"
     "I collapse to the floor, tome clutched to my chest, breathing heavy."
     show lucifrid guardedclenched worry at enterright
     "Lucifrid rushes over to me but doesn’t say a word."
@@ -2667,9 +2751,11 @@ label postchoice_ilyameeting:
     scene black
     with fade
 
-    #longer transition
+    ############################################################################
+
     scene hallway day
     with MVNStainedGlass10
+    play music "audio/bgm/Ordinary life.ogg"
     "Walking to class that morning, I catch a lively conversation spilling from Classroom 2D."
     "Liese" "And after all that, I still missed the train!"
     "Phila" "I think that was entirely your own fault..."
@@ -2678,6 +2764,13 @@ label postchoice_ilyameeting:
 
     play sound "audio/sfx/osabisi/sliding door.ogg"
     scene classroom day
+    show femalestudent1:
+        xcenter 0.15
+        xzoom -1.0
+    show femalestudent2:
+        xcenter 0.34
+    show femalestudent3:
+        xcenter 0.5
     with MVNStainedGlass10
 
     "Liese" "Oh! Edelweiss!"
@@ -2692,20 +2785,30 @@ label postchoice_ilyameeting:
     "Liese" "But... what did you do...?"
 
     play sound "audio/sfx/osabisi/sliding door.ogg"
-    show ilya stiff calm at enterleft
-    pause 1.3
+    show ilya stiff calm at enterright(0.75, 0.7)
+    pause 0.7
+    show femalestudent2:
+        xcenter 0.32
+        xzoom -1.0
+    show femalestudent3:
+        xcenter 0.48
+        xzoom -1.0
+    pause 0.2
     e awkward "..."
     "Phila" "Ilya! Good morning!"
     "Liese" "Vice-president Ilya, what a pleasant sight early in the morning. Can I help you with anything?"
-    show ilya gentle
+    show ilya gentle:
+        xpos 0.75
     i "Good morning Phila, Liese, Marigold."
     "He makes eye contact with them in turn as he says their names, to which they each grow a shade redder."
-    show ilya cold_smile
+    show ilya cold_smile:
+        xpos 0.75
     i "Actually, my business today is with Edelweiss. You don’t mind if I borrow her for a moment, do you?"
     "Phila" "No, no! Go right ahead!"
     "Liese nods along emphatically as my blood runs cold. It might freeze in my veins if I keep looking at that icy smile."
     e awkward "Ah, sorry, I forgot I actually have fish feeding duty! Gotta head over to my classroom!"
-    show ilya polite
+    show ilya polite:
+        xpos 0.75
     i "No worries, I’ll assist you while we chat. I won’t take much of your time."
     e "...ahaha. Thank you."
     "Marigold" "Oh, he’s so kind..."
@@ -2713,13 +2816,13 @@ label postchoice_ilyameeting:
 
     scene hallway day
     with MVNStainedGlass10
-    show ilya stiff calm at enterright(0.7,0.7)
+    show ilya stiff calm at enterright(0.5)
     play sound "audio/sfx/yamicafe/footsteps.ogg"
     pause 0.7
     e pout "Uh, yeah, I don’t actually need to feed the fish."
-    show ilya gentle at midright
+    show ilya gentle at center
     i "I know. Your classroom doesn’t have fish, Edelweiss. You have a rabbit."
-    show ilya calm at midright
+    show ilya calm at center
     i "Why don’t you come to the student council room with me? We’ll have some privacy there."
     "Privacy? President Rosiel must be busy with cultural festival preparations."
     "The way he phrases it doesn’t make it seem like a suggestion. Resigning myself to my fate, I follow him through the halls."
@@ -2741,7 +2844,7 @@ label postchoice_ilyameeting:
     "I’m slowly learning that talking to Ilya is like one of those video games where you’re presented with a choice but the question simply repeats until you choose the correct answer."
     
     play sound "audio/sfx/filmcow/place down cup.ogg"
-    
+    play music "audio/bgm/Under the moon.ogg"
     show ilya at center
     with move
     i "I visited the hospital yesterday. I thought you might want to know that Johan and Caitlin are doing alright considering the circumstances."
@@ -2919,13 +3022,14 @@ label postchoice_ilyafallout:
     with fade
     scene hallway day
     with MVNStainedGlass10
+    play music "audio/bgm/Spider's Covenant.ogg"
 
     if notsoquiet:
         "Since my confrontation with Ilya, the not-so-quiet dissolution of our armistice, I haven’t quite known how to proceed."
     else:
         "Since my confrontation with Ilya, the quiet dissolution of our armistice, I haven’t quite known how to proceed."
 
-    "Ilya is out for blood—do apparitions have blood?—that much is obvious. But he can't find Lucifrid on his own, else he'd have made a move by now" 
+    "Ilya is out for blood—do apparitions have blood?—that much is obvious. But he can't find Lucifrid on his own, else he'd have made a move by now." 
     "Of course, I wanted to warn Lucifrid... but I don’t know Ilya’s tactics." 
     "If he’s somehow following me then I’d be leading him right to his target."
     "As proven by our last battle, I’m little more than a liability. It’s not like I can smack Ilya in the head with a tome and make him our familiar..."
@@ -2940,6 +3044,7 @@ label postchoice_ilyafallout:
     show hallway day:
         blur 0
     show lucifrid guardedclenched displeased
+    play music "audio/bgm/Lucifrid's theme.ogg"
     l "What on Earth do you think you’re doing?"
     e pout "...Walking down the hall."
     show lucifrid guardedhips frown
@@ -2972,15 +3077,13 @@ label postchoice_ilyafallout:
     "The prince of spiders stumbles in after me and I"
     play sound "audio/sfx/taira-komori/door locking.mp3"
     extend " turn the lock on the door."
-    show broomcloset placeholder
+    show broomcloset start
     window hide
     $ renpy.pause(2,hard=True)
     "Then I notice how very small this room is.{w} And how little space there is between us."
-    #lucifrid angry
     l "Will you explain to me what exactly you’re trying to do?!"
-    #edelweiss panic/teary
     e2 "Shh! Please, just be quiet! I’ll explain everything if you promise you’ll be quiet."
-    #lucifrid neutral
+    show broomcloset neutrallucy
     "Lucifrid’s eyes soften when he notices the genuine panic in my voice."
     "I lower my voice to a whisper, afraid Ilya may find us."
     e2 "I— I messed up..."
@@ -2991,7 +3094,7 @@ label postchoice_ilyafallout:
     e2 "If I can just stay away from you, then I can keep you safe."
     e2 "...It’s the only good I can do now."
     l "Edelweiss..."
-    #cg hold chin
+    show broomcloset holdchin
     "Lucifrid takes hold of my chin and lifts my face to make me meet his gaze."
     "Blood rushes to my head. All I can think about is how unsightly I must seem to him in this moment."
     l "You’re an idiot."
@@ -3003,18 +3106,18 @@ label postchoice_ilyafallout:
     e2 "It doesn’t matter if you can handle it! Be honest, I’m a burden on you! You’d be better off without me holding you down!"
     l "Are you questioning my judgment, Edie?"
     l "I won’t say this twice, so listen closely."
-    #cg forehead lucy grin
+    show broomcloset foreheadgrin
     "He leans his forehead against mine as he continues. My heart feels like it’s beating in my throat."
     l "You are not a burden on me. I have need of you. {i}You{/i}, and no one else."
-    #edelweiss blushes
     l "You are my precious assistant, and I will not tolerate you running off elsewhere, no matter what silly justifications you come up with." 
     l "No matter your doubts, from now on you come to me instead of trying to take care of things alone."
 
 
     menu:
         "...Okay. Thank you, Lucifrid.#":
+            play music "audio/bgm/Spider's Covenant.ogg"
             $ positive_arc += 1
-            #lucifrid pause
+            show broomcloset foreheadpause
             "Something changes in Lucifrid. He’s normally so quick to respond, so candid, but now, he seems unsure."
             "I was expecting him to tease me for being an obedient little helper, but he lets the moment linger."
             "My eyes trace his form." 
@@ -3025,7 +3128,7 @@ label postchoice_ilyafallout:
             "With my own heartbeat no longer filling my ears, the quiet allows me to notice his for the first time."
             "He isn’t human—but he lives and breathes and feels."
             e2 "I mean it, thank you. When I get like this... it’s almost impossible for me to shake myself out of it."
-            #cg changes to regular position, lucy grin edie neutral
+            show broomcloset grinneutral
             l "It was never quite my intention to become an expert in the stirrings of the human heart, but it seems I hold at least a faint grasp over yours."
             l "Cheer up now, worrywart."
             jump postchoice_broomcloset
@@ -3033,16 +3136,16 @@ label postchoice_ilyafallout:
 
         "How am I supposed to trust anything you say with that smirk on your face?#":
             $ lucy_yan += 1
-            #cg changes to regular position, lucy grin edie neutral
+            show broomcloset grinneutral
             l "Oh, you wound me."
             l "I was being entirely earnest!"
             l "I’m busy enough managing all the threats upon our domain without you suffering existential crises."
-            #edie pout
+            show broomcloset grinpout
             e2 "See! Right back to bullying! Your feigned concern is only self-serving in the end."
-            #lucifrid neutral
+            show broomcloset neutralpout
             l "Though it may serve me well, that doesn’t mean the concern is feigned."
             l "You are free to believe what you will, so long as you obey my command."
-            #lucifrid grin
+            show broomcloset grinpout
             l "I will show you just how serious I am through actions rather than words."
             e2 "First bullying, now threats of physical nature... I can hardly remember why I felt the need to protect you."
             l "Perfect! Then it seems this crisis is resolved."
@@ -3050,22 +3153,23 @@ label postchoice_ilyafallout:
 
 
 label postchoice_broomcloset:
-    #cg regular lucy grin, edie neutral
+    show broomcloset grinneutral
+    play music "audio/bgm/Spider's Covenant.ogg"
     "It’s hard to believe the prince of spiders is skilled at easing the pains and fears of teenage girls, but I can’t deny that I’m feeling better."
     "My mind cleared of its undue fog, a lingering question from before rises to the surface."
     e2 "Something’s been on my mind lately because of Ilya’s threats. What would happen if you were exorcised while we have our contract?"
     l "I can’t believe you would entertain the thought! A deity of the beyond is not so easily bested."
     e2 "That’s not answering the question."
     l "Because the question is completely divorced from reality!"
-    #edie pout
+    show broomcloset grinpout
     e2 "...you don’t actually know what will happen, do you?"
     l "Ah, I still remember the day I forced you into this arrangement. You were shaking like a leaf, trying to seem brave."
     l "You hated my guts, didn’t you?"
     l "And look at you now, worrying about the evil overlord, you pure, innocent soul!"
     e2 "Who will have use of my abilities when you’re gone? You’re not the only one who can mix care with pragmatism, Lucy!"
-    #lucifrid blushes
+    show broomcloset blushpout
     l "L-Lucy?"
-    #edelweiss blushes
+    show broomcloset blushblush
     e2 "O-oh. Um."
     e2 "You always call me Edie too..."
     l "Hmph. I suppose I can allow it this one time."
@@ -3082,6 +3186,7 @@ label postchoice_broomcloset:
 
     scene hallway day
     with MVNStainedGlass10
+    play music "audio/bgm/Conflict.ogg"
     play sound "audio/sfx/osabisi/crash.ogg"
     pause 0.5
     play sound "audio/sfx/yamicafe/running.mp3"
@@ -3131,15 +3236,14 @@ label postchoice_broomcloset:
     "???" "You don’t frighten me, human. We’ll see how strong you are when you can’t cower behind the spider prince."
     "Well, that’s about as far as dialogue will get me."
     "I jump backwards to put some extra distance between us, and still holding the staff towards it, begin chanting a rite I studied up on recently."
-    show tome placeholder
-    #belled staff
+    show staff
     e determined "Light unto light, dark unto dark. Stay thy hand, walk thy path."
     "The masked spirit is slowed, but keeps pushing towards me. As expected, the rite isn’t strong enough..."
     "A heavy feeling settles in my stomach."
     "Why isn’t Lucifrid here yet?"
     e awkward "Light unto light, dark unto dark! Stay thy hand, walk thy path!"
     "As the apparition inches closer, sweat forms on my brow. I don’t know what else I’m supposed to do!"
-    hide tome placeholder
+    hide staff
     "My eyes wander around for any sort of escape, then spot Ilya through the window."
     "He’s heading this way! I don’t believe I’ve ever been so glad to see him."
 
@@ -3167,7 +3271,7 @@ label postchoice_broomcloset:
     "???" "More of my kin will come for you, Edelweiss!"
     "Until its last breath it curses us, and the pained sound echoes horrifically."
     "As I try to focus on anything else, Ilya rushes over, face flushed with an unreadable expression."
-
+    play music "audio/bgm/Under the moon.ogg"
 
     if ilya_affection >= 2:
         show ilya pity polite at center
@@ -3537,9 +3641,7 @@ label post_Lucifridmeltdown:
     "..."
     "...No. I won’t bring it up. Not now."
 
-
     if lucy_distrust:
-
 
         "What good will it do to confide in him? He won’t believe what I have to say, especially once he figures out the knowledge comes from Ilya."
         "I’m tired. I’ll figure out some way to deal with this later. Maybe Emrys could help..."
@@ -3561,43 +3663,48 @@ label post_Lucifridmeltdown:
         "I feel like something will irreversibly change once I mention it."
         "We’ll have to face the consequences eventually, but is it wrong for me to want these days to continue like this just a little longer?"
         "I glance over at Lucifrid, who has seated himself on his ‘throne’."
+        show lucifrid guardedhips grin
         "His eyes meet mine and he grins. I smile in return, glad to see him back to himself."
         l "Something on your mind?"
+        show lucifrid guardedopen innocent
         l "I thought I’d let you rest after your little run-in today, but there’s always inferior creatures to subdue."
-        e "Really? I thought we were getting pretty close to conquering the entire beyond!"
+        e laugh none "Really? I thought we were getting pretty close to conquering the entire beyond!"
+        show lucifrid grin
         l "Hehe, perhaps."
         "I move closer and sit down atop one of the desks facing Lucifrid."
-        e "Maybe we can just relax here today."
+        e smile "Maybe we can just relax here today."
+        show lucifrid threateninghips smug at halfcloseup
         l "Oh? You have nothing better to do with your after-school hours than loiter with an apparition?"
-        e "Not just any apparition! The prince of spiders, most powerful deity on the dark side of the boundary!"
+        e laugh "Not just any apparition! The prince of spiders, most powerful deity on the dark side of the boundary!"
         "He laughs heartily."
         l "Oh, now you’re just flattering me!"
-        #edelweiss smirk
-        e "What of it?"
+        e smug "What of it?"
+        show lucifrid invitinghips grin at halfcloseup
         l "Well, don’t stop there!"
         e "Hmm, you want more titles? I think it’s already quite a mouthful, my arachnid overlord."
-        e "Oh, right, what did the catgirl call you?"
-        e "I am at your service, Your Dark Majesty."
-        e "For loitering, or whatever else."
+        e smile "Oh, right, what did the catgirl call you?"
+        e determined "I am at your service, Your Dark Majesty."
+        e smile "For loitering, or whatever else."
         "Who knew that he was this easy to amuse all along?"
         "But no, I get the sense his contented smile has nothing to do with the words I'm speaking."
         "He rises from his seat and looms over me."
+        show lucifrid threateninghips ominous at closeup
         l "Whatever else?"
         "As he leans in closer, fangs gleaming, I can’t help but feel a hint of unease creep up on me still."
         "My gaze darts from his fangs to his eyes. Back to his fangs. Then his eyes again."
 
 
         if true_ending >= 1:
-            #edelweiss smile
-            e "Whatever else."
+            e smile slightblush "Whatever else."
         else:
-            #edelweiss uncomfortable
-            e "O-okay, maybe not {i}whatever{/i} else."
+            e awkward slightblush "O-okay, maybe not {i}whatever{/i} else."
 
-
+        show lucifrid guardedrelaxed grin
         l "Hehe, just kidding!"
+        show lucifrid smug
         l "What sorts of twisted things were you hoping for, hmm?"
         "I pinch his cheek hard. He deserves it."
+        show lucifrid guardedclenched pout
         l "Ow! I can’t believe I get assaulted for {i}not{/i} resorting to violence now!"
         "Our carefree days are bound to end soon, I can feel it. Can he feel it too?"
         "Regardless, that day is not today. Today we live. In feigned, blissful ignorance."
@@ -3605,14 +3712,13 @@ label post_Lucifridmeltdown:
 
 label endings:
 
-
     scene classroom day
     "It’s the dawn of the final day. The day before the cultural festival."
     "In the end, I barely helped out with our class exhibit. My classmates probably think I’m a slacker, which may well have been true any other year, but not this time."
     "Needless to say, I know who’s to blame."
     "It’s almost thematic. Our class really did decide on a haunted house, though Lucifrid did not volunteer his help."
     
-    #emrys focussed
+    show emrys casual determined
     "Emrys did, though—putting his peerless domestic skills to good use making various monster costumes from old bedsheets and fabric scraps."
     "Right now he’s putting the final touches on a vampire’s cape."
     e "Ooh, this one’s looking fancy!"

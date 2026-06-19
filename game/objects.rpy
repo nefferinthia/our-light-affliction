@@ -48,6 +48,10 @@ transform enterright(end_x=0.5, duration=1.3):
     yalign 1.0
     easein duration xcenter end_x
 
+transform exitright(start_x=0.25):
+    xpos start_x
+    linear 1.5  xpos 1.5
+
 transform pan:
     subpixel True
     zoom 2.0
