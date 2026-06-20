@@ -11,6 +11,11 @@ transform halfcloseup:
     yalign 0.15
     xpos 0.55
 
+transform halfcloseupright:
+    zoom 1.5
+    yalign 0.15
+    xcenter 0.7
+
 transform halfcloseupl:
     zoom 1.5
     yalign 0.15

@@ -151,7 +151,7 @@ define config.allow_underfull_grids = True
 ## https://www.renpy.org/doc/html/preferences.html#audio-channel-defaults
 define config.default_music_volume = 0.8
 define config.default_sfx_volume = 1.0
-define config.default_voice_volume = 0.7
+define config.default_voice_volume = 1.0
 
 ## Optional; this reverts the behaviour of the volume sliders back to
 ## pre-8.1, so muting the game shows the volume sliders all at 0
