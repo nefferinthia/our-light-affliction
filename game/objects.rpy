@@ -6,6 +6,8 @@ transform closeup:
     yalign 0.15
     xpos 0.55
 
+define fadehold = Fade(1.0, 3.0, 1.0)
+
 transform halfcloseup:
     zoom 1.5
     yalign 0.15

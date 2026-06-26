@@ -14,13 +14,13 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("our light affliction: spider's covenant")
+define config.name = _("Our Light Affliction: Spider's Covenant")
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "olasc"
+define build.name = "OurLightAffliction"
 
 ## Save directory ##############################################################
 ##
@@ -42,7 +42,7 @@ define config.save_directory = None
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "0.9"
 
 
 ## Sounds and music ############################################################
@@ -89,12 +89,12 @@ define config.intra_transition = dissolve
 
 ## A transition that is used after a game has been loaded.
 
-define config.after_load_transition = None
+define config.after_load_transition = dissolve
 
 
 ## Used when entering the main menu after the game has ended.
 
-define config.end_game_transition = None
+define config.end_game_transition = dissolve
 
 ## Window management ###########################################################
 ##
@@ -120,7 +120,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 30
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
@@ -149,7 +149,7 @@ define config.allow_underfull_grids = True
 
 ## Default volume % for the various volume sliders
 ## https://www.renpy.org/doc/html/preferences.html#audio-channel-defaults
-define config.default_music_volume = 0.8
+define config.default_music_volume = 0.6
 define config.default_sfx_volume = 1.0
 define config.default_voice_volume = 1.0
 
