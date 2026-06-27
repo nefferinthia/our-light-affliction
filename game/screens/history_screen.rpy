@@ -16,50 +16,51 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    add HBox(Transform("#292835", xsize=350), "#21212db2") # The background; can be whatever
+    # add HBox(Transform("#292835", xsize=350), "#21212db2") # The background; can be whatever
 
     use game_menu(_("History"))
 
-    viewport:
-        style_prefix 'game_menu'
-        mousewheel True draggable True pagekeys True
-        scrollbars "vertical" yinitial 1.0
+    hbox:
+        null width 500
+        viewport:
+            style_prefix 'game_menu'
+            mousewheel True draggable True pagekeys True
+            scrollbars "vertical" yinitial 1.0
+            # xoffset 1750
 
-        has vbox
+            has vbox
 
-        style_prefix "history"
+            style_prefix "history"
 
-        for h in _history_list:
+            for h in _history_list:
+                frame:
+                    has hbox
+                    if h.who:
+                        label h.who style 'history_name':
+                            substitute False
+                            ## Take the color of the who text
+                            ## from the Character, if set
+                            if "color" in h.who_args:
+                                text_color h.who_args["color"]
+                            xsize 200   # this number and the null width
+                                        # number should be the same
+                    else:
+                        null width 200
 
-            frame:
-                has hbox
-                if h.who:
-                    label h.who style 'history_name':
+                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                    text what:
                         substitute False
-                        ## Take the color of the who text
-                        ## from the Character, if set
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
-                        xsize 200   # this number and the null width
-                                    # number should be the same
-                else:
-                    null width 200
 
-                $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                text what:
-                    substitute False
-
-        if not _history_list:
-            label _("The dialogue history is empty.")
+            if not _history_list:
+                label _("The dialogue history is empty.")
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
 
 define gui.history_allow_tags = { "alt", "noalt", "rt", "rb", "art" }
 
-
 style history_frame:
-    xsize 1400
+    xsize 1200
     ysize None
     background None
 

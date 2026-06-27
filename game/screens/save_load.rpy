@@ -9,150 +9,133 @@
 
 
 ## The width and height of thumbnails used by the save slots.
-define config.thumbnail_width = 384
-define config.thumbnail_height = 216
+define config.thumbnail_width = 600
+define config.thumbnail_height = 340
 
+style saves_label_text:
+    size 45
 
-screen save():
-
-    tag menu
-
-    add HBox(Transform("#292835", xsize=350), "#21212db2") # The background; can be whatever
-
-    use file_slots(_("Save"))
-
-
-screen load():
+screen saves(slot=None):
 
     tag menu
 
-    add HBox(Transform("#292835", xsize=350), "#21212db2") # The background; can be whatever
+    use game_menu(_("Saves"))
 
-    use file_slots(_("Load"))
+    default name = "New Save..."
+    default name_input = ScreenVariableInputValue("name", default=False)
+
+    fixed:
+        if slot:
+            image "gui/save slot.png"
+
+        style_prefix "saveload"
+            
+        hbox:
+            null width 500
+            frame:
+                xsize 350
+                vbox:
+                    null height 40
+                    label "Saves"
+                    style_prefix "file_slots"
+
+                    viewport:
+                        mousewheel True draggable True pagekeys True
+                        scrollbars "vertical" yinitial 0.0
+
+                        vbox:
+                            button:
+                                key_events True
+                                action [SetScreenVariable("name", ""), name_input.Toggle()]
+
+                                input:
+                                    value name_input
+                                    action [
+                                        name_input.Toggle(), 
+                                        SetVariable("save_name", name_input.get_text()), 
+                                        FileSave(None, confirm=False, page=1, action=ShowMenu("saves"))
+                                    ]
+
+                            $ slots = FileUsedSlots(1)
+
+                            for s in slots:
+                                if FileLoadable(s, page=1):
+                                    if FileSaveName(s, page=1) != '':
+                                        if s == slot:
+                                            textbutton FileSaveName(s, page=1)
+                                        else:
+                                            textbutton FileSaveName(s, page=1) action ShowMenu("saves", slot=s)
+                                    else:
+                                        $ time = FileTime(s, page=1,
+                                                    format=_("{#file_time}%Y-%m-%d %H:%M"),
+                                                    empty=_("empty slot"))
+                                        textbutton time action ShowMenu("saves", slot=s)
+            null width 320
+            if slot:
+                vbox:
+                    null height 150
+                    add FileScreenshot(slot, page=1) xysize (config.thumbnail_width, config.thumbnail_height)
+                    null height 50
+                    $ time = FileTime(slot, page=1,
+                        format=_("{#file_time}%H:%M"),
+                        empty=_("empty slot"))
+                    text "Save Time:   " + time xalign 0.5
+                    if FileSaveName(slot, page=1) != '':
+                        text "Save Name:   " + FileSaveName(slot, page=1) xalign 0.5
+                    null height 100
+                    hbox:
+                        xalign 0.5
+                        if not main_menu:
+                            textbutton "Overwrite" action [SetVariable("save_name", FileSaveName(slot, page=1)), FileSave(slot, confirm=True, page=1, action=ShowMenu("saves", slot=slot))]
+                            null width 20
+                        textbutton _("Load") action FileLoad(slot, confirm=True, page=1)
+                        null width 20
+                        textbutton _("Delete") action FileDelete(slot, confirm=True, page=1)
+                        
+screen save(slot=None):
+
+    tag menu
+
+    use file_slots(_("Save"), slot=slot)
 
 
-screen file_slots(title):
+screen load(slot=None):
 
-    default page_name_value = FilePageNameInputValue(
-        pattern=_("Page {}"), auto=_("Automatic saves"),
-        quick=_("Quick saves"))
+    tag menu
+
+    use file_slots(_("Load"), slot=slot)
+
+screen file_slots(title, slot=None):
 
     use game_menu(title)
 
-    fixed:
-        xsize 1500 xalign 1.0
-        ## This ensures the input will get the enter event before any of the
-        ## buttons do.
-        order_reverse True
-
-        ## The page name, which can be edited by clicking on it.
-        ## This can be pretty easily removed if you want.
-        ## Don't forget to also remove the `default` at the top if so.
-        button:
-            style "page_label"
-            key_events True
-            action page_name_value.Toggle()
-
-            input:
-                style "page_label_text"
-                value page_name_value
-
-        ## The grid of file slots.
-        grid 3 2:
-            style_prefix "slot"
-
-            for i in range(3*2):
-                $ slot = i + 1
-
-                button:
-                    action FileAction(slot)
-                    has vbox
-
-                    add FileScreenshot(slot) xalign 0.5
-
-                    ## https://www.fabriziomusacchio.com/blog/2021-08-15-strftime_Cheat_Sheet/
-                    text FileTime(slot,
-                            format=_("{#file_time}%A, %B %d %Y, %H:%M"),
-                            empty=_("empty slot")):
-                        style "slot_time_text"
-
-                    text FileSaveName(slot) style "slot_name_text"
-
-                    # This means the player can hover this save
-                    # slot and hit delete to delete it
-                    key "save_delete" action FileDelete(slot)
-
-        ## Buttons to access other pages.
-        vbox:
-            style_prefix "page"
-            hbox:
-                textbutton _("<") action FilePagePrevious()
-
-                if config.has_autosave:
-                    textbutton _("{#auto_page}A") action FilePage("auto")
-
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                ## range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
-
-                textbutton _(">") action FilePageNext()
-
-            if config.has_sync:
-                if CurrentScreenName() == "save":
-                    textbutton _("Upload Sync"):
-                        action UploadSync()
-                else:
-                    textbutton _("Download Sync"):
-                        action DownloadSync()
-
-
-style page_label:
-    xpadding 75
-    ypadding 5
-    xalign 0.5
-
-style page_label_text:
-    textalign 0.5
-    layout "subtitle"
-    hover_color '#ff8335'
-
-style slot_grid:
-    xalign 0.5
+style saveload_button_text:
+    ##############################################################
+    # this is here to fix an issue with the selected_color always
+    # being the chosen color
+    ##############################################################
+    size gui.text_size
+    font gui.interface_text_font
     yalign 0.5
-    spacing 15
+    xalign 0.0
+    ## The color used for a text button when it is neither selected nor hovered.
+    color '#BBAF9D'
+    ## The color that is used for buttons and bars that are hovered.
+    hover_color '#F12F34'
+    ## The color used for a text button when it cannot be selected.
+    insensitive_color '#8888887f'
 
-style slot_time_text:
-    size 25
-    xalign 0.5
+style file_slots_viewport:
+    xsize 350
+    ysize config.screen_height-200
+    yoffset 50
 
-style slot_vbox:
-    spacing 12
+style file_slots_side:
+    yfill True
 
-style slot_button:
-    xysize (414, 309)
-    padding (15, 15, 15, 15)
-    background "gui/button/slot_[prefix_]background.png"
+style file_slots_vscrollbar:
+    yalign 0.5
+    ysize config.screen_height-200
+    unscrollable "hide"
 
-style slot_button_text:
-    size 21
-    xalign 0.5
-    idle_color '#aaaaaa'
-    hover_color '#ff8335'
-    selected_idle_color '#ffffff'
-
-style page_hbox:
-    xalign 0.5
-    spacing 5
-
-style page_vbox:
-    xalign 0.5
-    yalign 1.0
-    spacing 5
-
-style page_button:
-    padding (15, 6, 15, 6)
-    xalign 0.5
 

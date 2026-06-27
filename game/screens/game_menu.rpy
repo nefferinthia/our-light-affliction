@@ -9,11 +9,20 @@
 ## setting up containers for the contents of your menu screens.
 ##
 
+init python:
+    _game_menu_screen = "saves"
+
 screen game_menu(title):
 
     style_prefix "game_menu"
 
+    window: 
+        if title == _("Saves"):
+            background Image("gui/save load screen.png")
+        else:
+            background Image("gui/history screen.png")
     vbox:
+        
         xpos 60 yalign 0.5
         spacing 6
 
@@ -25,9 +34,9 @@ screen game_menu(title):
 
             textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            # textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Saves") action ShowMenu("saves")
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
@@ -56,11 +65,6 @@ screen game_menu(title):
         style "return_button"
         action Return()
 
-    ## Remove this line if you don't want to show the screen
-    ## title text as a label (for example, if it's baked into
-    ## the background image.)
-    label title
-
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
 
@@ -70,15 +74,17 @@ style return_button:
     yoffset -45
 
 style game_menu_viewport:
-    xsize config.screen_width-420
+    xsize config.screen_width-620
     ysize config.screen_height-200
-    align (0.5, 0.5)
+    align (1.0, 0.5)
 
 style game_menu_side:
     yfill True
     align (1.0, 0.5)
 
 style game_menu_vscrollbar:
+    yalign 0.5
+    ysize config.screen_height-200
     unscrollable "hide"
 
 style game_menu_label:
