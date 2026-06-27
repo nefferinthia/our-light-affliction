@@ -27,17 +27,19 @@ screen saves(slot=None):
     fixed:
         if slot:
             image "gui/save slot.png"
+
+        style_prefix "saveload"
             
         hbox:
             null width 500
             frame:
                 xsize 350
                 vbox:
-                    style_prefix "saves"
                     null height 40
                     label "Saves"
+                    style_prefix "file_slots"
+
                     viewport:
-                        style_prefix "file_slots"
                         mousewheel True draggable True pagekeys True
                         scrollbars "vertical" yinitial 0.0
 
@@ -83,22 +85,18 @@ screen saves(slot=None):
                     null height 100
                     hbox:
                         xalign 0.5
-                        style_prefix "saveload"
                         if not main_menu:
-                            textbutton "Overwrite" action [
-                                SetVariable("save_name", FileSaveName(slot, page=1)), 
-                                FileSave(slot, confirm=True, page=1, action=ShowMenu("saves", slot=slot))
-                            ]
+                            textbutton "Overwrite" action [SetVariable("save_name", FileSaveName(slot, page=1)), FileSave(slot, confirm=True, page=1, action=ShowMenu("saves", slot=slot))]
                             null width 20
-                        textbutton "Load" action  FileLoad(slot, confirm=True, page=1)
+                        textbutton _("Load") action FileLoad(slot, confirm=True, page=1)
                         null width 20
-                        textbutton "Delete" action [FileDelete(slot, confirm=True, page=1), ShowMenu("saves")]
+                        textbutton _("Delete") action FileDelete(slot, confirm=True, page=1)
                         
 screen save(slot=None):
 
     tag menu
 
-    use file_slots(_("saves"), slot=slot)
+    use file_slots(_("Save"), slot=slot)
 
 
 screen load(slot=None):
@@ -111,6 +109,21 @@ screen file_slots(title, slot=None):
 
     use game_menu(title)
 
+style saveload_button_text:
+    ##############################################################
+    # this is here to fix an issue with the selected_color always
+    # being the chosen color
+    ##############################################################
+    size gui.text_size
+    font gui.interface_text_font
+    yalign 0.5
+    xalign 0.0
+    ## The color used for a text button when it is neither selected nor hovered.
+    color '#BBAF9D'
+    ## The color that is used for buttons and bars that are hovered.
+    hover_color '#F12F34'
+    ## The color used for a text button when it cannot be selected.
+    insensitive_color '#8888887f'
 
 style file_slots_viewport:
     xsize 350
