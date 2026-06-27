@@ -6,10 +6,17 @@ transform closeup:
     yalign 0.15
     xpos 0.55
 
+define fadehold = Fade(1.0, 3.0, 1.0)
+
 transform halfcloseup:
     zoom 1.5
     yalign 0.15
     xpos 0.55
+
+transform halfcloseupright:
+    zoom 1.5
+    yalign 0.15
+    xcenter 0.7
 
 transform halfcloseupl:
     zoom 1.5
@@ -47,6 +54,10 @@ transform enterright(end_x=0.5, duration=1.3):
     xpos 1.5
     yalign 1.0
     easein duration xcenter end_x
+
+transform exitright(start_x=0.25):
+    xpos start_x
+    linear 1.5  xpos 1.5
 
 transform pan:
     subpixel True
