@@ -100,9 +100,11 @@ style label_text:
 
 
 style bar:
-    ysize 38
-    left_bar Frame("gui/bar/left.png", 6, 6, 6, 6, tile=False)
-    right_bar Frame("gui/bar/right.png", 6, 6, 6, 6, tile=False)
+    base_bar Frame("gui/scrollbar/horizontal_[prefix_]bar.png", 6, 6, tile=False, ysize=20, yalign=0.5)
+    thumb Frame("gui/scrollbar/horizontal_[prefix_]thumb.png", 6, 6, xysize=(70, 70), yalign=0.5)
+    thumb_align 0.5
+    thumb_offset (35, 20)
+    unscrollable 'hide'
 
 style vbar:
     xsize 38
@@ -110,9 +112,10 @@ style vbar:
     bottom_bar Frame("gui/bar/bottom.png", 6, 6, 6, 6, tile=False)
 
 style scrollbar:
-    ysize 18
-    base_bar Frame("gui/scrollbar/horizontal_[prefix_]bar.png", 6, 6, 6, 6, tile=False)
-    thumb Frame("gui/scrollbar/horizontal_[prefix_]thumb.png", 6, 6, 6, 6, tile=False)
+    base_bar Frame("gui/scrollbar/horizontal_[prefix_]bar.png", 6, 6, tile=False, ysize=20, yalign=0.5)
+    thumb Frame("gui/scrollbar/horizontal_[prefix_]thumb.png", 6, 6, xysize=(70, 70), yalign=0.5)
+    thumb_align 0.5
+    thumb_offset (35, 20)
     unscrollable 'hide'
 
 style vscrollbar:
