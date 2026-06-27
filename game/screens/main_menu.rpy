@@ -25,7 +25,7 @@ screen main_menu():
 
         textbutton _("New game") action Start()
 
-        textbutton _("Continue") action ShowMenu("save")
+        textbutton _("Continue") action ShowMenu("saves")
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
