@@ -83,8 +83,13 @@ screen saves(slot=None):
                     null height 100
                     hbox:
                         xalign 0.5
-                        textbutton "Overwrite" action [SetVariable("save_name", FileSaveName(slot, page=1)), FileSave(slot, confirm=True, page=1, action=ShowMenu("saves", slot=slot))]
-                        null width 20
+                        style_prefix "saveload"
+                        if not main_menu:
+                            textbutton "Overwrite" action [
+                                SetVariable("save_name", FileSaveName(slot, page=1)), 
+                                FileSave(slot, confirm=True, page=1, action=ShowMenu("saves", slot=slot))
+                            ]
+                            null width 20
                         textbutton "Load" action  FileLoad(slot, confirm=True, page=1)
                         null width 20
                         textbutton "Delete" action [FileDelete(slot, confirm=True, page=1), ShowMenu("saves")]
@@ -105,6 +110,7 @@ screen load(slot=None):
 screen file_slots(title, slot=None):
 
     use game_menu(title)
+
 
 style file_slots_viewport:
     xsize 350
