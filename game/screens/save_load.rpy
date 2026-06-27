@@ -44,17 +44,18 @@ screen saves(slot=None):
                         scrollbars "vertical" yinitial 0.0
 
                         vbox:
-                            button:
-                                key_events True
-                                action [SetScreenVariable("name", ""), name_input.Toggle()]
+                            if not main_menu:
+                                button:
+                                    key_events True
+                                    action [SetScreenVariable("name", ""), name_input.Toggle()]
 
-                                input:
-                                    value name_input
-                                    action [
-                                        name_input.Toggle(), 
-                                        SetVariable("save_name", name_input.get_text()), 
-                                        FileSave(None, confirm=False, page=1, action=ShowMenu("saves"))
-                                    ]
+                                    input:
+                                        value name_input
+                                        action [
+                                            name_input.Toggle(), 
+                                            SetVariable("save_name", name_input.get_text()), 
+                                            FileSave(None, confirm=False, page=1, action=ShowMenu("saves"))
+                                        ]
 
                             $ slots = FileUsedSlots(1)
 
