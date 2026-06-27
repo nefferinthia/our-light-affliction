@@ -18,25 +18,26 @@ screen about():
 
     tag menu
 
-    add "#21212db2" # The background; can be whatever
-
     use game_menu(_("About"))
 
-    viewport:
-        style_prefix 'game_menu'
-        mousewheel True draggable True pagekeys True
-        scrollbars "vertical"
+    hbox:
+        null width 500
 
-        has vbox
-        style_prefix "about"
+        viewport:
+            style_prefix 'game_menu'
+            mousewheel True draggable True pagekeys True
+            scrollbars "vertical"
 
-        label "[config.name!t]"
-        text _("Version [config.version!t]\n")
+            has vbox
+            style_prefix "about"
 
-        if gui.about:
-            text "[gui.about!t]\n"
+            label "[config.name!t]"
+            text _("Version [config.version!t]\n")
 
-        text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            if gui.about:
+                text "[gui.about!t]\n"
+
+            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 style about_label_text:
@@ -55,33 +56,34 @@ screen help():
 
     default device = "keyboard"
 
-    add HBox(Transform("#292835", xsize=350), "#21212db2") # The background; can be whatever
-
     use game_menu(_("Help"))
 
-    viewport:
-        style_prefix 'game_menu'
-        mousewheel True draggable True pagekeys True
-        scrollbars "vertical"
+    hbox:
+        null width 500
+        
+        viewport:
+            style_prefix 'game_menu'
+            mousewheel True draggable True pagekeys True
+            scrollbars "vertical"
 
-        has vbox
-        style_prefix "help"
-        spacing 23
+            has vbox
+            style_prefix "help"
+            spacing 23
 
-        hbox:
+            hbox:
 
-            textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-            textbutton _("Mouse") action SetScreenVariable("device", "mouse")
+                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
+                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
 
-            if GamepadExists():
-                textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+                if GamepadExists():
+                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
 
-        if device == "keyboard":
-            use keyboard_help
-        elif device == "mouse":
-            use mouse_help
-        elif device == "gamepad":
-            use gamepad_help
+            if device == "keyboard":
+                use keyboard_help
+            elif device == "mouse":
+                use mouse_help
+            elif device == "gamepad":
+                use gamepad_help
 
 
 screen keyboard_help():
