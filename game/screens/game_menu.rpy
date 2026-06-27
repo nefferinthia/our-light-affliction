@@ -17,10 +17,10 @@ screen game_menu(title):
     style_prefix "game_menu"
 
     window: 
-        if title == _("History"):
-            background Image("gui/history screen.png")
-        elif title == _("Saves"):
+        if title == _("Saves"):
             background Image("gui/save load screen.png")
+        else:
+            background Image("gui/history screen.png")
     vbox:
         
         xpos 60 yalign 0.5
