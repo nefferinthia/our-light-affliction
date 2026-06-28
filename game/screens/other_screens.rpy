@@ -10,6 +10,14 @@
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+Writing, sprite art, background art, CG art, GUI design and scripting by {a=https://nefferinthia.itch.io/}nefferinthia{/a}. Additional writing, proofreading, additional CG rendering by {a=https://tenshistudios.itch.io/}tenshideve{/a}. GUI programming by {a=https://actualpanda.itch.io/}ActualPanda{/a}. Music composed by {a=https://selenn.itch.io/}Selenn{/a}.
+
+Third party tools used include {a=https://cuteshadow.itch.io/layeredimage-visual-editor-v3}Layered Image Visual Editor in Ren'Py{/a} by CuteShadow, {a=https://makevisualnovels.itch.io/mvn-renpy-transition-kit}Make Visual Novels RenPy Transition Kit{/a} by Stella @ MakeVisualNovels, Blur shader by lauwurence and {a=https://wattson.itch.io/renpy-wave-shader}Ren'py Wave Shader{/a} by Wattson
+
+SFX sourced from {a=http://www.kurage-kosho.info/}Kurage Kosho{/a}, Filmcow, {a=http://www.vita-chi.net/sozai1.htm}Vita-chi Sozaikan{/a}, {a=http://yamicafe.nekonikoban.org/index.html}Yami Cafe{/a}, {a=https://otologic.jp/}OtoLogic{/a}, {a=https://osabisi.sakura.ne.jp/m2/material3.html}osabisi{/a}, {a=https://maou.audio/}Maou Tamashii{/a}, {a=https://taira-komori.net/freesound.html}Taira Komori{/a} and {a=http://freesound.org/}Freesound{/a} (including users {a=http://www.jshaw.co.uk/}InspectorJ{/a}, {a=https://freesound.org/s/188606/}TimPryor{/a}, {a=https://freesound.org/s/167074/}DrMinky{/a} and {a=https://freesound.org/s/270478/}LittleRobotSoundFactory{/a}).
+
+Silhouette sprites by {a=https://izayou.blog.shinobi.jp/}Rurichou{/a}. Battle cut-in CGs by {a=https://arimia.itch.io/}Arimia{/a}.
+
 EasyRenPyGui is made by {a=https://github.com/shawna-p}Feniks{/a} {a=https://feniksdev.com/}@feniksdev.com{/a}
 """)
 
@@ -37,7 +45,8 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _(
+            "Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 style about_label_text:

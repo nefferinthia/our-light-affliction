@@ -14,7 +14,7 @@ init python:
 
 screen game_menu(title):
 
-    style_prefix "game_menu"
+    style_prefix "gm"
 
     window: 
         if title == _("Saves"):
@@ -91,3 +91,11 @@ style game_menu_label:
     padding (10, 10)
 style game_menu_label_text:
     size 45
+
+style gm_button_text:
+    size 45
+    font "fonts/Cheboygan.ttf"
+    idle_color '#BBAF9D'
+    hover_color '#F12F34'
+    selected_color '#96211D'
+    insensitive_color '#8888887f'
