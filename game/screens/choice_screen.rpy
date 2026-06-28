@@ -17,8 +17,9 @@ screen choice(items):
             button:
                 action [Hide("full_choice", dissolve), an_action.action]
                 style "choice{}".format(idx+1)
-                hovered Show("full_choice", dissolve, idx, tooltip_text)
-                unhovered Hide("full_choice", dissolve)
+                if len(tooltip_text) > 0:
+                    hovered Show("full_choice", dissolve, idx, tooltip_text)
+                    unhovered Hide("full_choice", dissolve)
                 text choice_text
             
 screen full_choice(i, t):
