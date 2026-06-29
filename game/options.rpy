@@ -37,12 +37,12 @@ define build.name = "OurLightAffliction"
 ## literal string, not an expression.
 
 ## Note: a typical save_directory value looks like "FreshProject-1671818013"
-define config.save_directory = None
+define config.save_directory = "OurLightAffliction"
 
 
 ## The version of the game.
 
-define config.version = "0.9"
+define config.version = "1.0"
 
 
 ## Sounds and music ############################################################
@@ -150,7 +150,7 @@ define config.allow_underfull_grids = True
 ## Default volume % for the various volume sliders
 ## https://www.renpy.org/doc/html/preferences.html#audio-channel-defaults
 define config.default_music_volume = 0.6
-define config.default_sfx_volume = 1.0
+define config.default_sfx_volume = 0.8
 define config.default_voice_volume = 1.0
 
 ## Optional; this reverts the behaviour of the volume sliders back to
@@ -229,4 +229,4 @@ init python:
 ## The username and project name associated with an itch.io project, separated
 ## by a slash.
 
-# define build.itch_project = "renpytom/test-project"
+define build.itch_project = "nefferinthia/our-light-affliction-spiders-covenant"

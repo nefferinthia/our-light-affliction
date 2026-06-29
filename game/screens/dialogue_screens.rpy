@@ -42,7 +42,7 @@ screen say(who, what):
             
             window:
                 style "button1"
-                imagebutton action ShowMenu('save'):
+                imagebutton action ShowMenu('saves'):
                     idle "gui/menu button 2.png"
                     hover "gui/menu button 2 hover.png"
                 text "Save":
@@ -51,7 +51,7 @@ screen say(who, what):
 
             window: 
                 style "button2"
-                imagebutton action ShowMenu('load'):
+                imagebutton action ShowMenu('saves'):
                     idle "gui/menu button 3.png"
                     hover "gui/menu button 3 hover.png"
                 text "Load":

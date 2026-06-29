@@ -19,6 +19,8 @@ screen saves(slot=None):
 
     tag menu
 
+    style_prefix "save"
+
     use game_menu(_("Saves"))
 
     default name = "New Save..."
@@ -120,7 +122,7 @@ style saveload_button_text:
     yalign 0.5
     xalign 0.0
     ## The color used for a text button when it is neither selected nor hovered.
-    color '#BBAF9D'
+    color '#43292A'
     ## The color that is used for buttons and bars that are hovered.
     hover_color '#F12F34'
     ## The color used for a text button when it cannot be selected.

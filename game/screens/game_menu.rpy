@@ -69,9 +69,18 @@ screen game_menu(title):
         key "game_menu" action ShowMenu("main_menu")
 
 style return_button:
+    
     xpos 60
     yalign 1.0
     yoffset -45
+
+style return_button_text:
+    
+    font "fonts/Cheboygan.ttf"
+    idle_color '#BBAF9D'
+    hover_color '#F12F34'
+    selected_color '#96211D'
+    insensitive_color '#8888887f'
 
 style game_menu_viewport:
     xsize config.screen_width-620

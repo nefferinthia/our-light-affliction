@@ -1618,8 +1618,7 @@ label postchoice_lucycourtyard:
     with fade
     scene hallway day
     with MVNStainedGlass10
-    #Ilya's theme
-    play music "audio/bgm/Under the moon.ogg"
+    play music "audio/bgm/Ilya's theme.ogg"
     show ilyaintro
     with dissolve
     window hide
@@ -1943,8 +1942,7 @@ label postchoice_ilyameeting:
             "I knock two times, then let myself in."
 
             scene student council room
-            #Ilya's theme
-            play music "audio/bgm/Under the moon.ogg"
+            play music "audio/bgm/Ilya's theme.ogg"
             show ilya stiff calm
             with MVNStainedGlass10
 
@@ -2855,8 +2853,7 @@ label postchoice_ilyameeting:
     "I’m slowly learning that talking to Ilya is like one of those video games where you’re presented with a choice but the question simply repeats until you choose the correct answer."
     
     play sound "audio/sfx/filmcow/place down cup.ogg"
-    #Ilya's theme?
-    play music "audio/bgm/Under the moon.ogg"
+    play music "audio/bgm/Ilya's theme.ogg"
     show ilya at center
     with move
     i "I visited the hospital yesterday. I thought you might want to know that Johan and Caitlin are doing alright considering the circumstances."
@@ -3118,8 +3115,10 @@ label postchoice_ilyafallout:
     e2 "It doesn’t matter if you can handle it! Be honest, I’m a burden on you! You’d be better off without me holding you down!"
     l "Are you questioning my judgment, Edie?"
     l "I won’t say this twice, so listen closely."
-    show broomcloset foreheadgrin
-    "He leans his forehead against mine as he continues. My heart feels like it’s beating in my throat."
+    #show broomcloset foreheadgrin
+    show broomcloset grinneutral
+    #"He leans his forehead against mine as he continues. My heart feels like it’s beating in my throat."
+    "He leans in closer as he continues. My heart feels like it’s beating in my throat."
     l "You are not a burden on me. I have need of you. {i}You{/i}, and no one else."
     l "You are my precious assistant, and I will not tolerate you running off elsewhere, no matter what silly justifications you come up with." 
     l "No matter your doubts, from now on you come to me instead of trying to take care of things alone."
@@ -3129,7 +3128,8 @@ label postchoice_ilyafallout:
         "...Okay. Thank you, Lucifrid.#":
             play music "audio/bgm/Longing.ogg"
             $ positive_arc += 1
-            show broomcloset foreheadpause
+            #show broomcloset foreheadpause
+            show broomcloset neutrallucy
             "Something changes in Lucifrid. He’s normally so quick to respond, so candid, but now, he seems unsure."
             "I was expecting him to tease me for being an obedient little helper, but he lets the moment linger."
             "My eyes trace his form." 
@@ -3290,7 +3290,6 @@ label postchoice_broomcloset:
     "As I try to focus on anything else, Ilya rushes over, face flushed with an unreadable expression."
     stop sound
 
-    #Ilya's theme?
     play music "audio/bgm/Under the moon.ogg"
 
     if ilya_affection >= 2:
@@ -3654,7 +3653,6 @@ label post_Lucifridmeltdown:
     
     if true_ending <= 1:
         play music "audio/bgm/Spider's Covenant.ogg"
-    play sound "audio/sfx/kurage-kosho/wind.mp3"
     hide lucifrid
     "The wind from the open window rustles through the abandoned classroom, blowing a stray leaf inside."
     "I look outside at the waving treetops; they show hints of their autumn colours already."
@@ -4252,7 +4250,7 @@ label endings:
             n "While we look not at the things which are seen, but at the things which are not seen:"
             n "for the things which are seen are temporal; but the things which are not seen are eternal."
 
-            return
+            jump credits
 
         "Lucifrid#" if lucy_ending >= 1: 
 
@@ -4468,7 +4466,7 @@ label endings:
             i "Open your eyes! It’s never too late to make the right choice!"
             "It is, Ilya. It is. I don’t have the will to fight this anymore."
 
-            show spiderboy placeholder
+            show spiderboyfrown
             with dissolve
             window hide
             $ renpy.pause(2,hard=True)
@@ -4511,7 +4509,7 @@ label endings:
             show emrys alert frowning at midleft
             em "Edelweiss!"
 
-            show spiderboy placeholder
+            show spiderboylucy
             with dissolve
             l "Now, now, don’t get upset. I wasn’t {i}trying{/i} to hurt you!"
             l "This all went exactly according to plan."
@@ -4579,13 +4577,14 @@ label endings:
             l "No, how could I be?"
             l "You chose me."
             
-            show beyondroyals placeholder
+            show lucyyanending
             with dissolve
             window hide
             $ renpy.pause(2,hard=True)
             window show
             "I barely notice the world around us giving way, replaced by my new home."
-            "Lucifrid seats himself on his throne, and I take my place beside him."
+            "Both Lucifrid and I change into our proper forms as soon as we cross the boundary."
+            "I take my rightful place in his web, and he moves in closer to me."
             "Here, every atom moves in blissful obedience to his will."
             "I can hardly remember what things were like before his rule. It feels like every day, I forget a little more."
             "Is there a greater joy than losing oneself in the person one loves?"
@@ -4595,7 +4594,7 @@ label endings:
             l "Yes, my queen?"
             "I wanted to ask something, but the thought slips away."
             e2 "No, it’s nothing."
-            "I rest my head on his shoulder and close my eyes."
+            "I shake my head and smile at him."
             "It must not have been important."
 
             scene black
@@ -4604,12 +4603,11 @@ label endings:
             n "for love is strong as death; jealousy is cruel as the grave:" 
             n "the coals thereof are coals of fire, which hath a most vehement flame."
 
-            return
+            jump credits
 
         "Ilya#" if ilya_ending >= 1:
 
-            #Ilya's theme
-            play music "audio/bgm/Under the moon.ogg"
+            play music "audio/bgm/Ilya's theme.ogg"
 
             "I’m so tired of being caught in Lucifrid’s web. No matter what I do, I’m nothing but a pawn in his game."
             "I’ve followed his lead time and again, and yet he refuses to see me as an equal."
@@ -4856,8 +4854,7 @@ label endings:
             i "From nothing thy comest, and to nothing thy shalt return."
             "He screams out and burns up, like the apparition in the courtyard before."
             "A real exorcism."
-            #Ilya's theme
-            play music "audio/bgm/Under the moon.ogg"
+            play music "audio/bgm/Ilya's theme.ogg"
             show hideout day behind ilya:
                 blur 10
             "But it all goes faint and blurry. I can’t sense the presence of the beyond anymore."
@@ -4896,7 +4893,7 @@ label endings:
             with fadehold
             play sound "audio/sfx/otologic/school bell.mp3" volume 0.5
             pause 5.0
-            play music "audio/bgm/Ordinary life.ogg"
+            play music "audio/bgm/Ilya's theme.ogg"
             "..."
             em "Earth to Edelweiss! Class is over."
             e awkward "...Hm?"
@@ -4971,7 +4968,7 @@ label endings:
             n "they comfort in vain: therefore they went their way as a flock," 
             n "they were troubled, because there was no shepherd."
 
-            return
+            jump credits
 
         "Myself#" if bad_ending >= 1:
             "No! I refuse to let Lucifrid solve all my problems again."
@@ -5248,4 +5245,29 @@ label endings:
             n "He shall lean upon his house, but it shall not stand;"
             n "he shall cling to it, but it shall not endure."
             
-            return
+            jump credits
+    
+    label credits:
+
+        play music "audio/bgm/Spider's Covenant.ogg"
+        window hide
+        show credits 1
+        with dissolve
+        pause 5.0
+        show credits 2
+        with dissolve
+        pause 5.0
+        show credits 3
+        with dissolve
+        pause 5.0
+        show credits 4
+        with dissolve
+        pause 5.0
+        show credits 5
+        with dissolve
+        pause 5.0
+        show credits 6
+        with dissolve
+        pause 5.0
+
+        return
