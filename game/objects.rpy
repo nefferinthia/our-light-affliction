@@ -132,27 +132,27 @@ layeredimage ilya:
 
     group expressions:
         attribute annoyed_smile:
-            "ilya/expressions/annoyed_smile.png"
+            "ilya/annoyed_smile.png"
         attribute baffled:
-            "ilya/expressions/baffled.png"
+            "ilya/baffled.png"
         attribute calm default:
-            "ilya/expressions/calm.png"
+            "ilya/calm.png"
         attribute calm_smile:
-            "ilya/expressions/calm_smile.png"
+            "ilya/calm_smile.png"
         attribute cold:
-            "ilya/expressions/cold.png"
+            "ilya/cold.png"
         attribute cold_smile:
-            "ilya/expressions/cold_smile.png"
+            "ilya/cold_smile.png"
         attribute determined:
-            "ilya/expressions/determined.png"
+            "ilya/determined.png"
         attribute frown:
-            "ilya/expressions/frown.png"
+            "ilya/frown.png"
         attribute gentle:
-            "ilya/expressions/gentle.png"
+            "ilya/gentle.png"
         attribute pity:
-            "ilya/expressions/pity.png"
+            "ilya/pity.png"
         attribute sigh:
-            "ilya/expressions/sigh.png"
+            "ilya/sigh.png"
 
 layeredimage emrys:
     zoom 0.5
@@ -172,19 +172,19 @@ layeredimage emrys:
 
     group expressions:
         attribute big_smile:
-            "emrys/expressions/big_smile.png"
+            "emrys/big_smile.png"
         attribute confused:
-            "emrys/expressions/confused.png"
+            "emrys/confused.png"
         attribute determined:
-            "emrys/expressions/determined.png"
+            "emrys/determined.png"
         attribute frowning:
-            "emrys/expressions/frowning.png"
+            "emrys/frowning.png"
         attribute hurt:
-            "emrys/expressions/hurt.png"
+            "emrys/hurt.png"
         attribute neutral default:
-            "emrys/expressions/neutral.png"
+            "emrys/neutral.png"
         attribute small_smile:
-            "emrys/expressions/small_smile.png"
+            "emrys/small_smile.png"
     
     group glasses:
         attribute glasses default:

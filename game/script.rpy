@@ -784,7 +784,7 @@ label start:
 
     show lucifrid threateninghips
 
-    "Two of his hands clamp over my mouth. The other two to spin me around. Emrys is walking over."
+    "Two of his hands clamp over my mouth, the other two spin me around. Emrys is walking over."
     l "Hush now, you wouldn’t want him to get suspicious."
     "I try to calm my breathing and pretend I’m not deeply terrified."
 
@@ -2125,7 +2125,8 @@ label postchoice_ilyameeting:
             "For a second, our eyes are level. The world seems to pause."
             "Lucifrid lifts one of his hands to wipe the glaze with his fingertip."
             "Before I can react, he swipes a smear of sauce across my cheek."
-            show hideout day
+            show hideout day:
+                blur 0
             e angry slightblush "Lucifrid!"
             l grin guardedopen "See? It suits you."
             l evilsmile guardedrelaxed "Now we both match your offering."
@@ -3115,10 +3116,8 @@ label postchoice_ilyafallout:
     e2 "It doesn’t matter if you can handle it! Be honest, I’m a burden on you! You’d be better off without me holding you down!"
     l "Are you questioning my judgment, Edie?"
     l "I won’t say this twice, so listen closely."
-    #show broomcloset foreheadgrin
-    show broomcloset grinneutral
-    #"He leans his forehead against mine as he continues. My heart feels like it’s beating in my throat."
-    "He leans in closer as he continues. My heart feels like it’s beating in my throat."
+    show broomcloset foreheadgrin
+    "He leans his forehead against mine as he continues. My heart feels like it’s beating in my throat."
     l "You are not a burden on me. I have need of you. {i}You{/i}, and no one else."
     l "You are my precious assistant, and I will not tolerate you running off elsewhere, no matter what silly justifications you come up with." 
     l "No matter your doubts, from now on you come to me instead of trying to take care of things alone."
@@ -3128,8 +3127,7 @@ label postchoice_ilyafallout:
         "...Okay. Thank you, Lucifrid.#":
             play music "audio/bgm/Longing.ogg"
             $ positive_arc += 1
-            #show broomcloset foreheadpause
-            show broomcloset neutrallucy
+            show broomcloset foreheadpause
             "Something changes in Lucifrid. He’s normally so quick to respond, so candid, but now, he seems unsure."
             "I was expecting him to tease me for being an obedient little helper, but he lets the moment linger."
             "My eyes trace his form." 
@@ -3283,7 +3281,7 @@ label postchoice_broomcloset:
     #flame/smoke vfx
     play sound "audio/sfx/taira-komori/fire.mp3"
     hide apparition
-    "The masked figure bursts into flame, disintegrating piece by piece."
+    "The horned figure bursts into flame, disintegrating piece by piece."
     "I can’t help but avert my eyes."
     "???" "More of my kin will come for you, Edelweiss!"
     "Until its last breath it curses us, and the pained sound echoes horrifically."
