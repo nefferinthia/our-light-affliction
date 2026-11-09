@@ -782,21 +782,21 @@ label start:
 
     e "I-I’m sorry! I just didn’t know what to—"
 
-    show lucifrid threateninghips
+    show lucifrid threateninghips at midleft
+    with move
 
     "Two of his hands clamp over my mouth, the other two spin me around. Emrys is walking over."
     l "Hush now, you wouldn’t want him to get suspicious."
     "I try to calm my breathing and pretend I’m not deeply terrified."
 
-    show emrys confused casual
-    with easeinright
+    show emrys confused casual at enterright(0.7,0.7)
 
     em "Edelweiss, your face is pale, is everything alright?{nw=1.0} "
     extend  "{size=-8}...Apparitions again?{/size}"
     "He whispers it as he leans in, completely unaware of the third party in our little gathering."
     "I didn’t know Lucifrid could erase his presence like that, but I guess Emrys’ spiritual abilities are easily thrown off—he can't see him."
 
-    show edelweiss awkward
+    show edelweiss awkward 
 
     e "Oh yeah, a real scary-looking spider just crawled past. Probably harmless though!"
 
@@ -804,7 +804,7 @@ label start:
 
     e "Listen, I got a call and it looks like my plans really can’t wait. I’m sorry for being all wishy-washy. I’ll make it up to you some other time, I promise."
 
-    show lucifrid guardedhips displeased
+    show lucifrid guardedhips displeased at midleft
 
     "Lucifrid’s eyes narrow."
 
@@ -817,7 +817,7 @@ label start:
     "I look over at Lucifrid nervously, but his menacing glower has lost none of its intensity."
     "I swallow hard."
 
-    show emrys casual small_smile
+    show emrys casual small_smile at midright
     em "Hey, don’t forget I’m not {i}just{/i} your assistant. I want to spend time with you off-duty all the same."
     
     show edelweiss slightblush smile
@@ -826,13 +826,13 @@ label start:
     "Forgive me Emrys. This is all to protect you."
     e "I would never forget my best friend just because I got a boyfriend."
 
-    show lucifrid smug guardedrelaxed
-    show emrys confused blush
+    show lucifrid smug guardedrelaxed at midleft
+    show emrys confused blush at midright
 
     "Emrys blushes. Lucifrid grins."
     em "A boyfriend...? When did you find the time to{cps=3}...{/cps} Is he taking good care of you at least?"
 
-    show lucifrid innocent invitingrelaxed
+    show lucifrid innocent invitingrelaxed at midleft
 
     l "I didn't know you thought of me that way, Edie."
     "Lucifrid languidly slings two arms around me as I try my best to keep my composure."
@@ -848,7 +848,8 @@ label start:
     "Emrys dips his head, bashful. As I look at his face, the shame of deceit washes over me." 
 
     hide emrys
-    show lucifrid guardedrelaxed
+    show lucifrid guardedrelaxed at center
+    with move
 
     "I watch his frame move into the distance and promise myself I’ll tell him the truth eventually. He’ll understand.{w} He'll understand, right?"
     "...He'll definitely tell father. I don't even want to imagine the scolding I’ll receive."
@@ -1374,7 +1375,7 @@ label postchoice_lucycourtyard:
 
     e "My liege, might I have your permission to head home for the day?"
 
-    show lucifrid
+    show lucifrid evening
 
     "He gives a curt nod, befitting a noble of his station."
 
@@ -1458,7 +1459,7 @@ label postchoice_lucycourtyard:
     "I dig in and a delectable smell travels through the classroom, drawing some of our classmates over to our desks."
     "And regrettably... it seems they’re not the only ones."
 
-    show lucifrid smug threateningrelaxed
+    show lucifrid smug threateningrelaxed at midleft
 
     l "What a luxurious lunch for a regular Tuesday! Can you spare me a bite?"
     "I glare daggers at Lucifrid. He knows I can’t respond to him with everyone here."
@@ -1508,13 +1509,12 @@ label postchoice_lucycourtyard:
     
     play sound "audio/sfx/yamicafe/footsteps.ogg"
     "A tall upperclassman sidles up beside me and places a hand on my shoulder."
-    show lucifrid:
-        zoom 1.0
-        yalign 1.0  
-    show ilya calm
+    show lucifrid at midleft
+    with move
+    show ilya calm at center
     stop sound
     "???" "Is everything alright?"
-    show lucifrid grin
+    show lucifrid grin at midleft
     l "Ehehe!"
     hide lucifrid with dissolve
     "That’s Lucifrid’s cue to slip away. From the corner of my eye I watch him stuff the skewer in his mouth. Curses."
@@ -2348,29 +2348,25 @@ label postchoice_ilyameeting:
     with ease
     "Growing tired of waiting, Emrys sits down on Lucifrid’s usual chair. The room darkens immediately."
     play music "audio/bgm/Lucifrid's theme.ogg"
-    show lucifrid evening guardedclenched frown:
-        xpos 1420
+    show lucifrid evening guardedclenched frown at midright
     "Lucifrid materialises from a corner obscured by a crawling mass of his familiars."
     show emrys confused:
         xpos 500
+        ypos 1.0
     with MoveTransition(0.2)
     play sound "audio/sfx/filmcow/chair squeak 3.ogg"
     "Startled, Emrys jumps up from the chair with a flinch."
     l "Do not casually take my throne, human."
     "He says it dismissively, in a way I haven’t heard him speak to me. As if getting upset with Emrys would be impossibly far beneath him."
-    show emrys determined:
-        xpos 500
+    show emrys determined at midleft
+    with move
     em "You—"
     "Emrys starts but Lucifrid interrupts him heedlessly, fixing his eyes on me."
-    show lucifrid guardedhips frown:
-        xpos 1000
-    show emrys:
-        xpos 350
-    with ease
+    show lucifrid guardedhips frown at midright
+    show emrys at midleft
     l "What exactly is the meaning of this, my dear assistant?"
     "His voice is void of its usual levity. I swallow nervously."
-    show lucifrid guardedopen displeased:
-        xpos 1000
+    show lucifrid guardedopen displeased at midright
     l "I believe I agreed to keep this human out of our affairs in return for your services. You can’t extricate yourself by bringing him back here."
     "I take a deep breath. Lucifrid’s intimidation tactics are nothing more than that: tactics."
     e evening neutral "The two of us were investigating." 
@@ -3073,8 +3069,9 @@ label postchoice_ilyafallout:
     show lucifrid threateninghips frown at closeup
     l "That our {i}souls{/i} are {i}bound{/i}?"
     show ilya behind lucifrid:
-        xcenter 0.25
-        zoom 0.8
+        yalign 0.5
+        xcenter 0.3
+        zoom 0.7
     pause 0.5
     e panic "...!"
     "Without time to think, I open the door Lucifrid has me cornered against."
@@ -3924,36 +3921,29 @@ label endings:
             with MVNStainedGlass10
             "There he is!"
             "I spot Emrys seated on the floor, blood trailing from his leg. An apparition must have gotten to him."
-            show emrys beyond hurt:
-                xcenter 0.25
+            show emrys beyond hurt at midleft
             em "Edelweiss!"
             "His face flushes with relief when he sees me. He struggles to get up."
-            show lucifrid beyond invitingrelaxed smug:
-                xcenter 0.5
+            show lucifrid beyond invitingrelaxed smug at midright
             "Lucifrid, having caught up to us in seconds with his superhuman speed, extends one of his arms to him."
             l "She couldn’t have found you without me, you know."
             "Emrys begrudgingly takes the arm extended to him."
-            show emrys alert neutral:
-                    xcenter 0.25
+            show emrys alert neutral at midleft
             em "You have my thanks."
             e beyond smile "To think I would see a day where you two get along!"
-            show lucifrid guardedclenched pout:
-                xcenter 0.5
+            show lucifrid guardedclenched pout at midright
             l "Shush or I’ll let him fall."
-            show emrys determined:
-                    xcenter 0.25
+            show emrys determined at midleft
             em "...At least one of us was raised with good manners."
             "I let out a sigh of relief. If he has enough energy to retort sarcastically, his wound can’t be that bad."
             show lucifrid guardedrelaxed neutral at midright
             with move
             e beyond conflicted "Sorry about... all of this."
             "He frowns and shakes his head."
-            show emrys casual neutral:
-                    xcenter 0.25 
+            show emrys casual neutral at midleft 
             em "I don’t know what kind of mess you’ve gotten into this time but... you’re going to set it right, aren’t you? I’m counting on you."
             "He sternly eyes Lucifrid."
-            show emrys determined:
-                    xcenter 0.25
+            show emrys determined at midleft
             em "Both of you."
             "I nod at him with a smile, long used to his lectures. The spider prince merely rolls his eyes."
             show lucifrid guardedclenched evilsmile at midright
@@ -3963,8 +3953,7 @@ label endings:
             "He makes some hand signals towards a spider battalion, which gathers around Emrys."
             show lucifrid evilsmile at midright
             l "The boundary’s weak. These guys will get you across just fine."
-            show emrys small_smile alert:
-                xcenter 0.25
+            show emrys small_smile alert at midleft
             em "Stay safe, Edelweiss."
             show lucifrid guardedhips displeased at midright
             l "Quickly now, before I change my mind."

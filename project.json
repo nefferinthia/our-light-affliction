@@ -2,8 +2,7 @@
   "type": "template",
   "build_update": false,
   "packages": [
-    "pc",
-    "mac"
+    "market"
   ],
   "add_from": true,
   "force_recompile": true,
