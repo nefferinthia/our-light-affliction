@@ -91,16 +91,16 @@ screen preferences():
                             
 
 
-                    if config.has_voice:
-                        label _("Voice Volume")
-                        hbox:
-                            if config.sample_sound:
-                                ysize 90
-                            else:
-                                ysize 70
-                            bar value Preference("voice volume") style "scrollbar"
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                    # if config.has_voice:
+                    #     label _("Voice Volume")
+                    #     hbox:
+                    #         if config.sample_sound:
+                    #             ysize 90
+                    #         else:
+                    #             ysize 70
+                    #         bar value Preference("voice volume") style "scrollbar"
+                    #         if config.sample_voice:
+                    #             textbutton _("Test") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height 15

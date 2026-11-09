@@ -202,28 +202,33 @@ label start:
 
     show edelweiss determined
 
+    voice "audio/VA/LucyIntro/LucyIntro_1_e.ogg"
     e "L-let Emrys go! He’s my assistant!"
     "Well, so much for intimidation."
 
     show lucifrid invitinghips grin
 
+    voice "audio/VA/LucyIntro/LucyIntro_2_l.ogg"
     l2 "Oh, you came! I’ve been looking for you."
     "His grin is almost innocent."
 
     show lucifrid evilsmile invitinghips
 
+    voice "audio/VA/LucyIntro/LucyIntro_3_l.ogg"
     l2 "Don’t worry about him, he’s safe up there, you know. The poison’s only knocked him out. {i}Hehe.{/i}"
 
     show lucifrid evilsmile invitinghips at closeup
 
     play sound "audio/sfx/filmcow/swoosh.ogg"
     "The boy apparition is upon me in a flash, his movements sudden. {i}Inhuman{/i}. I back away instinctively—his face is too close."
+    voice "audio/VA/LucyIntro/LucyIntro_4_e.ogg"
     e "You’ve been looking for me? What business do you have with me?"
     "I try to stay calm, but I’m at an undeniable disadvantage. I can't falter here, I just have to bluff my way through."
     "If I have something he wants then I can leverage it. Apparitions may not follow human rules but they’re not savages."
 
     show lucifrid guardedopen neutral at closeup
 
+    voice "audio/VA/LucyIntro/LucyIntro_5_l.ogg"
     l2 "Well, first things first, I believe an introduction is in order."
 
     play sound "audio/sfx/otologic/finger snap.mp3"
@@ -232,48 +237,60 @@ label start:
 
     show lucifrid guardedopen evilsmile at closeup
 
+    voice "audio/VA/LucyIntro/LucyIntro_6_l.ogg"
     l "My name is Lucifrid, prince of spiders and one of the deities on the dark side of the barrier of this school."
+    voice "audio/VA/LucyIntro/LucyIntro_7_l.ogg"
     l "And you... are the strongest human specimen this school has to offer."
+    voice "audio/VA/LucyIntro/LucyIntro_8_l.ogg"
     l "It seems my plan to lure you here worked out in my favour."
     "Tch. I've been dancing to his tune the whole time."
     "I keep my voice firm."
+    voice "audio/VA/LucyIntro/LucyIntro_9_e.ogg"
     e "I'm Edelweiss, though I suppose I don't have to inform you. That boy you’ve so rudely accosted is Emrys."
 
     show lucifrid threateninghips neutral
 
     "He clasps two of his arms behind his back in a solemn pose, using the other two to pick at Emrys’ uniform in a part-curious, part-disgusted manner."
+    voice "audio/VA/LucyIntro/LucyIntro_10_l.ogg"
     l "Now what are you doing spending your time with a halfwit such as this?"
     "Right. Apparitions only respect spiritual power—I just have to play along."
 
     show edelweiss neutral
 
+    voice "audio/VA/LucyIntro/LucyIntro_11_e.ogg"
     e "He’s my assistant. I delegate any work not fit for my hands to him."
 
     show lucifrid innocent
 
+    voice "audio/VA/LucyIntro/LucyIntro_12_l.ogg"
     l "Hmmmm, is that so?"
 
     show lucifrid evilsmile
 
+    voice "audio/VA/LucyIntro/LucyIntro_13_l.ogg"
     l "It seems like he’s causing you more trouble than he’s getting you out of."
 
     show lucifrid ominous
 
+    voice "audio/VA/LucyIntro/LucyIntro_14_l.ogg"
     l "I think I’d be doing you a favour if I disposed of him."
     "His grin grows wider. My heart beats in my throat."
     "What do I do? What do I do?!"
 
     show lucifrid grin
 
+    voice "audio/VA/LucyIntro/LucyIntro_15_l.ogg"
     l "{i}Ehehehe!{/i} Your scared face is really cute, miss."
 
     show edelweiss angry
 
+    voice "audio/VA/LucyIntro/LucyIntro_16_e.ogg"
     e "Emrys is my property! Don’t lay your hands on him."
     "My voice quakes. I doubt I sound convincing, but it’s too late to drop my act."
 
     show edelweiss determined
 
+    voice "audio/VA/LucyIntro/LucyIntro_17_e.ogg"
     e "Your business is with me, isn’t it?"
 
     play sound "audio/sfx/yamicafe/footsteps.ogg"
@@ -281,17 +298,24 @@ label start:
 
     show lucifrid evilsmile guardedopen at halfcloseup
     stop sound
+    voice "audio/VA/LucyIntro/LucyIntro_18_l.ogg"
     l "So, will you offer yourself in exchange for him?"
+    voice "audio/VA/LucyIntro/LucyIntro_19_l.ogg"
     l "I’d be happy to let him go if I receive something more... valuable."    
     "Ugh, this was his plan all along, wasn’t it? I walked right into his trap."
+    voice "audio/VA/LucyIntro/LucyIntro_20_e.ogg"
     e "What do you want from me?"
 
     show lucifrid neutral at halfcloseup
+    voice "audio/VA/LucyIntro/LucyIntro_21_l.ogg"
     l "I need a strong human’s power. Become my assistant. I promise I won’t treat you badly."
     show lucifrid grin at halfcloseup
+    voice "audio/VA/LucyIntro/LucyIntro_22_l.ogg"
     l "Well, you won’t die at least, hehe."
+    voice "audio/VA/LucyIntro/LucyIntro_23_e.ogg"
     e "And you promise you’ll let Emrys go? You’ll never bother him again?"
     show lucifrid innocent at halfcloseup
+    voice "audio/VA/LucyIntro/LucyIntro_24_l.ogg"
     l "I swear it! I’ll even make sure he doesn’t remember a thing."
     "I breathe a small sigh of relief. Apparitions lie and cheat with the best of them, but their formal promises are usually binding."
     "I'll figure my way out of this situation somehow, as long as I can keep Emrys safe."
@@ -299,8 +323,10 @@ label start:
     "Humans have little influence on apparition affairs, and if apparitions have interest in humans at all it's usually to consume their spiritual energy."
     "But surely if that's all he wanted, this would be an unnecessarily roundabout method..."
     "It's no use. I'll find out eventually."
+    voice "audio/VA/LucyIntro/LucyIntro_25_e.ogg"
     e "I’ll help you. But no life-threatening situations! And only during after-school hours!"
     show lucifrid pout at halfcloseup
+    voice "audio/VA/LucyIntro/LucyIntro_26_l.ogg"
     l "We’re going to have to work on the bond of trust between us. I already said I wouldn’t treat you badly..."
     "Hmph, you won’t manipulate me with that cute act!"
     "I can't tell what his intentions are, or whether anything he's saying is sincere."
@@ -311,17 +337,21 @@ label start:
     window hide
     $ renpy.pause(2,hard=True)
     window show
+    voice "audio/VA/LucyIntro/LucyIntro_27_l.ogg"
     l "Well then, let’s make our contract."
     "His four hands press against the wall behind me, pinning me in place." 
     "Before I have time to process what’s happening he presses his lips against mine."
+    voice "audio/VA/LucyIntro/LucyIntro_28_l.ogg"
     l "Let this be proof of the invisible ties that bind us, now and forever. Neither life nor death shall come between us."
     hide lucyintro
     
     play sound "audio/sfx/otologic/finger snap.mp3"
     
     "He snaps his fingers again and Emrys falls from his web. A procession of spiders softens his fall and parades him out of the classroom."
+    voice "audio/VA/LucyIntro/LucyIntro_29_l.ogg"
     l "Don’t worry, they’ll deliver him safely back to where he came from."
     show lucifrid grin at halfcloseup
+    voice "audio/VA/LucyIntro/LucyIntro_30_l.ogg"
     l "Now, we have work to do, my dearest partner!"
 
     scene black
@@ -1631,8 +1661,10 @@ label postchoice_lucycourtyard:
     "I imagine us walking home from school, hand in hand."
     "When he notices me, he nods his head politely."
     show ilyaintrosmile
+    voice "audio/VA/IlyaIntro/IlyaIntro_1_i.ogg"
     i "Edelweiss, I’m glad you came."
     "I nod in turn, blushing involuntarily. Alright, that’s enough. Stop daydreaming."
+    voice "audio/VA/IlyaIntro/IlyaIntro_2_i.ogg"
     i "Why don’t you come inside? We’re the only ones here this afternoon."
     
     play sound "audio/sfx/osabisi/sliding door.ogg"
@@ -1642,30 +1674,41 @@ label postchoice_lucycourtyard:
     "A steaming cup of tea warms my hands as I sit at the table across from Ilya."
     "It’s my first time in the student council room. My eyes wander to the various decorations and accolades crowding the shelves."
     show ilya stiff calm
+    voice "audio/VA/IlyaIntro/IlyaIntro_3_i.ogg"
     i "Ahem."
     "Ilya clears his throat to draw my attention back to him."
+    voice "audio/VA/IlyaIntro/IlyaIntro_4_i.ogg"
     i "You must be wondering why I called you here. Allow me to get straight to the point."
+    voice "audio/VA/IlyaIntro/IlyaIntro_5_i.ogg"
     i "As a member of the student council I concern myself with the well-being of the whole student body."
+    voice "audio/VA/IlyaIntro/IlyaIntro_6_i.ogg"
     i "Have you noticed strange happenings around yourself lately? Has anything been bothering you?"
     "He’s being vague on purpose. Is he testing me?" 
     "Don’t panic, there’s no way he could know about the apparitions. He just saw you acting strange in class."
+    voice "audio/VA/IlyaIntro/IlyaIntro_7_e.ogg"
     e awkward "N-no! Nothing strange going on with me!"
     show ilya determined
     "Ilya narrows his eyes."
     "Wait, I know what this could be about. The 4th floor... We’re not supposed to go there."
     "If he discovers the hideout, I'll be in a world of trouble. Time for confusion tactics."
+    voice "audio/VA/IlyaIntro/IlyaIntro_8_e.ogg"
     e "Have you? Noticed anything strange?" 
     show ilya sigh
+    voice "audio/VA/IlyaIntro/IlyaIntro_9_i.ogg"
     i "Yes... I’m afraid something might be afoot in this school. And I’m afraid it might have something to do with you."
+    voice "audio/VA/IlyaIntro/IlyaIntro_10_i.ogg"
     i "I know you may be in a precarious situation, but please don’t be alarmed. I am on your side."
     show ilya polite gentle
+    voice "audio/VA/IlyaIntro/IlyaIntro_11_i.ogg"
     i "You can trust me."
     "When he looks straight into my eyes with that gentle expression, I can’t help but grow flustered."
+    voice "audio/VA/IlyaIntro/IlyaIntro_12_e.ogg"
     e conflicted deepblush "I- um, I’m sorry but I don’t really know what you mean."
     "This is sounding less and less like someone concerned about me rummaging around abandoned classrooms."
     "Can he... really sense apparitions somehow?"
     "But even if he could, how could he help me? This situation is my own responsibility to solve. There’s nothing to learn from letting others clean up my messes."
     show ilya stiff determined
+    voice "audio/VA/IlyaIntro/IlyaIntro_13_i.ogg"
     i "Alright. You leave me no choice but to change my approach."
 
     play sound "audio/sfx/vita-chi sozaikan/bells gentle.ogg"
@@ -1673,23 +1716,36 @@ label postchoice_lucycourtyard:
     "Ilya places a bracelet made of bells on the table. Each bell is engraved with symbols and as I look closer I realise that I recognise most of them."
     "I suppose the look on my face reveals enough. Only someone who knows about the world beyond the boundary would have this on them."
     show ilya calm
+    voice "audio/VA/IlyaIntro/IlyaIntro_14_i.ogg"
     i "You must recognise these, no? After class today I looked into your family."
     show ilya polite
+    voice "audio/VA/IlyaIntro/IlyaIntro_15_i.ogg"
     i "Your family and mine were allies once, before our methods diverged too much to allow such cooperation."
+    voice "audio/VA/IlyaIntro/IlyaIntro_16_i.ogg"
     i "You are diviners, we are exorcists."
+    voice "audio/VA/IlyaIntro/IlyaIntro_17_i.ogg"
     i "But we both bear strong blood ties to the beyond."
+    voice "audio/VA/IlyaIntro/IlyaIntro_18_e.ogg"
     e neutral none "This bracelet is exquisite... I’ve seen similar relics in our family’s vault, but father would never let me walk around with those. Not while I’m still in training."
+    voice "audio/VA/IlyaIntro/IlyaIntro_19_e.ogg"
     e smile "Does that mean you’re a full-fledged exorcist?"
+    voice "audio/VA/IlyaIntro/IlyaIntro_20_i.ogg"
     i gentle "As the appointed heir to our estate I have been trained from a young age to carry out my duties as an exorcist, yes. Though I still have much to learn."
+    voice "audio/VA/IlyaIntro/IlyaIntro_21_e.ogg"
     e laugh "I can’t believe no one told me there were others like us! Surely we aren’t so different."
+    voice "audio/VA/IlyaIntro/IlyaIntro_22_i.ogg"
     i stiff sigh "Our parents have their reasons, I’m sure. There have been... disagreements in the past.{nw=1.5}"
     show ilya gentle
+    voice "audio/VA/IlyaIntro/IlyaIntro_23_i.ogg"
     extend " But there is no reason for us to carry on their feud."
+    voice "audio/VA/IlyaIntro/IlyaIntro_24_i.ogg"
     i "We share a duty to protect the human realm from the beyond, wouldn’t you agree?"
     show ilya calm
+    voice "audio/VA/IlyaIntro/IlyaIntro_25_i.ogg"
     i "But we can’t do that without first keeping ourselves safe."
     "He pauses and my initial excitement chills down to a freezing temperature."
     show ilya polite sigh
+    voice "audio/VA/IlyaIntro/IlyaIntro_26_i.ogg"
     i "You’ve been beset by one of {i}them{/i}, haven’t you?"
     "A sinking feeling settles in my stomach, and I don’t know how to respond."
     "If this is a game, I have no cards in hand and the board is firmly under his control."
@@ -1697,11 +1753,15 @@ label postchoice_lucycourtyard:
     "I need more time to think through my moves. Why is Emrys always right?! Though what good would it do if he were here..."
     "I haven’t even decided what to do about Lucifrid yet, so I can’t involve anyone else. Let alone a complete stranger." 
     "Ilya may be an exorcist, but who knows if he can best the prince of spiders? And if he can’t, I’m the one who takes the fall."
+    voice "audio/VA/IlyaIntro/IlyaIntro_27_e.ogg"
     e determined "I have done nothing outside my own volition. You don’t need to concern yourself with me."
     show ilya pity
     "His eyes turn to pity now. Oh, that look pisses me off."
+    voice "audio/VA/IlyaIntro/IlyaIntro_28_i.ogg"
     i "I cannot allow an apparition of his calibre to exert influence over the light side of the barrier. You understand that, don’t you?"
+    voice "audio/VA/IlyaIntro/IlyaIntro_29_i.ogg"
     i stiff cold "That thing needs to be eliminated. For your good as well."
+    voice "audio/VA/IlyaIntro/IlyaIntro_30_i.ogg"
     i cold_smile "In fact, perhaps I should have started off by thanking you. For bringing this existence to my attention. It has lowered its guard around you, it appears."
     
     menu:
@@ -3091,35 +3151,55 @@ label postchoice_ilyafallout:
     $ renpy.pause(2,hard=True)
     window show
     "Then I notice how very small this room is.{w} And how little space there is between us."
+    voice "audio/VA/BroomCloset/BroomCloset_1_l.ogg"
     l "Will you explain to me what exactly you’re trying to do?!"
+    voice "audio/VA/BroomCloset/BroomCloset_2_e.ogg"
     e2 "Shh! Please, just be quiet! I’ll explain everything if you promise you’ll be quiet."
     show broomcloset neutrallucy
     "Lucifrid’s eyes soften when he notices the genuine panic in my voice."
     "I lower my voice to a whisper, afraid Ilya may find us."
+    voice "audio/VA/BroomCloset/BroomCloset_3_e.ogg"
     e2 "I— I messed up..."
+    voice "audio/VA/BroomCloset/BroomCloset_4_e.ogg"
     e2 "Of course, you know I messed up... But you don’t know what it led to..."
+    voice "audio/VA/BroomCloset/BroomCloset_5_e.ogg"
     e2 "I thought I could protect you!"
+    voice "audio/VA/BroomCloset/BroomCloset_6_e.ogg"
     e2 "Ilya, that exorcist... He’s set on eliminating you. I-I couldn’t convince him otherwise."
+    voice "audio/VA/BroomCloset/BroomCloset_7_e.ogg"
     e2 "It’s all because of me! But— but I can still set it right!"
+    voice "audio/VA/BroomCloset/BroomCloset_8_e.ogg"
     e2 "If I can just stay away from you, then I can keep you safe."
+    voice "audio/VA/BroomCloset/BroomCloset_9_e.ogg"
     e2 "...It’s the only good I can do now."
+    voice "audio/VA/BroomCloset/BroomCloset_10_l.ogg"
     l "Edelweiss..."
     show broomcloset holdchin
     "Lucifrid takes hold of my chin and lifts my face to make me meet his gaze."
     "Blood rushes to my head. All I can think about is how unsightly I must seem to him in this moment."
+    voice "audio/VA/BroomCloset/BroomCloset_11_l.ogg"
     l "You’re an idiot."
+    voice "audio/VA/BroomCloset/BroomCloset_12_l.ogg"
     l "How does all of this have any bearing on me?"
+    voice "audio/VA/BroomCloset/BroomCloset_13_l.ogg"
     l "I am a deity of the otherworld. You're worried over nothing." 
+    voice "audio/VA/BroomCloset/BroomCloset_14_l.ogg"
     l "You think I can’t handle something like this?"
     "Yes, he’s right. I’m an idiot. I know that. But... I didn’t know what to do."
     "I never know what to do. And yet I keep moving, and acting, and making things worse."
+    voice "audio/VA/BroomCloset/BroomCloset_15_e.ogg"
     e2 "It doesn’t matter if you can handle it! Be honest, I’m a burden on you! You’d be better off without me holding you down!"
+    voice "audio/VA/BroomCloset/BroomCloset_16_l.ogg"
     l "Are you questioning my judgment, Edie?"
+    voice "audio/VA/BroomCloset/BroomCloset_17_l.ogg"
     l "I won’t say this twice, so listen closely."
     show broomcloset foreheadgrin
     "He leans his forehead against mine as he continues. My heart feels like it’s beating in my throat."
+    voice "audio/VA/BroomCloset/BroomCloset_18_l.ogg"
     l "You are not a burden on me. I have need of you. {i}You{/i}, and no one else."
+    voice "audio/VA/BroomCloset/BroomCloset_19_l.ogg"
     l "You are my precious assistant, and I will not tolerate you running off elsewhere, no matter what silly justifications you come up with." 
+    voice "audio/VA/BroomCloset/BroomCloset_20_l.ogg"
     l "No matter your doubts, from now on you come to me instead of trying to take care of things alone."
 
 
@@ -3137,9 +3217,12 @@ label postchoice_ilyafallout:
             "He still doesn’t move. The slight smile he wears seems almost shy."
             "With my own heartbeat no longer filling my ears, the quiet allows me to notice his for the first time."
             "He isn’t human—but he lives and breathes and feels."
+            voice "audio/VA/BroomCloset/BroomCloset_21_e.ogg"
             e2 "I mean it, thank you. When I get like this... it’s almost impossible for me to shake myself out of it."
             show broomcloset grinneutral
+            voice "audio/VA/BroomCloset/BroomCloset_22_l.ogg"
             l "It was never quite my intention to become an expert in the stirrings of the human heart, but it seems I hold at least a faint grasp over yours."
+            voice "audio/VA/BroomCloset/BroomCloset_23_l.ogg"
             l "Cheer up now, worrywart."
             jump postchoice_broomcloset
 
@@ -3147,17 +3230,26 @@ label postchoice_ilyafallout:
         "How am I supposed to trust anything you say with that smirk on your face?#":
             $ lucy_yan += 1
             show broomcloset grinneutral
+            voice "audio/VA/BroomCloset/BroomCloset_24_l.ogg"
             l "Oh, you wound me."
+            voice "audio/VA/BroomCloset/BroomCloset_25_l.ogg"
             l "I was being entirely earnest!"
+            voice "audio/VA/BroomCloset/BroomCloset_26_l.ogg"
             l "I’m busy enough managing all the threats upon our domain without you suffering existential crises."
             show broomcloset grinpout
+            voice "audio/VA/BroomCloset/BroomCloset_27_e.ogg"
             e2 "See! Right back to bullying! Your feigned concern is only self-serving in the end."
             show broomcloset neutralpout
+            voice "audio/VA/BroomCloset/BroomCloset_28_l.ogg"
             l "Though it may serve me well, that doesn’t mean the concern is feigned."
+            voice "audio/VA/BroomCloset/BroomCloset_29_l.ogg"
             l "You are free to believe what you will, so long as you obey my command."
             show broomcloset grinpout
+            voice "audio/VA/BroomCloset/BroomCloset_30_l.ogg"
             l "I will show you just how serious I am through actions rather than words."
+            voice "audio/VA/BroomCloset/BroomCloset_31_e.ogg"
             e2 "First bullying, now threats of physical nature... I can hardly remember why I felt the need to protect you."
+            voice "audio/VA/BroomCloset/BroomCloset_32_l.ogg"
             l "Perfect! Then it seems this crisis is resolved."
             jump postchoice_broomcloset
 
@@ -3167,21 +3259,34 @@ label postchoice_broomcloset:
     play music "audio/bgm/Spider's Covenant.ogg"
     "It’s hard to believe the prince of spiders is skilled at easing the pains and fears of teenage girls, but I can’t deny that I’m feeling better."
     "My mind cleared of its undue fog, a lingering question from before rises to the surface."
+    voice "audio/VA/BroomCloset/BroomCloset_33_e.ogg"
     e2 "Something’s been on my mind lately because of Ilya’s threats. What would happen if you were exorcised while we have our contract?"
+    voice "audio/VA/BroomCloset/BroomCloset_34_l.ogg"
     l "I can’t believe you would entertain the thought! A deity of the beyond is not so easily bested."
+    voice "audio/VA/BroomCloset/BroomCloset_35_e.ogg"
     e2 "That’s not answering the question."
+    voice "audio/VA/BroomCloset/BroomCloset_36_l.ogg"
     l "Because the question is completely divorced from reality!"
     show broomcloset grinpout
+    voice "audio/VA/BroomCloset/BroomCloset_37_e.ogg"
     e2 "...you don’t actually know what will happen, do you?"
+    voice "audio/VA/BroomCloset/BroomCloset_38_l.ogg"
     l "Ah, I still remember the day I forced you into this arrangement. You were shaking like a leaf, trying to seem brave."
+    voice "audio/VA/BroomCloset/BroomCloset_39_l.ogg"
     l "You hated my guts, didn’t you?"
+    voice "audio/VA/BroomCloset/BroomCloset_40_l.ogg"
     l "And look at you now, worrying about the evil overlord, you pure, innocent soul!"
+    voice "audio/VA/BroomCloset/BroomCloset_41_e.ogg"
     e2 "Who will have use of my abilities when you’re gone? You’re not the only one who can mix care with pragmatism, Lucy!"
     show broomcloset blushpout
+    voice "audio/VA/BroomCloset/BroomCloset_42_l.ogg"
     l "L-Lucy?"
     show broomcloset blushblush
+    voice "audio/VA/BroomCloset/BroomCloset_43_e.ogg"
     e2 "O-oh. Um."
+    voice "audio/VA/BroomCloset/BroomCloset_44_e.ogg"
     e2 "You always call me Edie too..."
+    voice "audio/VA/BroomCloset/BroomCloset_45_l.ogg"
     l "Hmph. I suppose I can allow it this one time."
     "Our eyes meet. The world seems to freeze in time. Everything we were arguing about vanishes."
     "I can feel his breath."
@@ -3314,6 +3419,7 @@ label postchoice_broomcloset:
         i "As soon as you have no value, you will be discarded."
         e tearful "Y-you’re wrong. I still have value. Lucifrid and I... our souls are bound."
         show ilya baffled stiff
+        voice "audio/VA/IlyaConfrontation/IlyaConfrontation_1_i.ogg"
         i "You... That’s what this was all along?!"
 
 
@@ -3354,30 +3460,42 @@ label postchoice_broomcloset:
         show ilya baffled
         i "Unless..."
         "He looks at me in horror."
+        voice "audio/VA/IlyaConfrontation/IlyaConfrontation_2_i.ogg"
         i "You made a contract with him, didn’t you?"
         e panic none "...!"
 
 
     show ilya sigh
+    voice "audio/VA/IlyaConfrontation/IlyaConfrontation_3_i.ogg"
     i "If that’s the case... what can I even do?"
     show ilya determined
+    voice "audio/VA/IlyaConfrontation/IlyaConfrontation_4_i.ogg"
     i "This can’t go on like this, Edelweiss. This contract between the two of you is slowly melding the light and dark side of the barrier into one amalgamation."
+    voice "audio/VA/IlyaConfrontation/IlyaConfrontation_5_i.ogg"
     i "I’ve never seen anything this disordered occur, but it must be because of your respective affinities."
     "Can I trust what he says? Is this another tactic to get me on his side?"
     "...Is everything really my fault again?"
+    voice "audio/VA/IlyaConfrontation/IlyaConfrontation_6_e.ogg"
     e conflicted "..."
     show ilya polite
+    voice "audio/VA/IlyaConfrontation/IlyaConfrontation_7_i.ogg"
     i "Do you think this is what it means to keep the balance between the realms? That {i}this{/i} is your duty as a diviner?"
+    voice "audio/VA/IlyaConfrontation/IlyaConfrontation_8_e.ogg"
     e rueful "It’s not what I set out to do... But I don’t think it’s all bad."
+    voice "audio/VA/IlyaConfrontation/IlyaConfrontation_9_e.ogg"
     e neutral "I have real power now. I can do something to protect this school."
     show ilya cold stiff
+    voice "audio/VA/IlyaConfrontation/IlyaConfrontation_10_i.ogg"
     i "You have no clue what you’ve gotten yourself into."
+    voice "audio/VA/IlyaConfrontation/IlyaConfrontation_11_i.ogg"
     i "This needs to be set right, one way or another."
     if ilya_affection >= 2:
         show ilya determined polite
+        voice "audio/VA/IlyaConfrontation/IlyaConfrontation_12_i.ogg"
         i "I will save you, Edelweiss. You can depend on me."
     else:
         show ilya polite
+        voice "audio/VA/IlyaConfrontation/IlyaConfrontation_13_i.ogg"
         i "I will do what I must, Edelweiss. That I promise."
     "When I avert my eyes to avoid Ilya’s piercing gaze, I notice Lucifrid glaring daggers at us from the roof, and I start to piece things together."
     "Lucifrid isn’t late, and he certainly hasn’t abandoned me. He simply couldn’t approach without risking exorcism at Ilya’s hands."
@@ -4103,22 +4221,36 @@ label endings:
             window show
             "Again, he interlaces his fingers with mine and uses his other arms to press me against the wall."
             "But softly, this time. Gently."
+            voice "audio/VA/LiberationEnding/Liberation_1_l.ogg"
             l "You remember how we made our contract, I’m sure?"
+            voice "audio/VA/LiberationEnding/Liberation_2_e.ogg"
             e2 "Mm, I do."
+            voice "audio/VA/LiberationEnding/Liberation_3_l.ogg"
             l "It comes undone in just the same way."
+            voice "audio/VA/LiberationEnding/Liberation_4_e.ogg"
             e2 "It’ll be different this time."
+            voice "audio/VA/LiberationEnding/Liberation_5_l.ogg"
             l "Oh, is that so?"
+            voice "audio/VA/LiberationEnding/Liberation_6_l.ogg"
             l "Pray tell, how might that be?"
+            voice "audio/VA/LiberationEnding/Liberation_7_e.ogg"
             e2 "You're really going to make me say it, huh?"
+            voice "audio/VA/LiberationEnding/Liberation_8_e.ogg"
             e2 "Because I love you, Lucifrid."
+            voice "audio/VA/LiberationEnding/Liberation_9_e.ogg"
             e2 "Even once this contract breaks. Even once there’s no way to reach you anymore. We’re still connected."
+            voice "audio/VA/LiberationEnding/Liberation_10_e.ogg"
             e2 "You don’t have the power to snap those invisible ties."
+            voice "audio/VA/LiberationEnding/Liberation_11_l.ogg"
             l "Edelweiss... How could I have known what meeting you would do to me?"
+            voice "audio/VA/LiberationEnding/Liberation_12_l.ogg"
             l "Look at me! A deity of the beyond, all soft-hearted for love of one human girl."
+            voice "audio/VA/LiberationEnding/Liberation_13_l.ogg"
             l "No one ever told me love would make me weak."
             "I can sense Lucifrid hesitate, the look in his eyes unsure. He’s so close I can feel his breath on my skin."
             "The most indescribable feeling comes over me." 
             "I want to kiss him more than anything, but I know that it will be the end."
+            voice "audio/VA/LiberationEnding/Liberation_14_e.ogg"
             e2 "No one ever told me love would make me strong."
             show lucykiss
             "I press my body against his and close the distance between our lips."
@@ -4133,9 +4265,13 @@ label endings:
             "Even if I never reach there, this moment too is eternal."
             hide lucykiss
             "We break from each other to catch our breaths, and I look at him. I try to memorise every little detail about him, even knowing that it’s futile."
+            voice "audio/VA/LiberationEnding/Liberation_15_l.ogg"
             l "Edelweiss..."
+            voice "audio/VA/LiberationEnding/Liberation_16_e.ogg"
             e2 "Lucifrid..."
+            voice "audio/VA/LiberationEnding/Liberation_17_l.ogg"
             l "I hereby dissolve the invisible ties that bind us."
+            voice "audio/VA/LiberationEnding/Liberation_18_l.ogg"
             l "Live well, my soulmate, and I will do the same."
             hide lucykiss_prekiss
             "As soon as he speaks the words, something snaps inside my chest."
@@ -4200,24 +4336,30 @@ label endings:
             scene black
             with dissolve
             "I close my eyes and rest my head on my knees."
+            voice "audio/VA/LiberationEnding/Liberation_19_e.ogg"
             e evening rueful "Lucifrid... Are you there?"
             play sound "audio/sfx/filmcow/chair squeak 3.ogg"
             play music "audio/bgm/Lucifrid's theme.ogg"
             pause 1.0
             scene hideout evening empty
+            voice "audio/VA/LiberationEnding/Liberation_20_e.ogg"
             e evening conflicted "W-what was that?"
             "I look over at the chair he always sat in, but he’s not there. Of course he’s not."
             "But when I look closer, I see something else."
             "A single spider sits in his place, shuffling around almost uncertainly."
+            voice "audio/VA/LiberationEnding/Liberation_21_e.ogg"
             e evening awkward "Yang?"
             "The spider perks up at my voice, and jumps over to the desk in front of him."
             "I get up and walk towards the desk."
+            voice "audio/VA/LiberationEnding/Liberation_22_e.ogg"
             e "But... how?"
             "I stretch my arm out to him, and he climbs onto my hand."
             "Spiders don't give any answers."
             "Something finally gives way, and tears spill down my cheeks."
+            voice "audio/VA/LiberationEnding/Liberation_23_e.ogg"
             e evening tearful "You’re there, aren’t you?"
             "My voice shakes."
+            voice "audio/VA/LiberationEnding/Liberation_24_e.ogg"
             e "Only the prince of spiders could pull off something like that!"
             play music "audio/bgm/Longing.ogg"
             show trueending
@@ -4230,14 +4372,18 @@ label endings:
             "It's so easy to state your ideals proudly before the world."
             "The hard part comes in upholding them when there's no one around to show them off to."
             "I’m sure if he could speak to me now, he’d be scolding me."
+            voice "audio/VA/LiberationEnding/Liberation_25_l.ogg"
             l "{i}Unbelievable! I give you a gift, and you reward me with tears?{/i}"
+            voice "audio/VA/LiberationEnding/Liberation_26_e.ogg"
             e2 "...I’ll take good care of him, I promise."
+            voice "audio/VA/LiberationEnding/Liberation_27_e.ogg"
             e2 "Thank you."
             "The breeze stirs through the broken window."
             "No matter how much I want to stay here just like this, there's a future waiting for me."
             hide trueending
             "I cradle Yang in my hands and walk to the door." 
             "Before I leave, I turn back to the empty room." 
+            voice "audio/VA/LiberationEnding/Liberation_28_e.ogg"
             e evening rueful "Don’t forget, Lucifrid. Neither life nor death."
             "And somewhere, I know, he's smiling."
 
@@ -4305,17 +4451,22 @@ label endings:
             extend " If everything's going to collapse and you're powerless to stop it, wouldn't you rather live freely until the moment it does?"
             "I bite my thumb. Isn't that the exact same logic I was using to justify not addressing this?"
             "What's wrong with me?"
+            voice "audio/VA/PossessionEnding/Possession_1_e.ogg"
             e pout "...You're right. You're right and I'm a hypocrite. I'm all talk of lofty ideals but I can't do a thing to back them up."
+            voice "audio/VA/PossessionEnding/Possession_2_e.ogg"
             e conflicted "Ilya told me all this would happen and I never said a word to you."
             show lucifrid at closeup
             "Lucifrid closes in on me. I freeze, unable to read his expression."
             "He wraps his four arms around me and rests his head on my shoulder. His hushed breath tickles my ear."
             show lucifrid innocent at closeup
+            voice "audio/VA/PossessionEnding/Possession_3_l.ogg"
             l "Don't you worry now, it's alright. I've accepted all your flaws."
             show lucifrid threateninghips at closeup
+            voice "audio/VA/PossessionEnding/Possession_4_l.ogg"
             extend " Because you are mine."
             "The arms around me don't change their weight or force, but they feel tighter. I can't go anywhere."
             show lucifrid evilsmile at closeup
+            voice "audio/VA/PossessionEnding/Possession_5_l.ogg"
             l "You can curse me, distrust me, struggle all you want. It's alright."
             l "No matter how far you fall, no matter how dark your soul gets, I'll take care of you."
             "Should I stop resisting? Should I fall into his embrace and forget about everything?"
@@ -4509,24 +4660,37 @@ label endings:
 
             show spiderboylucy
             with dissolve
+            voice "audio/VA/PossessionEnding/Possession_7_l.ogg"
             l "Now, now, don’t get upset. I wasn’t {i}trying{/i} to hurt you!"
+            voice "audio/VA/PossessionEnding/Possession_8_l.ogg"
             l "This all went exactly according to plan."
             "Emrys is quivering. I wish I could take away his fear."
+            voice "audio/VA/PossessionEnding/Possession_9_e.ogg"
             e beyond conflicted "Calm down, Emrys. You’re safe!"
+            voice "audio/VA/PossessionEnding/Possession_10_e.ogg"
             e "He wouldn’t hurt you. He promised me he’d save you!"
             "Lucifrid smiles at me so gently. It’s all okay."
+            voice "audio/VA/PossessionEnding/Possession_11_l.ogg"
             l "Now, Edie, time for the final step in our plan."
+            voice "audio/VA/PossessionEnding/Possession_12_l.ogg"
             l "Have you figured it out, the solution to the convergence?"
+            voice "audio/VA/PossessionEnding/Possession_13_l.ogg"
             l "A bond between a powerful spiritual life force belonging to the human realm, and a deity of the beyond."
+            voice "audio/VA/PossessionEnding/Possession_14_l.ogg"
             l "Something has to give. There is no happiness without sacrifice."
             "He reaches out his hand."
             "I think I know where this is going. But I don’t need to ask him, I only need to take his hand."
             "So I do."
+            voice "audio/VA/PossessionEnding/Possession_15_e.ogg"
             e rueful slightblush "Thank you... for rescuing Emrys. For saving this school."
             "He pulls me closer, then lifts me up in his arms effortlessly. I cling to him feverishly."
+            voice "audio/VA/PossessionEnding/Possession_16_l.ogg"
             l "Hold still now. This will hurt just a little bit, but then it’ll all be better."
+            voice "audio/VA/PossessionEnding/Possession_17_e.ogg"
             e conflicted "Lucifrid, I’m scared."
+            voice "audio/VA/PossessionEnding/Possession_18_l.ogg"
             l "Shh, you’ll be okay. I’m with you."
+            voice "audio/VA/PossessionEnding/Possession_19_l.ogg"
             l "Neither life nor death shall come between us."
 
             scene black
@@ -4568,11 +4732,15 @@ label endings:
             with dissolve
             pause 0.5
             show lucifrid guardedrelaxed evilsmile
+            voice "audio/VA/PossessionEnding/Possession_20_l.ogg"
             l "I knew I’d find you here. Come, are you done reminiscing?"
+            voice "audio/VA/PossessionEnding/Possession_21_e.ogg"
             e smile "Oh, are you jealous of a boy who can’t even see me now?"
             "He pulls me close."
             show lucifrid wrysmile at closeup
+            voice "audio/VA/PossessionEnding/Possession_22_l.ogg"
             l "No, how could I be?"
+            voice "audio/VA/PossessionEnding/Possession_23_l.ogg"
             l "You chose me."
             
             show lucyyanending
@@ -4587,10 +4755,13 @@ label endings:
             "I can hardly remember what things were like before his rule. It feels like every day, I forget a little more."
             "Is there a greater joy than losing oneself in the person one loves?"
             "I give him all my fear, and he returns his love."
+            voice "audio/VA/PossessionEnding/Possession_24_e.ogg"
             e2 "Lucifrid?"
             "He turns to me with a tender look."
+            voice "audio/VA/PossessionEnding/Possession_25_l.ogg"
             l "Yes, my queen?"
             "I wanted to ask something, but the thought slips away."
+            voice "audio/VA/PossessionEnding/Possession_26_l.ogg"
             e2 "No, it’s nothing."
             "I shake my head and smile at him."
             "It must not have been important."
@@ -4863,11 +5034,13 @@ label endings:
             "He sheathes his sword when it’s all done, and walks towards me."
             show ilya polite calm_smile at halfcloseup:
                 xcenter 0.5
+            voice "audio/VA/IlyaEnding/IlyaEnding_1_i.ogg"
             i "I’m proud of you, Edelweiss. You didn’t falter."
             "Proud. What a disgusting word."
             "There’s nothing to be proud of here. Though I let someone else do all the dirty work, my soul is squalid all the same."
             "But it’s over now."
             "I can’t move or speak. I just want to rest."
+            voice "audio/VA/IlyaEnding/IlyaEnding_2_i.ogg"
             i "Here. Let me help you."
             show ilyaending
             with dissolve
@@ -4877,9 +5050,13 @@ label endings:
             "Ilya lifts me in his arms and holds my limp body against his."
             "There is warmth here."
             "All else may be gone, but this warmth alone remains."
+            voice "audio/VA/IlyaEnding/IlyaEnding_3_e.ogg"
             e2 "...Don’t let me go."
+            voice "audio/VA/IlyaEnding/IlyaEnding_4_i.ogg"
             i "I won’t."
+            voice "audio/VA/IlyaEnding/IlyaEnding_5_e.ogg"
             e2 "Promise."
+            voice "audio/VA/IlyaEnding/IlyaEnding_6_i.ogg"
             i "I promise. I’ll never let you go."
             scene black
             "I rest my head against his chest and close my eyes."
@@ -4915,16 +5092,21 @@ label endings:
             show femalestudent1 at right
             "Classmate" "Vice president Ilya! Is there anything I can do for you?"
             show ilya gentle at center
+            voice "audio/VA/IlyaEnding/IlyaEnding_7_i.ogg"
             i "No need, I’m here for Edelweiss."
             play music "audio/bgm/Longing.ogg"
+            voice "audio/VA/IlyaEnding/IlyaEnding_8_e.ogg"
             e laugh "Ilya!"
             hide emrys
             hide femalestudent1
             "I jump up from my seat and move past Emrys towards him."
             show ilya calm_smile polite
+            voice "audio/VA/IlyaEnding/IlyaEnding_9_i.ogg"
             i "I’ve come to escort you home."
             "He takes my hand and raises it to his lips, pressing a chaste kiss upon it."
+            voice "audio/VA/IlyaEnding/IlyaEnding_10_e.ogg"
             e smile slightblush "I was waiting for you."
+            voice "audio/VA/IlyaEnding/IlyaEnding_11_i.ogg"
             i "Then let’s not tarry."
             "He doesn’t let go of my hand as we walk out of the classroom, intertwining our fingers instead."
             "Classmate" "Oh, I can’t believe it! I’m so jealous!"
@@ -4935,15 +5117,22 @@ label endings:
             "I don’t look back."
             "The only comfort I have is the warmth of his touch."
             "The only guidance I need is his hand pulling me onward."
+            voice "audio/VA/IlyaEnding/IlyaEnding_12_e.ogg"
             e neutral slightblush "What are we doing this weekend?"
             show ilya gentle polite
+            voice "audio/VA/IlyaEnding/IlyaEnding_13_i.ogg"
             i "They’ve just displayed the winter illuminations at the theme park a few stations over. I bought us tickets."
+            voice "audio/VA/IlyaEnding/IlyaEnding_14_e.ogg"
             e smile slightblush "That sounds lovely."
             show ilya calm
+            voice "audio/VA/IlyaEnding/IlyaEnding_15_i.ogg"
             i "Don’t forget to wear the scarf I gave you. They say the temperature will drop near zero this weekend."
+            voice "audio/VA/IlyaEnding/IlyaEnding_16_e.ogg"
             e rueful slightblush "Of course. Thank you again for the thoughtful gift."
             show ilya calm_smile
+            voice "audio/VA/IlyaEnding/IlyaEnding_17_i.ogg"
             i "Think nothing of it. It’s my duty to look after you."
+            voice "audio/VA/IlyaEnding/IlyaEnding_18_e.ogg"
             e neutral deepblush "I love you, Ilya."
             show ilya stiff
             i "..."
@@ -4958,6 +5147,7 @@ label endings:
             "Ilya must not have seen it. His boot comes down with a squelch."
             "He squeezes my hand, and I turn back towards him."
             show ilya gentle polite
+            voice "audio/VA/IlyaEnding/IlyaEnding_20_i.ogg"
             i "I love you too, Edelweiss."
 
             scene black
